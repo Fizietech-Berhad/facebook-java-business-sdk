@@ -78,6 +78,9 @@ public class AttributionData {
     @SerializedName("total_credit")
     private Float totalCredit = null;
 
+    @SerializedName("partner_client_id")
+    private String partnerClientId = null;
+
     /**
      * Default constructor
      */
@@ -106,12 +109,13 @@ public class AttributionData {
      * @param touchpointId Unique identifier for touchpoint events shared by Meta with advertisers.
      * @param attributionSetting The attribution setting with inactivity and reattribution window configuration.
      * @param totalCredit Total credit attributed to all publishers for this conversion.
+     * @param partnerClientId Partner workspace/dashboard identifier for dedup across shared pixels.
      */
     public AttributionData(String scope, Long visitTime, String adId, String adsetId, String campaignId,
         Float attributionShare, AttributionModelEnum attributionModel, Integer attributionWindow, Float attributionValue,
         String attributionSource, String touchpointType, Integer touchpointTs, AttributionMethodEnum attributionMethod,
         DeclineReasonEnum declineReason, String auditingToken, String linkageKey, String touchpointId, AttributionSetting attributionSetting,
-        Float totalCredit) {
+        Float totalCredit, String partnerClientId) {
       this.scope = scope;
       this.visitTime = visitTime;
       this.adId = adId;
@@ -131,6 +135,7 @@ public class AttributionData {
       this.touchpointId = touchpointId;
       this.attributionSetting = attributionSetting;
       this.totalCredit = totalCredit;
+      this.partnerClientId = partnerClientId;
     }
 
     /**
@@ -684,6 +689,35 @@ public class AttributionData {
       this.totalCredit = totalCredit;
     }
 
+    /**
+     * Set partnerClientId
+     *
+     * @param partnerClientId Partner workspace/dashboard identifier for dedup across shared pixels.
+     * @return AttributionData
+     */
+    public AttributionData partnerClientId(String partnerClientId) {
+      this.partnerClientId = partnerClientId;
+      return this;
+    }
+
+    /**
+     * Get partnerClientId
+     *
+     * @return partnerClientId
+     */
+    public String getPartnerClientId() {
+      return partnerClientId;
+    }
+
+    /**
+     * Set partnerClientId
+     *
+     * @param partnerClientId Partner workspace/dashboard identifier for dedup across shared pixels.
+     */
+    public void setPartnerClientId(String partnerClientId) {
+      this.partnerClientId = partnerClientId;
+    }
+
     @Override
     public boolean equals(Object o) {
       if (this == o) return true;
@@ -709,12 +743,13 @@ public class AttributionData {
         && Objects.equals(this.linkageKey, attributionData.linkageKey)
         && Objects.equals(this.touchpointId, attributionData.touchpointId)
         && Objects.equals(this.attributionSetting, attributionData.attributionSetting)
-        && Objects.equals(this.totalCredit, attributionData.totalCredit);
+        && Objects.equals(this.totalCredit, attributionData.totalCredit)
+        && Objects.equals(this.partnerClientId, attributionData.partnerClientId);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(scope, visitTime, adId, adsetId, campaignId, attributionShare, attributionModel, attributionWindow, attributionValue, attributionSource, touchpointType, touchpointTs, attributionMethod, declineReason, auditingToken, linkageKey, touchpointId, attributionSetting, totalCredit);
+      return Objects.hash(scope, visitTime, adId, adsetId, campaignId, attributionShare, attributionModel, attributionWindow, attributionValue, attributionSource, touchpointType, touchpointTs, attributionMethod, declineReason, auditingToken, linkageKey, touchpointId, attributionSetting, totalCredit, partnerClientId);
     }
 
     @Override
@@ -740,6 +775,7 @@ public class AttributionData {
       sb.append("    touchpointId: ").append(toIndentedString(touchpointId)).append("\n");
       sb.append("    attributionSetting: ").append(toIndentedString(attributionSetting)).append("\n");
       sb.append("    totalCredit: ").append(toIndentedString(totalCredit)).append("\n");
+      sb.append("    partnerClientId: ").append(toIndentedString(partnerClientId)).append("\n");
       sb.append("}");
       return sb.toString();
     }
