@@ -74,7 +74,10 @@ public class AttributionData {
 
     @SerializedName("attribution_setting")
     private AttributionSetting attributionSetting = null;
-    
+
+    @SerializedName("total_credit")
+    private Float totalCredit = null;
+
     /**
      * Default constructor
      */
@@ -102,11 +105,13 @@ public class AttributionData {
      * @param linkageKey The linkage key for the attribution.
      * @param touchpointId Unique identifier for touchpoint events shared by Meta with advertisers.
      * @param attributionSetting The attribution setting with inactivity and reattribution window configuration.
+     * @param totalCredit Total credit attributed to all publishers for this conversion.
      */
     public AttributionData(String scope, Long visitTime, String adId, String adsetId, String campaignId,
         Float attributionShare, AttributionModelEnum attributionModel, Integer attributionWindow, Float attributionValue,
         String attributionSource, String touchpointType, Integer touchpointTs, AttributionMethodEnum attributionMethod,
-        DeclineReasonEnum declineReason, String auditingToken, String linkageKey, String touchpointId, AttributionSetting attributionSetting) {
+        DeclineReasonEnum declineReason, String auditingToken, String linkageKey, String touchpointId, AttributionSetting attributionSetting,
+        Float totalCredit) {
       this.scope = scope;
       this.visitTime = visitTime;
       this.adId = adId;
@@ -125,6 +130,7 @@ public class AttributionData {
       this.linkageKey = linkageKey;
       this.touchpointId = touchpointId;
       this.attributionSetting = attributionSetting;
+      this.totalCredit = totalCredit;
     }
 
     /**
@@ -642,11 +648,40 @@ public class AttributionData {
 
     /**
      * Set attributionSetting
-     * 
+     *
      * @param attributionSetting The attribution setting with inactivity and reattribution window configuration.
      */
     public void setAttributionSetting(AttributionSetting attributionSetting) {
       this.attributionSetting = attributionSetting;
+    }
+
+    /**
+     * Set totalCredit
+     *
+     * @param totalCredit Total credit attributed to all publishers for this conversion.
+     * @return AttributionData
+     */
+    public AttributionData totalCredit(Float totalCredit) {
+      this.totalCredit = totalCredit;
+      return this;
+    }
+
+    /**
+     * Get totalCredit
+     *
+     * @return totalCredit
+     */
+    public Float getTotalCredit() {
+      return totalCredit;
+    }
+
+    /**
+     * Set totalCredit
+     *
+     * @param totalCredit Total credit attributed to all publishers for this conversion.
+     */
+    public void setTotalCredit(Float totalCredit) {
+      this.totalCredit = totalCredit;
     }
 
     @Override
@@ -673,12 +708,13 @@ public class AttributionData {
         && Objects.equals(this.auditingToken, attributionData.auditingToken)
         && Objects.equals(this.linkageKey, attributionData.linkageKey)
         && Objects.equals(this.touchpointId, attributionData.touchpointId)
-        && Objects.equals(this.attributionSetting, attributionData.attributionSetting);
+        && Objects.equals(this.attributionSetting, attributionData.attributionSetting)
+        && Objects.equals(this.totalCredit, attributionData.totalCredit);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(scope, visitTime, adId, adsetId, campaignId, attributionShare, attributionModel, attributionWindow, attributionValue, attributionSource, touchpointType, touchpointTs, attributionMethod, declineReason, auditingToken, linkageKey, touchpointId, attributionSetting);
+      return Objects.hash(scope, visitTime, adId, adsetId, campaignId, attributionShare, attributionModel, attributionWindow, attributionValue, attributionSource, touchpointType, touchpointTs, attributionMethod, declineReason, auditingToken, linkageKey, touchpointId, attributionSetting, totalCredit);
     }
 
     @Override
@@ -703,6 +739,7 @@ public class AttributionData {
       sb.append("    linkageKey: ").append(toIndentedString(linkageKey)).append("\n");
       sb.append("    touchpointId: ").append(toIndentedString(touchpointId)).append("\n");
       sb.append("    attributionSetting: ").append(toIndentedString(attributionSetting)).append("\n");
+      sb.append("    totalCredit: ").append(toIndentedString(totalCredit)).append("\n");
       sb.append("}");
       return sb.toString();
     }

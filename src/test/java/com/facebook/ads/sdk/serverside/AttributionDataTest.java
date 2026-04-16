@@ -44,6 +44,7 @@ public class AttributionDataTest {
         String linkageKey = "key123";
         String touchpointId = "tp_test_touchpoint_id_123";
         AttributionSetting attributionSetting = new AttributionSetting(24, 48);
+        float totalCredit = 0.85f;
 
         attributionData
                      .scope(scope)
@@ -63,7 +64,8 @@ public class AttributionDataTest {
                      .auditingToken(auditingToken)
                      .linkageKey(linkageKey)
                      .touchpointId(touchpointId)
-                     .attributionSetting(attributionSetting);
+                     .attributionSetting(attributionSetting)
+                     .totalCredit(totalCredit);
 
         assertEquals(attributionData.getScope(), scope);
         assertEquals(attributionData.getAdId(), adId);
@@ -85,6 +87,7 @@ public class AttributionDataTest {
         assertEquals(attributionData.getAttributionSetting(), attributionSetting);
         assertEquals((int)attributionData.getAttributionSetting().getInactivityWindowHours(), 24);
         assertEquals((int)attributionData.getAttributionSetting().getReattributionWindowHours(), 48);
+        assertEquals((float)attributionData.getTotalCredit(), totalCredit, 0);
     }
 
     @Test
@@ -109,6 +112,7 @@ public class AttributionDataTest {
         String linkageKey = "key123";
         String touchpointId = "tp_test_touchpoint_id_123";
         AttributionSetting attributionSetting = new AttributionSetting(24, 48);
+        float totalCredit = 0.85f;
 
         attributionData1
                      .scope(scope)
@@ -128,7 +132,8 @@ public class AttributionDataTest {
                      .auditingToken(auditingToken)
                      .linkageKey(linkageKey)
                      .touchpointId(touchpointId)
-                     .attributionSetting(attributionSetting);
+                     .attributionSetting(attributionSetting)
+                     .totalCredit(totalCredit);
 
         attributionData2
                      .scope(scope)
@@ -148,7 +153,8 @@ public class AttributionDataTest {
                      .auditingToken(auditingToken)
                      .linkageKey(linkageKey)
                      .touchpointId(touchpointId)
-                     .attributionSetting(attributionSetting);
+                     .attributionSetting(attributionSetting)
+                     .totalCredit(totalCredit);
 
         assertEquals(attributionData1, attributionData2);
         assertEquals(attributionData1.hashCode(), attributionData2.hashCode());
@@ -195,7 +201,8 @@ public class AttributionDataTest {
                      .auditingToken(auditingToken)
                      .linkageKey(linkageKey)
                      .touchpointId("tp_test_touchpoint_id_123")
-                     .attributionSetting(attributionSetting1);
+                     .attributionSetting(attributionSetting1)
+                     .totalCredit(0.85f);
 
         attributionData2
                      .scope(scope)
@@ -215,7 +222,8 @@ public class AttributionDataTest {
                      .auditingToken(auditingToken)
                      .linkageKey(linkageKey)
                      .touchpointId("tp_test_touchpoint_id_456")
-                     .attributionSetting(attributionSetting2);
+                     .attributionSetting(attributionSetting2)
+                     .totalCredit(0.35f);
 
         assertNotEquals(attributionData1, attributionData2);
         assertNotEquals(attributionData1.hashCode(), attributionData2.hashCode());
