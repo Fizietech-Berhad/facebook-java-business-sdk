@@ -49,6 +49,8 @@ public class CPASCollaborationRequest extends APINode {
   private List<String> mBrands = null;
   @SerializedName("catalog_segment")
   private ProductCatalog mCatalogSegment = null;
+  @SerializedName("collaborative_ads_share_settings")
+  private CollaborativeAdsShareSettings mCollaborativeAdsShareSettings = null;
   @SerializedName("contact_email")
   private String mContactEmail = null;
   @SerializedName("contact_first_name")
@@ -310,6 +312,13 @@ public class CPASCollaborationRequest extends APINode {
     return mCatalogSegment;
   }
 
+  public CollaborativeAdsShareSettings getFieldCollaborativeAdsShareSettings() {
+    if (mCollaborativeAdsShareSettings != null) {
+      mCollaborativeAdsShareSettings.context = getContext();
+    }
+    return mCollaborativeAdsShareSettings;
+  }
+
   public String getFieldContactEmail() {
     return mContactEmail;
   }
@@ -392,6 +401,7 @@ public class CPASCollaborationRequest extends APINode {
       "ad_account_name",
       "brands",
       "catalog_segment",
+      "collaborative_ads_share_settings",
       "contact_email",
       "contact_first_name",
       "contact_last_name",
@@ -524,6 +534,13 @@ public class CPASCollaborationRequest extends APINode {
     }
     public APIRequestGet requestCatalogSegmentField (boolean value) {
       this.requestField("catalog_segment", value);
+      return this;
+    }
+    public APIRequestGet requestCollaborativeAdsShareSettingsField () {
+      return this.requestCollaborativeAdsShareSettingsField(true);
+    }
+    public APIRequestGet requestCollaborativeAdsShareSettingsField (boolean value) {
+      this.requestField("collaborative_ads_share_settings", value);
       return this;
     }
     public APIRequestGet requestContactEmailField () {
@@ -687,6 +704,7 @@ public class CPASCollaborationRequest extends APINode {
     this.mAdAccountName = instance.mAdAccountName;
     this.mBrands = instance.mBrands;
     this.mCatalogSegment = instance.mCatalogSegment;
+    this.mCollaborativeAdsShareSettings = instance.mCollaborativeAdsShareSettings;
     this.mContactEmail = instance.mContactEmail;
     this.mContactFirstName = instance.mContactFirstName;
     this.mContactLastName = instance.mContactLastName;

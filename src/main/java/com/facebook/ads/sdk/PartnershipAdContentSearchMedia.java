@@ -45,6 +45,8 @@ public class PartnershipAdContentSearchMedia extends APINode {
   private Long mFbAdCodeSponsorCount = null;
   @SerializedName("fb_ad_code_sponsors")
   private List<FBPageAndInstagramAccount> mFbAdCodeSponsors = null;
+  @SerializedName("fb_affiliate_shortened_url")
+  private String mFbAffiliateShortenedUrl = null;
   @SerializedName("ig_ad_code_sponsor_count")
   private Long mIgAdCodeSponsorCount = null;
   @SerializedName("ig_ad_code_sponsors")
@@ -231,6 +233,15 @@ public class PartnershipAdContentSearchMedia extends APINode {
     this.mFbAdCodeSponsors = FBPageAndInstagramAccount.getGson().fromJson(value, type);
     return this;
   }
+  public String getFieldFbAffiliateShortenedUrl() {
+    return mFbAffiliateShortenedUrl;
+  }
+
+  public PartnershipAdContentSearchMedia setFieldFbAffiliateShortenedUrl(String value) {
+    this.mFbAffiliateShortenedUrl = value;
+    return this;
+  }
+
   public Long getFieldIgAdCodeSponsorCount() {
     return mIgAdCodeSponsorCount;
   }
@@ -317,6 +328,7 @@ public class PartnershipAdContentSearchMedia extends APINode {
   public PartnershipAdContentSearchMedia copyFrom(PartnershipAdContentSearchMedia instance) {
     this.mFbAdCodeSponsorCount = instance.mFbAdCodeSponsorCount;
     this.mFbAdCodeSponsors = instance.mFbAdCodeSponsors;
+    this.mFbAffiliateShortenedUrl = instance.mFbAffiliateShortenedUrl;
     this.mIgAdCodeSponsorCount = instance.mIgAdCodeSponsorCount;
     this.mIgAdCodeSponsors = instance.mIgAdCodeSponsors;
     this.mIgMedia = instance.mIgMedia;

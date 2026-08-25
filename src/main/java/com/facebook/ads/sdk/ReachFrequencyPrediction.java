@@ -65,6 +65,8 @@ public class ReachFrequencyPrediction extends APINode {
   private String mCampaignTimeStart = null;
   @SerializedName("campaign_time_stop")
   private String mCampaignTimeStop = null;
+  @SerializedName("cpm")
+  private Long mCpm = null;
   @SerializedName("currency")
   private String mCurrency = null;
   @SerializedName("curve_budget_reach")
@@ -487,6 +489,10 @@ public class ReachFrequencyPrediction extends APINode {
     return mCampaignTimeStop;
   }
 
+  public Long getFieldCpm() {
+    return mCpm;
+  }
+
   public String getFieldCurrency() {
     return mCurrency;
   }
@@ -832,6 +838,7 @@ public class ReachFrequencyPrediction extends APINode {
       "campaign_id",
       "campaign_time_start",
       "campaign_time_stop",
+      "cpm",
       "currency",
       "curve_budget_reach",
       "curve_reach",
@@ -1086,6 +1093,13 @@ public class ReachFrequencyPrediction extends APINode {
     }
     public APIRequestGet requestCampaignTimeStopField (boolean value) {
       this.requestField("campaign_time_stop", value);
+      return this;
+    }
+    public APIRequestGet requestCpmField () {
+      return this.requestCpmField(true);
+    }
+    public APIRequestGet requestCpmField (boolean value) {
+      this.requestField("cpm", value);
       return this;
     }
     public APIRequestGet requestCurrencyField () {
@@ -1770,6 +1784,7 @@ public class ReachFrequencyPrediction extends APINode {
     this.mCampaignId = instance.mCampaignId;
     this.mCampaignTimeStart = instance.mCampaignTimeStart;
     this.mCampaignTimeStop = instance.mCampaignTimeStop;
+    this.mCpm = instance.mCpm;
     this.mCurrency = instance.mCurrency;
     this.mCurveBudgetReach = instance.mCurveBudgetReach;
     this.mCurveReach = instance.mCurveReach;

@@ -11466,6 +11466,7 @@ public class Business extends APINode {
       "ad_account_name",
       "brands",
       "catalog_segment",
+      "collaborative_ads_share_settings",
       "contact_email",
       "contact_first_name",
       "contact_last_name",
@@ -11631,6 +11632,13 @@ public class Business extends APINode {
     }
     public APIRequestGetCollaborativeAdsCollaborationRequests requestCatalogSegmentField (boolean value) {
       this.requestField("catalog_segment", value);
+      return this;
+    }
+    public APIRequestGetCollaborativeAdsCollaborationRequests requestCollaborativeAdsShareSettingsField () {
+      return this.requestCollaborativeAdsShareSettingsField(true);
+    }
+    public APIRequestGetCollaborativeAdsCollaborationRequests requestCollaborativeAdsShareSettingsField (boolean value) {
+      this.requestField("collaborative_ads_share_settings", value);
       return this;
     }
     public APIRequestGetCollaborativeAdsCollaborationRequests requestContactEmailField () {

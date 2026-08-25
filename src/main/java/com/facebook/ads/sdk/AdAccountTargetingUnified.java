@@ -525,6 +525,87 @@ public class AdAccountTargetingUnified extends APINode {
       }
   }
 
+  public static enum EnumOptimizationGoal {
+      @SerializedName("ADVERTISER_SILOED_VALUE")
+      VALUE_ADVERTISER_SILOED_VALUE("ADVERTISER_SILOED_VALUE"),
+      @SerializedName("AD_RECALL_LIFT")
+      VALUE_AD_RECALL_LIFT("AD_RECALL_LIFT"),
+      @SerializedName("APP_INSTALLS")
+      VALUE_APP_INSTALLS("APP_INSTALLS"),
+      @SerializedName("APP_INSTALLS_AND_OFFSITE_CONVERSIONS")
+      VALUE_APP_INSTALLS_AND_OFFSITE_CONVERSIONS("APP_INSTALLS_AND_OFFSITE_CONVERSIONS"),
+      @SerializedName("AUTOMATIC_OBJECTIVE")
+      VALUE_AUTOMATIC_OBJECTIVE("AUTOMATIC_OBJECTIVE"),
+      @SerializedName("CONVERSATIONS")
+      VALUE_CONVERSATIONS("CONVERSATIONS"),
+      @SerializedName("DERIVED_EVENTS")
+      VALUE_DERIVED_EVENTS("DERIVED_EVENTS"),
+      @SerializedName("ENGAGED_PAGE_VIEWS")
+      VALUE_ENGAGED_PAGE_VIEWS("ENGAGED_PAGE_VIEWS"),
+      @SerializedName("ENGAGED_USERS")
+      VALUE_ENGAGED_USERS("ENGAGED_USERS"),
+      @SerializedName("EVENT_RESPONSES")
+      VALUE_EVENT_RESPONSES("EVENT_RESPONSES"),
+      @SerializedName("IMPRESSIONS")
+      VALUE_IMPRESSIONS("IMPRESSIONS"),
+      @SerializedName("IN_APP_VALUE")
+      VALUE_IN_APP_VALUE("IN_APP_VALUE"),
+      @SerializedName("LANDING_PAGE_VIEWS")
+      VALUE_LANDING_PAGE_VIEWS("LANDING_PAGE_VIEWS"),
+      @SerializedName("LEAD_GENERATION")
+      VALUE_LEAD_GENERATION("LEAD_GENERATION"),
+      @SerializedName("LINK_CLICKS")
+      VALUE_LINK_CLICKS("LINK_CLICKS"),
+      @SerializedName("MEANINGFUL_CALL_ATTEMPT")
+      VALUE_MEANINGFUL_CALL_ATTEMPT("MEANINGFUL_CALL_ATTEMPT"),
+      @SerializedName("MESSAGING_APPOINTMENT_CONVERSION")
+      VALUE_MESSAGING_APPOINTMENT_CONVERSION("MESSAGING_APPOINTMENT_CONVERSION"),
+      @SerializedName("MESSAGING_DEEP_CONVERSATION_AND_FOLLOW")
+      VALUE_MESSAGING_DEEP_CONVERSATION_AND_FOLLOW("MESSAGING_DEEP_CONVERSATION_AND_FOLLOW"),
+      @SerializedName("MESSAGING_PURCHASE_CONVERSION")
+      VALUE_MESSAGING_PURCHASE_CONVERSION("MESSAGING_PURCHASE_CONVERSION"),
+      @SerializedName("NONE")
+      VALUE_NONE("NONE"),
+      @SerializedName("OFFSITE_CONVERSIONS")
+      VALUE_OFFSITE_CONVERSIONS("OFFSITE_CONVERSIONS"),
+      @SerializedName("PAGE_LIKES")
+      VALUE_PAGE_LIKES("PAGE_LIKES"),
+      @SerializedName("POST_ENGAGEMENT")
+      VALUE_POST_ENGAGEMENT("POST_ENGAGEMENT"),
+      @SerializedName("PROFILE_AND_PAGE_ENGAGEMENT")
+      VALUE_PROFILE_AND_PAGE_ENGAGEMENT("PROFILE_AND_PAGE_ENGAGEMENT"),
+      @SerializedName("PROFILE_VISIT")
+      VALUE_PROFILE_VISIT("PROFILE_VISIT"),
+      @SerializedName("QUALITY_CALL")
+      VALUE_QUALITY_CALL("QUALITY_CALL"),
+      @SerializedName("QUALITY_LEAD")
+      VALUE_QUALITY_LEAD("QUALITY_LEAD"),
+      @SerializedName("REACH")
+      VALUE_REACH("REACH"),
+      @SerializedName("REMINDERS_SET")
+      VALUE_REMINDERS_SET("REMINDERS_SET"),
+      @SerializedName("SUBSCRIBERS")
+      VALUE_SUBSCRIBERS("SUBSCRIBERS"),
+      @SerializedName("THRUPLAY")
+      VALUE_THRUPLAY("THRUPLAY"),
+      @SerializedName("VALUE")
+      VALUE_VALUE("VALUE"),
+      @SerializedName("VISIT_INSTAGRAM_PROFILE")
+      VALUE_VISIT_INSTAGRAM_PROFILE("VISIT_INSTAGRAM_PROFILE"),
+      ;
+
+      private String value;
+
+      private EnumOptimizationGoal(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
   public static enum EnumRegulatedCategories {
       @SerializedName("CREDIT")
       VALUE_CREDIT("CREDIT"),

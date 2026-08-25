@@ -3730,6 +3730,7 @@ public class IGUser extends APINode {
       "major_audience_device_type",
       "major_audience_gender",
       "major_audience_states",
+      "page_name",
       "platform",
       "query",
       "recommendation_type",
@@ -3744,6 +3745,7 @@ public class IGUser extends APINode {
       "age_bucket",
       "badges",
       "biography",
+      "category",
       "country",
       "email",
       "gender",
@@ -3984,6 +3986,11 @@ public class IGUser extends APINode {
       return this;
     }
 
+    public APIRequestGetCreatorMarketPlaceCreators setPageName (String pageName) {
+      this.setParam("page_name", pageName);
+      return this;
+    }
+
     public APIRequestGetCreatorMarketPlaceCreators setPlatform (IGUserExportForCAM.EnumPlatform platform) {
       this.setParam("platform", platform);
       return this;
@@ -4103,6 +4110,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetCreatorMarketPlaceCreators requestBiographyField (boolean value) {
       this.requestField("biography", value);
+      return this;
+    }
+    public APIRequestGetCreatorMarketPlaceCreators requestCategoryField () {
+      return this.requestCategoryField(true);
+    }
+    public APIRequestGetCreatorMarketPlaceCreators requestCategoryField (boolean value) {
+      this.requestField("category", value);
       return this;
     }
     public APIRequestGetCreatorMarketPlaceCreators requestCountryField () {

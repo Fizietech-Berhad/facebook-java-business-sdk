@@ -40,31 +40,27 @@ import com.facebook.ads.sdk.APIException.MalformedResponseException;
  * pull request for this class.
  *
  */
-public class PageAboutStoryComposedBlock extends APINode {
-  @SerializedName("depth")
-  private Long mDepth = null;
-  @SerializedName("entity_ranges")
-  private List<PageAboutStoryComposedBlockEntityRanges> mEntityRanges = null;
-  @SerializedName("inline_style_ranges")
-  private List<PageAboutStoryComposedBlockInlineStyle> mInlineStyleRanges = null;
-  @SerializedName("text")
-  private String mText = null;
-  @SerializedName("type")
-  private String mType = null;
+public class AdAccountAdVideosGet extends APINode {
+  @SerializedName("data")
+  private List<Object> mData = null;
+  @SerializedName("paging")
+  private Object mPaging = null;
+  @SerializedName("summary")
+  private Object mSummary = null;
   protected static Gson gson = null;
 
-  public PageAboutStoryComposedBlock() {
+  public AdAccountAdVideosGet() {
   }
 
   public String getId() {
     return null;
   }
-  public static PageAboutStoryComposedBlock loadJSON(String json, APIContext context, String header) {
-    PageAboutStoryComposedBlock pageAboutStoryComposedBlock = getGson().fromJson(json, PageAboutStoryComposedBlock.class);
+  public static AdAccountAdVideosGet loadJSON(String json, APIContext context, String header) {
+    AdAccountAdVideosGet adAccountAdVideosGet = getGson().fromJson(json, AdAccountAdVideosGet.class);
     if (context.isDebug()) {
       JsonParser parser = new JsonParser();
       JsonElement o1 = parser.parse(json);
-      JsonElement o2 = parser.parse(pageAboutStoryComposedBlock.toString());
+      JsonElement o2 = parser.parse(adAccountAdVideosGet.toString());
       if (o1.getAsJsonObject().get("__fb_trace_id__") != null) {
         o2.getAsJsonObject().add("__fb_trace_id__", o1.getAsJsonObject().get("__fb_trace_id__"));
       }
@@ -74,14 +70,14 @@ public class PageAboutStoryComposedBlock extends APINode {
         context.log("[Object]" + o2);
       }
     }
-    pageAboutStoryComposedBlock.context = context;
-    pageAboutStoryComposedBlock.rawValue = json;
-    pageAboutStoryComposedBlock.header = header;
-    return pageAboutStoryComposedBlock;
+    adAccountAdVideosGet.context = context;
+    adAccountAdVideosGet.rawValue = json;
+    adAccountAdVideosGet.header = header;
+    return adAccountAdVideosGet;
   }
 
-  public static APINodeList<PageAboutStoryComposedBlock> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
-    APINodeList<PageAboutStoryComposedBlock> pageAboutStoryComposedBlocks = new APINodeList<PageAboutStoryComposedBlock>(request, json, header);
+  public static APINodeList<AdAccountAdVideosGet> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
+    APINodeList<AdAccountAdVideosGet> adAccountAdVideosGets = new APINodeList<AdAccountAdVideosGet>(request, json, header);
     JsonArray arr;
     JsonObject obj;
     JsonParser parser = new JsonParser();
@@ -92,9 +88,9 @@ public class PageAboutStoryComposedBlock extends APINode {
         // First, check if it's a pure JSON Array
         arr = result.getAsJsonArray();
         for (int i = 0; i < arr.size(); i++) {
-          pageAboutStoryComposedBlocks.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+          adAccountAdVideosGets.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
         };
-        return pageAboutStoryComposedBlocks;
+        return adAccountAdVideosGets;
       } else if (result.isJsonObject()) {
         obj = result.getAsJsonObject();
         if (obj.has("data")) {
@@ -104,20 +100,20 @@ public class PageAboutStoryComposedBlock extends APINode {
                 JsonObject cursors = paging.get("cursors").getAsJsonObject();
                 String before = cursors.has("before") ? cursors.get("before").getAsString() : null;
                 String after = cursors.has("after") ? cursors.get("after").getAsString() : null;
-                pageAboutStoryComposedBlocks.setCursors(before, after);
+                adAccountAdVideosGets.setCursors(before, after);
             }
             String previous = paging.has("previous") ? paging.get("previous").getAsString() : null;
             String next = paging.has("next") ? paging.get("next").getAsString() : null;
-            pageAboutStoryComposedBlocks.setPaging(previous, next);
+            adAccountAdVideosGets.setPaging(previous, next);
             if (context.hasAppSecret()) {
-              pageAboutStoryComposedBlocks.setAppSecret(context.getAppSecretProof());
+              adAccountAdVideosGets.setAppSecret(context.getAppSecretProof());
             }
           }
           if (obj.get("data").isJsonArray()) {
             // Second, check if it's a JSON array with "data"
             arr = obj.get("data").getAsJsonArray();
             for (int i = 0; i < arr.size(); i++) {
-              pageAboutStoryComposedBlocks.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+              adAccountAdVideosGets.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
             };
           } else if (obj.get("data").isJsonObject()) {
             // Third, check if it's a JSON object with "data"
@@ -128,23 +124,23 @@ public class PageAboutStoryComposedBlock extends APINode {
                 isRedownload = true;
                 obj = obj.getAsJsonObject(s);
                 for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-                  pageAboutStoryComposedBlocks.add(loadJSON(entry.getValue().toString(), context, header));
+                  adAccountAdVideosGets.add(loadJSON(entry.getValue().toString(), context, header));
                 }
                 break;
               }
             }
             if (!isRedownload) {
-              pageAboutStoryComposedBlocks.add(loadJSON(obj.toString(), context, header));
+              adAccountAdVideosGets.add(loadJSON(obj.toString(), context, header));
             }
           }
-          return pageAboutStoryComposedBlocks;
+          return adAccountAdVideosGets;
         } else if (obj.has("images")) {
           // Fourth, check if it's a map of image objects
           obj = obj.get("images").getAsJsonObject();
           for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-              pageAboutStoryComposedBlocks.add(loadJSON(entry.getValue().toString(), context, header));
+              adAccountAdVideosGets.add(loadJSON(entry.getValue().toString(), context, header));
           }
-          return pageAboutStoryComposedBlocks;
+          return adAccountAdVideosGets;
         } else {
           // Fifth, check if it's an array of objects indexed by id
           boolean isIdIndexedArray = true;
@@ -161,20 +157,20 @@ public class PageAboutStoryComposedBlock extends APINode {
               value.getAsJsonObject().get("id") != null &&
               value.getAsJsonObject().get("id").getAsString().equals(key)
             ) {
-              pageAboutStoryComposedBlocks.add(loadJSON(value.toString(), context, header));
+              adAccountAdVideosGets.add(loadJSON(value.toString(), context, header));
             } else {
               isIdIndexedArray = false;
               break;
             }
           }
           if (isIdIndexedArray) {
-            return pageAboutStoryComposedBlocks;
+            return adAccountAdVideosGets;
           }
 
           // Sixth, check if it's pure JsonObject
-          pageAboutStoryComposedBlocks.clear();
-          pageAboutStoryComposedBlocks.add(loadJSON(json, context, header));
-          return pageAboutStoryComposedBlocks;
+          adAccountAdVideosGets.clear();
+          adAccountAdVideosGets.add(loadJSON(json, context, header));
+          return adAccountAdVideosGets;
         }
       }
     } catch (Exception e) {
@@ -202,58 +198,30 @@ public class PageAboutStoryComposedBlock extends APINode {
   }
 
 
-  public Long getFieldDepth() {
-    return mDepth;
+  public List<Object> getFieldData() {
+    return mData;
   }
 
-  public PageAboutStoryComposedBlock setFieldDepth(Long value) {
-    this.mDepth = value;
+  public AdAccountAdVideosGet setFieldData(List<Object> value) {
+    this.mData = value;
     return this;
   }
 
-  public List<PageAboutStoryComposedBlockEntityRanges> getFieldEntityRanges() {
-    return mEntityRanges;
+  public Object getFieldPaging() {
+    return mPaging;
   }
 
-  public PageAboutStoryComposedBlock setFieldEntityRanges(List<PageAboutStoryComposedBlockEntityRanges> value) {
-    this.mEntityRanges = value;
+  public AdAccountAdVideosGet setFieldPaging(Object value) {
+    this.mPaging = value;
     return this;
   }
 
-  public PageAboutStoryComposedBlock setFieldEntityRanges(String value) {
-    Type type = new TypeToken<List<PageAboutStoryComposedBlockEntityRanges>>(){}.getType();
-    this.mEntityRanges = PageAboutStoryComposedBlockEntityRanges.getGson().fromJson(value, type);
-    return this;
-  }
-  public List<PageAboutStoryComposedBlockInlineStyle> getFieldInlineStyleRanges() {
-    return mInlineStyleRanges;
+  public Object getFieldSummary() {
+    return mSummary;
   }
 
-  public PageAboutStoryComposedBlock setFieldInlineStyleRanges(List<PageAboutStoryComposedBlockInlineStyle> value) {
-    this.mInlineStyleRanges = value;
-    return this;
-  }
-
-  public PageAboutStoryComposedBlock setFieldInlineStyleRanges(String value) {
-    Type type = new TypeToken<List<PageAboutStoryComposedBlockInlineStyle>>(){}.getType();
-    this.mInlineStyleRanges = PageAboutStoryComposedBlockInlineStyle.getGson().fromJson(value, type);
-    return this;
-  }
-  public String getFieldText() {
-    return mText;
-  }
-
-  public PageAboutStoryComposedBlock setFieldText(String value) {
-    this.mText = value;
-    return this;
-  }
-
-  public String getFieldType() {
-    return mType;
-  }
-
-  public PageAboutStoryComposedBlock setFieldType(String value) {
-    this.mType = value;
+  public AdAccountAdVideosGet setFieldSummary(Object value) {
+    this.mSummary = value;
     return this;
   }
 
@@ -273,21 +241,19 @@ public class PageAboutStoryComposedBlock extends APINode {
     return gson;
   }
 
-  public PageAboutStoryComposedBlock copyFrom(PageAboutStoryComposedBlock instance) {
-    this.mDepth = instance.mDepth;
-    this.mEntityRanges = instance.mEntityRanges;
-    this.mInlineStyleRanges = instance.mInlineStyleRanges;
-    this.mText = instance.mText;
-    this.mType = instance.mType;
+  public AdAccountAdVideosGet copyFrom(AdAccountAdVideosGet instance) {
+    this.mData = instance.mData;
+    this.mPaging = instance.mPaging;
+    this.mSummary = instance.mSummary;
     this.context = instance.context;
     this.rawValue = instance.rawValue;
     return this;
   }
 
-  public static APIRequest.ResponseParser<PageAboutStoryComposedBlock> getParser() {
-    return new APIRequest.ResponseParser<PageAboutStoryComposedBlock>() {
-      public APINodeList<PageAboutStoryComposedBlock> parseResponse(String response, APIContext context, APIRequest<PageAboutStoryComposedBlock> request, String header) throws MalformedResponseException {
-        return PageAboutStoryComposedBlock.parseResponse(response, context, request, header);
+  public static APIRequest.ResponseParser<AdAccountAdVideosGet> getParser() {
+    return new APIRequest.ResponseParser<AdAccountAdVideosGet>() {
+      public APINodeList<AdAccountAdVideosGet> parseResponse(String response, APIContext context, APIRequest<AdAccountAdVideosGet> request, String header) throws MalformedResponseException {
+        return AdAccountAdVideosGet.parseResponse(response, context, request, header);
       }
     };
   }

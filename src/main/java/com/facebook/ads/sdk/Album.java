@@ -1627,6 +1627,7 @@ public class Album extends APINode {
       "backdated_time",
       "backdated_time_granularity",
       "caption",
+      "composer_entry_point",
       "composer_session_id",
       "direct_share_status",
       "feed_targeting",
@@ -1791,6 +1792,11 @@ public class Album extends APINode {
 
     public APIRequestCreatePhoto setCaption (String caption) {
       this.setParam("caption", caption);
+      return this;
+    }
+
+    public APIRequestCreatePhoto setComposerEntryPoint (String composerEntryPoint) {
+      this.setParam("composer_entry_point", composerEntryPoint);
       return this;
     }
 

@@ -555,6 +555,7 @@ public class AdReportRun extends APINode {
       "messages_delivered",
       "messages_delivered_ctr",
       "mobile_app_purchase_roas",
+      "msa_seller_budget",
       "multi_event_conversion_attribution_setting",
       "objective",
       "objective_result_rate",
@@ -580,6 +581,7 @@ public class AdReportRun extends APINode {
       "result_rate",
       "result_values_performance_indicator",
       "results",
+      "shop_clicks",
       "shops_assisted_purchases",
       "social_spend",
       "spend",
@@ -1790,6 +1792,13 @@ public class AdReportRun extends APINode {
       this.requestField("mobile_app_purchase_roas", value);
       return this;
     }
+    public APIRequestGetInsights requestMsaSellerBudgetField () {
+      return this.requestMsaSellerBudgetField(true);
+    }
+    public APIRequestGetInsights requestMsaSellerBudgetField (boolean value) {
+      this.requestField("msa_seller_budget", value);
+      return this;
+    }
     public APIRequestGetInsights requestMultiEventConversionAttributionSettingField () {
       return this.requestMultiEventConversionAttributionSettingField(true);
     }
@@ -1963,6 +1972,13 @@ public class AdReportRun extends APINode {
     }
     public APIRequestGetInsights requestResultsField (boolean value) {
       this.requestField("results", value);
+      return this;
+    }
+    public APIRequestGetInsights requestShopClicksField () {
+      return this.requestShopClicksField(true);
+    }
+    public APIRequestGetInsights requestShopClicksField (boolean value) {
+      this.requestField("shop_clicks", value);
       return this;
     }
     public APIRequestGetInsights requestShopsAssistedPurchasesField () {
@@ -2656,6 +2672,10 @@ public class AdReportRun extends APINode {
       VALUE_AD_EXTENSION_URL("ad_extension_url"),
       @SerializedName("ad_format_asset")
       VALUE_AD_FORMAT_ASSET("ad_format_asset"),
+      @SerializedName("affiliate_click_region")
+      VALUE_AFFILIATE_CLICK_REGION("affiliate_click_region"),
+      @SerializedName("affiliate_link_url")
+      VALUE_AFFILIATE_LINK_URL("affiliate_link_url"),
       @SerializedName("age")
       VALUE_AGE("age"),
       @SerializedName("app_id")
@@ -2756,12 +2776,16 @@ public class AdReportRun extends APINode {
       VALUE_MEDIA_TYPE("media_type"),
       @SerializedName("mmm")
       VALUE_MMM("mmm"),
+      @SerializedName("msa_seller_name")
+      VALUE_MSA_SELLER_NAME("msa_seller_name"),
       @SerializedName("overlap_segment")
       VALUE_OVERLAP_SEGMENT("overlap_segment"),
       @SerializedName("pa_creator_ig_handle")
       VALUE_PA_CREATOR_IG_HANDLE("pa_creator_ig_handle"),
       @SerializedName("place_page_id")
       VALUE_PLACE_PAGE_ID("place_page_id"),
+      @SerializedName("placement_path")
+      VALUE_PLACEMENT_PATH("placement_path"),
       @SerializedName("platform_position")
       VALUE_PLATFORM_POSITION("platform_position"),
       @SerializedName("postback_sequence_index")

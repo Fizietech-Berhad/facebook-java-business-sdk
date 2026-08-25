@@ -67,6 +67,8 @@ public class AdPromotedObject extends APINode {
   private String mFundraiserCampaignId = null;
   @SerializedName("instagram_actor_id")
   private String mInstagramActorId = null;
+  @SerializedName("is_catalog_user_acknowledged")
+  private Boolean mIsCatalogUserAcknowledged = null;
   @SerializedName("job_listing_id")
   private String mJobListingId = null;
   @SerializedName("lead_ads_custom_event_str")
@@ -406,6 +408,15 @@ public class AdPromotedObject extends APINode {
 
   public AdPromotedObject setFieldInstagramActorId(String value) {
     this.mInstagramActorId = value;
+    return this;
+  }
+
+  public Boolean getFieldIsCatalogUserAcknowledged() {
+    return mIsCatalogUserAcknowledged;
+  }
+
+  public AdPromotedObject setFieldIsCatalogUserAcknowledged(Boolean value) {
+    this.mIsCatalogUserAcknowledged = value;
     return this;
   }
 
@@ -991,6 +1002,7 @@ public class AdPromotedObject extends APINode {
     this.mFullFunnelObjective = instance.mFullFunnelObjective;
     this.mFundraiserCampaignId = instance.mFundraiserCampaignId;
     this.mInstagramActorId = instance.mInstagramActorId;
+    this.mIsCatalogUserAcknowledged = instance.mIsCatalogUserAcknowledged;
     this.mJobListingId = instance.mJobListingId;
     this.mLeadAdsCustomEventStr = instance.mLeadAdsCustomEventStr;
     this.mLeadAdsCustomEventType = instance.mLeadAdsCustomEventType;

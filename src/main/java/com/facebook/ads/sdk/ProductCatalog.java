@@ -9884,6 +9884,7 @@ public class ProductCatalog extends APINode {
       "material",
       "mobile_link",
       "name",
+      "native_commerce",
       "offer_disclaimer",
       "offer_disclaimer_url",
       "ordering_index",
@@ -9894,6 +9895,7 @@ public class ProductCatalog extends APINode {
       "post_conversion_signal_based_enforcement_appeal_eligibility",
       "price",
       "product_catalog",
+      "product_disclosures",
       "product_feed",
       "product_group",
       "product_local_info",
@@ -10457,6 +10459,13 @@ public class ProductCatalog extends APINode {
       this.requestField("name", value);
       return this;
     }
+    public APIRequestGetProducts requestNativeCommerceField () {
+      return this.requestNativeCommerceField(true);
+    }
+    public APIRequestGetProducts requestNativeCommerceField (boolean value) {
+      this.requestField("native_commerce", value);
+      return this;
+    }
     public APIRequestGetProducts requestOfferDisclaimerField () {
       return this.requestOfferDisclaimerField(true);
     }
@@ -10525,6 +10534,13 @@ public class ProductCatalog extends APINode {
     }
     public APIRequestGetProducts requestProductCatalogField (boolean value) {
       this.requestField("product_catalog", value);
+      return this;
+    }
+    public APIRequestGetProducts requestProductDisclosuresField () {
+      return this.requestProductDisclosuresField(true);
+    }
+    public APIRequestGetProducts requestProductDisclosuresField (boolean value) {
+      this.requestField("product_disclosures", value);
       return this;
     }
     public APIRequestGetProducts requestProductFeedField () {
@@ -13280,11 +13296,11 @@ public class ProductCatalog extends APINode {
     }
   }
 
-  public static class APIRequestCreateVersionItemsBatch extends APIRequest<ProductCatalog> {
+  public static class APIRequestCreateVersionItemsBatch extends APIRequest<APINode> {
 
-    ProductCatalog lastResponse = null;
+    APINode lastResponse = null;
     @Override
-    public ProductCatalog getLastResponse() {
+    public APINode getLastResponse() {
       return lastResponse;
     }
     public static final String[] PARAMS = {
@@ -13299,31 +13315,31 @@ public class ProductCatalog extends APINode {
     };
 
     @Override
-    public ProductCatalog parseResponse(String response, String header) throws APIException {
-      return ProductCatalog.parseResponse(response, getContext(), this, header).head();
+    public APINode parseResponse(String response, String header) throws APIException {
+      return APINode.parseResponse(response, getContext(), this, header).head();
     }
 
     @Override
-    public ProductCatalog execute() throws APIException {
+    public APINode execute() throws APIException {
       return execute(new HashMap<String, Object>());
     }
 
     @Override
-    public ProductCatalog execute(Map<String, Object> extraParams) throws APIException {
+    public APINode execute(Map<String, Object> extraParams) throws APIException {
       ResponseWrapper rw = executeInternal(extraParams);
       lastResponse = parseResponse(rw.getBody(), rw.getHeader());
       return lastResponse;
     }
 
-    public ListenableFuture<ProductCatalog> executeAsync() throws APIException {
+    public ListenableFuture<APINode> executeAsync() throws APIException {
       return executeAsync(new HashMap<String, Object>());
     };
 
-    public ListenableFuture<ProductCatalog> executeAsync(Map<String, Object> extraParams) throws APIException {
+    public ListenableFuture<APINode> executeAsync(Map<String, Object> extraParams) throws APIException {
       return Futures.transform(
         executeAsyncInternal(extraParams),
-        new Function<ResponseWrapper, ProductCatalog>() {
-           public ProductCatalog apply(ResponseWrapper result) {
+        new Function<ResponseWrapper, APINode>() {
+           public APINode apply(ResponseWrapper result) {
              try {
                return APIRequestCreateVersionItemsBatch.this.parseResponse(result.getBody(), result.getHeader());
              } catch (Exception e) {

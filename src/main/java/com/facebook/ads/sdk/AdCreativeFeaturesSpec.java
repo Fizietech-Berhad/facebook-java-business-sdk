@@ -203,6 +203,8 @@ public class AdCreativeFeaturesSpec extends APINode {
   private AdCreativeFeatureDetails mVideoUncrop = null;
   @SerializedName("video_uncrop_9x16_to_9x18")
   private AdCreativeFeatureDetails mVideoUncrop9x16To9x18 = null;
+  @SerializedName("video_voiceover")
+  private AdCreativeFeatureDetails mVideoVoiceover = null;
   @SerializedName("wa_mm_image_filtering")
   private AdCreativeFeatureDetails mWaMmImageFiltering = null;
   @SerializedName("wa_mm_text_truncation_length")
@@ -1492,6 +1494,20 @@ public class AdCreativeFeaturesSpec extends APINode {
     this.mVideoUncrop9x16To9x18 = AdCreativeFeatureDetails.getGson().fromJson(value, type);
     return this;
   }
+  public AdCreativeFeatureDetails getFieldVideoVoiceover() {
+    return mVideoVoiceover;
+  }
+
+  public AdCreativeFeaturesSpec setFieldVideoVoiceover(AdCreativeFeatureDetails value) {
+    this.mVideoVoiceover = value;
+    return this;
+  }
+
+  public AdCreativeFeaturesSpec setFieldVideoVoiceover(String value) {
+    Type type = new TypeToken<AdCreativeFeatureDetails>(){}.getType();
+    this.mVideoVoiceover = AdCreativeFeatureDetails.getGson().fromJson(value, type);
+    return this;
+  }
   public AdCreativeFeatureDetails getFieldWaMmImageFiltering() {
     return mWaMmImageFiltering;
   }
@@ -1618,6 +1634,7 @@ public class AdCreativeFeaturesSpec extends APINode {
     this.mVideoToImage = instance.mVideoToImage;
     this.mVideoUncrop = instance.mVideoUncrop;
     this.mVideoUncrop9x16To9x18 = instance.mVideoUncrop9x16To9x18;
+    this.mVideoVoiceover = instance.mVideoVoiceover;
     this.mWaMmImageFiltering = instance.mWaMmImageFiltering;
     this.mWaMmTextTruncationLength = instance.mWaMmTextTruncationLength;
     this.context = instance.context;

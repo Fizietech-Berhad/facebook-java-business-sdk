@@ -40,27 +40,27 @@ import com.facebook.ads.sdk.APIException.MalformedResponseException;
  * pull request for this class.
  *
  */
-public class PageAboutStoryComposedBlockInlineStyle extends APINode {
-  @SerializedName("length")
-  private Long mLength = null;
-  @SerializedName("offset")
-  private Long mOffset = null;
-  @SerializedName("style")
-  private String mStyle = null;
+public class ProductFeedAppsAndSoftwareGet extends APINode {
+  @SerializedName("data")
+  private List<Object> mData = null;
+  @SerializedName("paging")
+  private Object mPaging = null;
+  @SerializedName("summary")
+  private Object mSummary = null;
   protected static Gson gson = null;
 
-  public PageAboutStoryComposedBlockInlineStyle() {
+  public ProductFeedAppsAndSoftwareGet() {
   }
 
   public String getId() {
     return null;
   }
-  public static PageAboutStoryComposedBlockInlineStyle loadJSON(String json, APIContext context, String header) {
-    PageAboutStoryComposedBlockInlineStyle pageAboutStoryComposedBlockInlineStyle = getGson().fromJson(json, PageAboutStoryComposedBlockInlineStyle.class);
+  public static ProductFeedAppsAndSoftwareGet loadJSON(String json, APIContext context, String header) {
+    ProductFeedAppsAndSoftwareGet productFeedAppsAndSoftwareGet = getGson().fromJson(json, ProductFeedAppsAndSoftwareGet.class);
     if (context.isDebug()) {
       JsonParser parser = new JsonParser();
       JsonElement o1 = parser.parse(json);
-      JsonElement o2 = parser.parse(pageAboutStoryComposedBlockInlineStyle.toString());
+      JsonElement o2 = parser.parse(productFeedAppsAndSoftwareGet.toString());
       if (o1.getAsJsonObject().get("__fb_trace_id__") != null) {
         o2.getAsJsonObject().add("__fb_trace_id__", o1.getAsJsonObject().get("__fb_trace_id__"));
       }
@@ -70,14 +70,14 @@ public class PageAboutStoryComposedBlockInlineStyle extends APINode {
         context.log("[Object]" + o2);
       }
     }
-    pageAboutStoryComposedBlockInlineStyle.context = context;
-    pageAboutStoryComposedBlockInlineStyle.rawValue = json;
-    pageAboutStoryComposedBlockInlineStyle.header = header;
-    return pageAboutStoryComposedBlockInlineStyle;
+    productFeedAppsAndSoftwareGet.context = context;
+    productFeedAppsAndSoftwareGet.rawValue = json;
+    productFeedAppsAndSoftwareGet.header = header;
+    return productFeedAppsAndSoftwareGet;
   }
 
-  public static APINodeList<PageAboutStoryComposedBlockInlineStyle> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
-    APINodeList<PageAboutStoryComposedBlockInlineStyle> pageAboutStoryComposedBlockInlineStyles = new APINodeList<PageAboutStoryComposedBlockInlineStyle>(request, json, header);
+  public static APINodeList<ProductFeedAppsAndSoftwareGet> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
+    APINodeList<ProductFeedAppsAndSoftwareGet> productFeedAppsAndSoftwareGets = new APINodeList<ProductFeedAppsAndSoftwareGet>(request, json, header);
     JsonArray arr;
     JsonObject obj;
     JsonParser parser = new JsonParser();
@@ -88,9 +88,9 @@ public class PageAboutStoryComposedBlockInlineStyle extends APINode {
         // First, check if it's a pure JSON Array
         arr = result.getAsJsonArray();
         for (int i = 0; i < arr.size(); i++) {
-          pageAboutStoryComposedBlockInlineStyles.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+          productFeedAppsAndSoftwareGets.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
         };
-        return pageAboutStoryComposedBlockInlineStyles;
+        return productFeedAppsAndSoftwareGets;
       } else if (result.isJsonObject()) {
         obj = result.getAsJsonObject();
         if (obj.has("data")) {
@@ -100,20 +100,20 @@ public class PageAboutStoryComposedBlockInlineStyle extends APINode {
                 JsonObject cursors = paging.get("cursors").getAsJsonObject();
                 String before = cursors.has("before") ? cursors.get("before").getAsString() : null;
                 String after = cursors.has("after") ? cursors.get("after").getAsString() : null;
-                pageAboutStoryComposedBlockInlineStyles.setCursors(before, after);
+                productFeedAppsAndSoftwareGets.setCursors(before, after);
             }
             String previous = paging.has("previous") ? paging.get("previous").getAsString() : null;
             String next = paging.has("next") ? paging.get("next").getAsString() : null;
-            pageAboutStoryComposedBlockInlineStyles.setPaging(previous, next);
+            productFeedAppsAndSoftwareGets.setPaging(previous, next);
             if (context.hasAppSecret()) {
-              pageAboutStoryComposedBlockInlineStyles.setAppSecret(context.getAppSecretProof());
+              productFeedAppsAndSoftwareGets.setAppSecret(context.getAppSecretProof());
             }
           }
           if (obj.get("data").isJsonArray()) {
             // Second, check if it's a JSON array with "data"
             arr = obj.get("data").getAsJsonArray();
             for (int i = 0; i < arr.size(); i++) {
-              pageAboutStoryComposedBlockInlineStyles.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+              productFeedAppsAndSoftwareGets.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
             };
           } else if (obj.get("data").isJsonObject()) {
             // Third, check if it's a JSON object with "data"
@@ -124,23 +124,23 @@ public class PageAboutStoryComposedBlockInlineStyle extends APINode {
                 isRedownload = true;
                 obj = obj.getAsJsonObject(s);
                 for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-                  pageAboutStoryComposedBlockInlineStyles.add(loadJSON(entry.getValue().toString(), context, header));
+                  productFeedAppsAndSoftwareGets.add(loadJSON(entry.getValue().toString(), context, header));
                 }
                 break;
               }
             }
             if (!isRedownload) {
-              pageAboutStoryComposedBlockInlineStyles.add(loadJSON(obj.toString(), context, header));
+              productFeedAppsAndSoftwareGets.add(loadJSON(obj.toString(), context, header));
             }
           }
-          return pageAboutStoryComposedBlockInlineStyles;
+          return productFeedAppsAndSoftwareGets;
         } else if (obj.has("images")) {
           // Fourth, check if it's a map of image objects
           obj = obj.get("images").getAsJsonObject();
           for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-              pageAboutStoryComposedBlockInlineStyles.add(loadJSON(entry.getValue().toString(), context, header));
+              productFeedAppsAndSoftwareGets.add(loadJSON(entry.getValue().toString(), context, header));
           }
-          return pageAboutStoryComposedBlockInlineStyles;
+          return productFeedAppsAndSoftwareGets;
         } else {
           // Fifth, check if it's an array of objects indexed by id
           boolean isIdIndexedArray = true;
@@ -157,20 +157,20 @@ public class PageAboutStoryComposedBlockInlineStyle extends APINode {
               value.getAsJsonObject().get("id") != null &&
               value.getAsJsonObject().get("id").getAsString().equals(key)
             ) {
-              pageAboutStoryComposedBlockInlineStyles.add(loadJSON(value.toString(), context, header));
+              productFeedAppsAndSoftwareGets.add(loadJSON(value.toString(), context, header));
             } else {
               isIdIndexedArray = false;
               break;
             }
           }
           if (isIdIndexedArray) {
-            return pageAboutStoryComposedBlockInlineStyles;
+            return productFeedAppsAndSoftwareGets;
           }
 
           // Sixth, check if it's pure JsonObject
-          pageAboutStoryComposedBlockInlineStyles.clear();
-          pageAboutStoryComposedBlockInlineStyles.add(loadJSON(json, context, header));
-          return pageAboutStoryComposedBlockInlineStyles;
+          productFeedAppsAndSoftwareGets.clear();
+          productFeedAppsAndSoftwareGets.add(loadJSON(json, context, header));
+          return productFeedAppsAndSoftwareGets;
         }
       }
     } catch (Exception e) {
@@ -198,34 +198,55 @@ public class PageAboutStoryComposedBlockInlineStyle extends APINode {
   }
 
 
-  public Long getFieldLength() {
-    return mLength;
+  public List<Object> getFieldData() {
+    return mData;
   }
 
-  public PageAboutStoryComposedBlockInlineStyle setFieldLength(Long value) {
-    this.mLength = value;
+  public ProductFeedAppsAndSoftwareGet setFieldData(List<Object> value) {
+    this.mData = value;
     return this;
   }
 
-  public Long getFieldOffset() {
-    return mOffset;
+  public Object getFieldPaging() {
+    return mPaging;
   }
 
-  public PageAboutStoryComposedBlockInlineStyle setFieldOffset(Long value) {
-    this.mOffset = value;
+  public ProductFeedAppsAndSoftwareGet setFieldPaging(Object value) {
+    this.mPaging = value;
     return this;
   }
 
-  public String getFieldStyle() {
-    return mStyle;
+  public Object getFieldSummary() {
+    return mSummary;
   }
 
-  public PageAboutStoryComposedBlockInlineStyle setFieldStyle(String value) {
-    this.mStyle = value;
+  public ProductFeedAppsAndSoftwareGet setFieldSummary(Object value) {
+    this.mSummary = value;
     return this;
   }
 
 
+
+  public static enum EnumDisplayFormat {
+      @SerializedName("CAROUSEL_AD")
+      VALUE_CAROUSEL_AD("CAROUSEL_AD"),
+      @SerializedName("SHOPS_PDP")
+      VALUE_SHOPS_PDP("SHOPS_PDP"),
+      @SerializedName("SINGLE_AD")
+      VALUE_SINGLE_AD("SINGLE_AD"),
+      ;
+
+      private String value;
+
+      private EnumDisplayFormat(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
 
 
   synchronized /*package*/ static Gson getGson() {
@@ -241,19 +262,19 @@ public class PageAboutStoryComposedBlockInlineStyle extends APINode {
     return gson;
   }
 
-  public PageAboutStoryComposedBlockInlineStyle copyFrom(PageAboutStoryComposedBlockInlineStyle instance) {
-    this.mLength = instance.mLength;
-    this.mOffset = instance.mOffset;
-    this.mStyle = instance.mStyle;
+  public ProductFeedAppsAndSoftwareGet copyFrom(ProductFeedAppsAndSoftwareGet instance) {
+    this.mData = instance.mData;
+    this.mPaging = instance.mPaging;
+    this.mSummary = instance.mSummary;
     this.context = instance.context;
     this.rawValue = instance.rawValue;
     return this;
   }
 
-  public static APIRequest.ResponseParser<PageAboutStoryComposedBlockInlineStyle> getParser() {
-    return new APIRequest.ResponseParser<PageAboutStoryComposedBlockInlineStyle>() {
-      public APINodeList<PageAboutStoryComposedBlockInlineStyle> parseResponse(String response, APIContext context, APIRequest<PageAboutStoryComposedBlockInlineStyle> request, String header) throws MalformedResponseException {
-        return PageAboutStoryComposedBlockInlineStyle.parseResponse(response, context, request, header);
+  public static APIRequest.ResponseParser<ProductFeedAppsAndSoftwareGet> getParser() {
+    return new APIRequest.ResponseParser<ProductFeedAppsAndSoftwareGet>() {
+      public APINodeList<ProductFeedAppsAndSoftwareGet> parseResponse(String response, APIContext context, APIRequest<ProductFeedAppsAndSoftwareGet> request, String header) throws MalformedResponseException {
+        return ProductFeedAppsAndSoftwareGet.parseResponse(response, context, request, header);
       }
     };
   }

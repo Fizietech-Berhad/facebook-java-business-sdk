@@ -349,6 +349,8 @@ public class AdsInsights extends APINode {
   private String mMessagesDeliveredCtr = null;
   @SerializedName("mobile_app_purchase_roas")
   private List<AdsActionStats> mMobileAppPurchaseRoas = null;
+  @SerializedName("msa_seller_budget")
+  private Long mMsaSellerBudget = null;
   @SerializedName("multi_event_conversion_attribution_setting")
   private String mMultiEventConversionAttributionSetting = null;
   @SerializedName("objective")
@@ -399,6 +401,8 @@ public class AdsInsights extends APINode {
   private String mResultValuesPerformanceIndicator = null;
   @SerializedName("results")
   private List<Object> mResults = null;
+  @SerializedName("shop_clicks")
+  private String mShopClicks = null;
   @SerializedName("shops_assisted_purchases")
   private String mShopsAssistedPurchases = null;
   @SerializedName("social_spend")
@@ -486,6 +490,10 @@ public class AdsInsights extends APINode {
   private String mAdExtensionUrl = null;
   @SerializedName("ad_format_asset")
   private String mAdFormatAsset = null;
+  @SerializedName("affiliate_click_region")
+  private String mAffiliateClickRegion = null;
+  @SerializedName("affiliate_link_url")
+  private String mAffiliateLinkUrl = null;
   @SerializedName("age")
   private String mAge = null;
   @SerializedName("app_id")
@@ -586,12 +594,16 @@ public class AdsInsights extends APINode {
   private String mMediaType = null;
   @SerializedName("mmm")
   private String mMmm = null;
+  @SerializedName("msa_seller_name")
+  private String mMsaSellerName = null;
   @SerializedName("overlap_segment")
   private String mOverlapSegment = null;
   @SerializedName("pa_creator_ig_handle")
   private String mPaCreatorIgHandle = null;
   @SerializedName("place_page_id")
   private String mPlacePageId = null;
+  @SerializedName("placement_path")
+  private String mPlacementPath = null;
   @SerializedName("platform_position")
   private String mPlatformPosition = null;
   @SerializedName("postback_sequence_index")
@@ -2470,6 +2482,15 @@ public class AdsInsights extends APINode {
     this.mMobileAppPurchaseRoas = AdsActionStats.getGson().fromJson(value, type);
     return this;
   }
+  public Long getFieldMsaSellerBudget() {
+    return mMsaSellerBudget;
+  }
+
+  public AdsInsights setFieldMsaSellerBudget(Long value) {
+    this.mMsaSellerBudget = value;
+    return this;
+  }
+
   public String getFieldMultiEventConversionAttributionSetting() {
     return mMultiEventConversionAttributionSetting;
   }
@@ -2712,6 +2733,15 @@ public class AdsInsights extends APINode {
 
   public AdsInsights setFieldResults(List<Object> value) {
     this.mResults = value;
+    return this;
+  }
+
+  public String getFieldShopClicks() {
+    return mShopClicks;
+  }
+
+  public AdsInsights setFieldShopClicks(String value) {
+    this.mShopClicks = value;
     return this;
   }
 
@@ -3227,6 +3257,14 @@ public class AdsInsights extends APINode {
     return mAdFormatAsset;
   }
 
+  public String getFieldAffiliateClickRegion() {
+    return mAffiliateClickRegion;
+  }
+
+  public String getFieldAffiliateLinkUrl() {
+    return mAffiliateLinkUrl;
+  }
+
   public String getFieldAge() {
     return mAge;
   }
@@ -3427,6 +3465,10 @@ public class AdsInsights extends APINode {
     return mMmm;
   }
 
+  public String getFieldMsaSellerName() {
+    return mMsaSellerName;
+  }
+
   public String getFieldOverlapSegment() {
     return mOverlapSegment;
   }
@@ -3437,6 +3479,10 @@ public class AdsInsights extends APINode {
 
   public String getFieldPlacePageId() {
     return mPlacePageId;
+  }
+
+  public String getFieldPlacementPath() {
+    return mPlacementPath;
   }
 
   public String getFieldPlatformPosition() {
@@ -3717,6 +3763,10 @@ public class AdsInsights extends APINode {
       VALUE_AD_EXTENSION_URL("ad_extension_url"),
       @SerializedName("ad_format_asset")
       VALUE_AD_FORMAT_ASSET("ad_format_asset"),
+      @SerializedName("affiliate_click_region")
+      VALUE_AFFILIATE_CLICK_REGION("affiliate_click_region"),
+      @SerializedName("affiliate_link_url")
+      VALUE_AFFILIATE_LINK_URL("affiliate_link_url"),
       @SerializedName("age")
       VALUE_AGE("age"),
       @SerializedName("app_id")
@@ -3817,12 +3867,16 @@ public class AdsInsights extends APINode {
       VALUE_MEDIA_TYPE("media_type"),
       @SerializedName("mmm")
       VALUE_MMM("mmm"),
+      @SerializedName("msa_seller_name")
+      VALUE_MSA_SELLER_NAME("msa_seller_name"),
       @SerializedName("overlap_segment")
       VALUE_OVERLAP_SEGMENT("overlap_segment"),
       @SerializedName("pa_creator_ig_handle")
       VALUE_PA_CREATOR_IG_HANDLE("pa_creator_ig_handle"),
       @SerializedName("place_page_id")
       VALUE_PLACE_PAGE_ID("place_page_id"),
+      @SerializedName("placement_path")
+      VALUE_PLACEMENT_PATH("placement_path"),
       @SerializedName("platform_position")
       VALUE_PLATFORM_POSITION("platform_position"),
       @SerializedName("postback_sequence_index")
@@ -4197,6 +4251,7 @@ public class AdsInsights extends APINode {
     this.mMessagesDelivered = instance.mMessagesDelivered;
     this.mMessagesDeliveredCtr = instance.mMessagesDeliveredCtr;
     this.mMobileAppPurchaseRoas = instance.mMobileAppPurchaseRoas;
+    this.mMsaSellerBudget = instance.mMsaSellerBudget;
     this.mMultiEventConversionAttributionSetting = instance.mMultiEventConversionAttributionSetting;
     this.mObjective = instance.mObjective;
     this.mObjectiveResultRate = instance.mObjectiveResultRate;
@@ -4222,6 +4277,7 @@ public class AdsInsights extends APINode {
     this.mResultRate = instance.mResultRate;
     this.mResultValuesPerformanceIndicator = instance.mResultValuesPerformanceIndicator;
     this.mResults = instance.mResults;
+    this.mShopClicks = instance.mShopClicks;
     this.mShopsAssistedPurchases = instance.mShopsAssistedPurchases;
     this.mSocialSpend = instance.mSocialSpend;
     this.mSpend = instance.mSpend;
@@ -4265,6 +4321,8 @@ public class AdsInsights extends APINode {
     this.mAdExtensionDomain = instance.mAdExtensionDomain;
     this.mAdExtensionUrl = instance.mAdExtensionUrl;
     this.mAdFormatAsset = instance.mAdFormatAsset;
+    this.mAffiliateClickRegion = instance.mAffiliateClickRegion;
+    this.mAffiliateLinkUrl = instance.mAffiliateLinkUrl;
     this.mAge = instance.mAge;
     this.mAppId = instance.mAppId;
     this.mBodyAsset = instance.mBodyAsset;
@@ -4315,9 +4373,11 @@ public class AdsInsights extends APINode {
     this.mMediaTextContent = instance.mMediaTextContent;
     this.mMediaType = instance.mMediaType;
     this.mMmm = instance.mMmm;
+    this.mMsaSellerName = instance.mMsaSellerName;
     this.mOverlapSegment = instance.mOverlapSegment;
     this.mPaCreatorIgHandle = instance.mPaCreatorIgHandle;
     this.mPlacePageId = instance.mPlacePageId;
+    this.mPlacementPath = instance.mPlacementPath;
     this.mPlatformPosition = instance.mPlatformPosition;
     this.mPostbackSequenceIndex = instance.mPostbackSequenceIndex;
     this.mProductBrandBreakdown = instance.mProductBrandBreakdown;

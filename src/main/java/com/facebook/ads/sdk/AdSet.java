@@ -8228,105 +8228,6 @@ public class AdSet extends APINode {
       }
   }
 
-  public static enum EnumAttributionCountType {
-      @SerializedName("ALL_CONVERSIONS")
-      VALUE_ALL_CONVERSIONS("ALL_CONVERSIONS"),
-      @SerializedName("FIRST_CONVERSION")
-      VALUE_FIRST_CONVERSION("FIRST_CONVERSION"),
-      ;
-
-      private String value;
-
-      private EnumAttributionCountType(String value) {
-        this.value = value;
-      }
-
-      @Override
-      public String toString() {
-        return value;
-      }
-  }
-
-  public static enum EnumAutomaticManualState {
-      @SerializedName("AUTOMATIC")
-      VALUE_AUTOMATIC("AUTOMATIC"),
-      @SerializedName("MANUAL")
-      VALUE_MANUAL("MANUAL"),
-      @SerializedName("UNSET")
-      VALUE_UNSET("UNSET"),
-      ;
-
-      private String value;
-
-      private EnumAutomaticManualState(String value) {
-        this.value = value;
-      }
-
-      @Override
-      public String toString() {
-        return value;
-      }
-  }
-
-  public static enum EnumBudgetSource {
-      @SerializedName("NONE")
-      VALUE_NONE("NONE"),
-      @SerializedName("RMN")
-      VALUE_RMN("RMN"),
-      ;
-
-      private String value;
-
-      private EnumBudgetSource(String value) {
-        this.value = value;
-      }
-
-      @Override
-      public String toString() {
-        return value;
-      }
-  }
-
-  public static enum EnumCostBiddingMode {
-      @SerializedName("BALANCED")
-      VALUE_BALANCED("BALANCED"),
-      @SerializedName("COST_FOCUSED")
-      VALUE_COST_FOCUSED("COST_FOCUSED"),
-      @SerializedName("VOLUME_FOCUSED")
-      VALUE_VOLUME_FOCUSED("VOLUME_FOCUSED"),
-      ;
-
-      private String value;
-
-      private EnumCostBiddingMode(String value) {
-        this.value = value;
-      }
-
-      @Override
-      public String toString() {
-        return value;
-      }
-  }
-
-  public static enum EnumCreativeSequenceRepetitionPattern {
-      @SerializedName("FULL_SEQUENCE")
-      VALUE_FULL_SEQUENCE("FULL_SEQUENCE"),
-      @SerializedName("LAST_AD")
-      VALUE_LAST_AD("LAST_AD"),
-      ;
-
-      private String value;
-
-      private EnumCreativeSequenceRepetitionPattern(String value) {
-        this.value = value;
-      }
-
-      @Override
-      public String toString() {
-        return value;
-      }
-  }
-
   public static enum EnumDatePreset {
       @SerializedName("DATA_MAXIMUM")
       VALUE_DATA_MAXIMUM("DATA_MAXIMUM"),
@@ -8373,6 +8274,86 @@ public class AdSet extends APINode {
       private String value;
 
       private EnumDatePreset(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumOperator {
+      @SerializedName("ALL")
+      VALUE_ALL("ALL"),
+      @SerializedName("ANY")
+      VALUE_ANY("ANY"),
+      ;
+
+      private String value;
+
+      private EnumOperator(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumAutomaticManualState {
+      @SerializedName("AUTOMATIC")
+      VALUE_AUTOMATIC("AUTOMATIC"),
+      @SerializedName("MANUAL")
+      VALUE_MANUAL("MANUAL"),
+      @SerializedName("UNSET")
+      VALUE_UNSET("UNSET"),
+      ;
+
+      private String value;
+
+      private EnumAutomaticManualState(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumCostBiddingMode {
+      @SerializedName("BALANCED")
+      VALUE_BALANCED("BALANCED"),
+      @SerializedName("COST_FOCUSED")
+      VALUE_COST_FOCUSED("COST_FOCUSED"),
+      @SerializedName("VOLUME_FOCUSED")
+      VALUE_VOLUME_FOCUSED("VOLUME_FOCUSED"),
+      ;
+
+      private String value;
+
+      private EnumCostBiddingMode(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumCreativeSequenceRepetitionPattern {
+      @SerializedName("FULL_SEQUENCE")
+      VALUE_FULL_SEQUENCE("FULL_SEQUENCE"),
+      @SerializedName("LAST_AD")
+      VALUE_LAST_AD("LAST_AD"),
+      ;
+
+      private String value;
+
+      private EnumCreativeSequenceRepetitionPattern(String value) {
         this.value = value;
       }
 
@@ -8590,6 +8571,8 @@ public class AdSet extends APINode {
       VALUE_21("21"),
       @SerializedName("22")
       VALUE_22("22"),
+      @SerializedName("24")
+      VALUE_24("24"),
       ;
 
       private String value;
@@ -8624,25 +8607,6 @@ public class AdSet extends APINode {
       private String value;
 
       private EnumTuneForCategory(String value) {
-        this.value = value;
-      }
-
-      @Override
-      public String toString() {
-        return value;
-      }
-  }
-
-  public static enum EnumOperator {
-      @SerializedName("ALL")
-      VALUE_ALL("ALL"),
-      @SerializedName("ANY")
-      VALUE_ANY("ANY"),
-      ;
-
-      private String value;
-
-      private EnumOperator(String value) {
         this.value = value;
       }
 

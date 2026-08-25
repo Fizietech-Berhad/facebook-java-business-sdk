@@ -101,6 +101,12 @@ public class AdsUserSettings extends APINode {
   private Object mCampaignNameTemplate = null;
   @SerializedName("carousel_to_video_opt_in_status")
   private String mCarouselToVideoOptInStatus = null;
+  @SerializedName("catalog_templates_survey_impr")
+  private Long mCatalogTemplatesSurveyImpr = null;
+  @SerializedName("catalog_templates_survey_last_impr_ts")
+  private String mCatalogTemplatesSurveyLastImprTs = null;
+  @SerializedName("catalog_templates_survey_resp_ts")
+  private String mCatalogTemplatesSurveyRespTs = null;
   @SerializedName("connected_sources_catalog_opt_in_status")
   private String mConnectedSourcesCatalogOptInStatus = null;
   @SerializedName("create_cta_sticker_opt_in_status")
@@ -605,6 +611,18 @@ public class AdsUserSettings extends APINode {
     return mCarouselToVideoOptInStatus;
   }
 
+  public Long getFieldCatalogTemplatesSurveyImpr() {
+    return mCatalogTemplatesSurveyImpr;
+  }
+
+  public String getFieldCatalogTemplatesSurveyLastImprTs() {
+    return mCatalogTemplatesSurveyLastImprTs;
+  }
+
+  public String getFieldCatalogTemplatesSurveyRespTs() {
+    return mCatalogTemplatesSurveyRespTs;
+  }
+
   public String getFieldConnectedSourcesCatalogOptInStatus() {
     return mConnectedSourcesCatalogOptInStatus;
   }
@@ -997,6 +1015,9 @@ public class AdsUserSettings extends APINode {
       "campaign_group_name_template",
       "campaign_name_template",
       "carousel_to_video_opt_in_status",
+      "catalog_templates_survey_impr",
+      "catalog_templates_survey_last_impr_ts",
+      "catalog_templates_survey_resp_ts",
       "connected_sources_catalog_opt_in_status",
       "create_cta_sticker_opt_in_status",
       "creative_flex_opt_in_status",
@@ -1382,6 +1403,27 @@ public class AdsUserSettings extends APINode {
     }
     public APIRequestGet requestCarouselToVideoOptInStatusField (boolean value) {
       this.requestField("carousel_to_video_opt_in_status", value);
+      return this;
+    }
+    public APIRequestGet requestCatalogTemplatesSurveyImprField () {
+      return this.requestCatalogTemplatesSurveyImprField(true);
+    }
+    public APIRequestGet requestCatalogTemplatesSurveyImprField (boolean value) {
+      this.requestField("catalog_templates_survey_impr", value);
+      return this;
+    }
+    public APIRequestGet requestCatalogTemplatesSurveyLastImprTsField () {
+      return this.requestCatalogTemplatesSurveyLastImprTsField(true);
+    }
+    public APIRequestGet requestCatalogTemplatesSurveyLastImprTsField (boolean value) {
+      this.requestField("catalog_templates_survey_last_impr_ts", value);
+      return this;
+    }
+    public APIRequestGet requestCatalogTemplatesSurveyRespTsField () {
+      return this.requestCatalogTemplatesSurveyRespTsField(true);
+    }
+    public APIRequestGet requestCatalogTemplatesSurveyRespTsField (boolean value) {
+      this.requestField("catalog_templates_survey_resp_ts", value);
       return this;
     }
     public APIRequestGet requestConnectedSourcesCatalogOptInStatusField () {
@@ -2026,6 +2068,9 @@ public class AdsUserSettings extends APINode {
     this.mCampaignGroupNameTemplate = instance.mCampaignGroupNameTemplate;
     this.mCampaignNameTemplate = instance.mCampaignNameTemplate;
     this.mCarouselToVideoOptInStatus = instance.mCarouselToVideoOptInStatus;
+    this.mCatalogTemplatesSurveyImpr = instance.mCatalogTemplatesSurveyImpr;
+    this.mCatalogTemplatesSurveyLastImprTs = instance.mCatalogTemplatesSurveyLastImprTs;
+    this.mCatalogTemplatesSurveyRespTs = instance.mCatalogTemplatesSurveyRespTs;
     this.mConnectedSourcesCatalogOptInStatus = instance.mConnectedSourcesCatalogOptInStatus;
     this.mCreateCtaStickerOptInStatus = instance.mCreateCtaStickerOptInStatus;
     this.mCreativeFlexOptInStatus = instance.mCreativeFlexOptInStatus;

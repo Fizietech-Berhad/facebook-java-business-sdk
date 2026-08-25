@@ -9169,11 +9169,11 @@ public class AdAccount extends APINode {
     }
   }
 
-  public static class APIRequestCreateAdSet extends APIRequest<AdSet> {
+  public static class APIRequestCreateAdSet extends APIRequest<APINode> {
 
-    AdSet lastResponse = null;
+    APINode lastResponse = null;
     @Override
-    public AdSet getLastResponse() {
+    public APINode getLastResponse() {
       return lastResponse;
     }
     public static final String[] PARAMS = {
@@ -9259,31 +9259,31 @@ public class AdAccount extends APINode {
     };
 
     @Override
-    public AdSet parseResponse(String response, String header) throws APIException {
-      return AdSet.parseResponse(response, getContext(), this, header).head();
+    public APINode parseResponse(String response, String header) throws APIException {
+      return APINode.parseResponse(response, getContext(), this, header).head();
     }
 
     @Override
-    public AdSet execute() throws APIException {
+    public APINode execute() throws APIException {
       return execute(new HashMap<String, Object>());
     }
 
     @Override
-    public AdSet execute(Map<String, Object> extraParams) throws APIException {
+    public APINode execute(Map<String, Object> extraParams) throws APIException {
       ResponseWrapper rw = executeInternal(extraParams);
       lastResponse = parseResponse(rw.getBody(), rw.getHeader());
       return lastResponse;
     }
 
-    public ListenableFuture<AdSet> executeAsync() throws APIException {
+    public ListenableFuture<APINode> executeAsync() throws APIException {
       return executeAsync(new HashMap<String, Object>());
     };
 
-    public ListenableFuture<AdSet> executeAsync(Map<String, Object> extraParams) throws APIException {
+    public ListenableFuture<APINode> executeAsync(Map<String, Object> extraParams) throws APIException {
       return Futures.transform(
         executeAsyncInternal(extraParams),
-        new Function<ResponseWrapper, AdSet>() {
-           public AdSet apply(ResponseWrapper result) {
+        new Function<ResponseWrapper, APINode>() {
+           public APINode apply(ResponseWrapper result) {
              try {
                return APIRequestCreateAdSet.this.parseResponse(result.getBody(), result.getHeader());
              } catch (Exception e) {
@@ -9339,7 +9339,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setAttributionCountType (AdSet.EnumAttributionCountType attributionCountType) {
+    public APIRequestCreateAdSet setAttributionCountType (EnumAttributionCountType attributionCountType) {
       this.setParam("attribution_count_type", attributionCountType);
       return this;
     }
@@ -9357,7 +9357,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setAutomaticManualState (AdSet.EnumAutomaticManualState automaticManualState) {
+    public APIRequestCreateAdSet setAutomaticManualState (EnumAutomaticManualState automaticManualState) {
       this.setParam("automatic_manual_state", automaticManualState);
       return this;
     }
@@ -9393,7 +9393,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setBidStrategy (AdSet.EnumBidStrategy bidStrategy) {
+    public APIRequestCreateAdSet setBidStrategy (EnumBidStrategy bidStrategy) {
       this.setParam("bid_strategy", bidStrategy);
       return this;
     }
@@ -9402,7 +9402,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setBillingEvent (AdSet.EnumBillingEvent billingEvent) {
+    public APIRequestCreateAdSet setBillingEvent (EnumBillingEvent billingEvent) {
       this.setParam("billing_event", billingEvent);
       return this;
     }
@@ -9429,7 +9429,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setBudgetSource (AdSet.EnumBudgetSource budgetSource) {
+    public APIRequestCreateAdSet setBudgetSource (EnumBudgetSource budgetSource) {
       this.setParam("budget_source", budgetSource);
       return this;
     }
@@ -9466,7 +9466,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setCostBiddingMode (AdSet.EnumCostBiddingMode costBiddingMode) {
+    public APIRequestCreateAdSet setCostBiddingMode (EnumCostBiddingMode costBiddingMode) {
       this.setParam("cost_bidding_mode", costBiddingMode);
       return this;
     }
@@ -9484,7 +9484,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setCreativeSequenceRepetitionPattern (AdSet.EnumCreativeSequenceRepetitionPattern creativeSequenceRepetitionPattern) {
+    public APIRequestCreateAdSet setCreativeSequenceRepetitionPattern (EnumCreativeSequenceRepetitionPattern creativeSequenceRepetitionPattern) {
       this.setParam("creative_sequence_repetition_pattern", creativeSequenceRepetitionPattern);
       return this;
     }
@@ -9534,7 +9534,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setDestinationType (AdSet.EnumDestinationType destinationType) {
+    public APIRequestCreateAdSet setDestinationType (EnumDestinationType destinationType) {
       this.setParam("destination_type", destinationType);
       return this;
     }
@@ -9558,7 +9558,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setExecutionOptions (List<AdSet.EnumExecutionOptions> executionOptions) {
+    public APIRequestCreateAdSet setExecutionOptions (List<EnumExecutionOptions> executionOptions) {
       this.setParam("execution_options", executionOptions);
       return this;
     }
@@ -9585,7 +9585,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setFullFunnelExplorationMode (AdSet.EnumFullFunnelExplorationMode fullFunnelExplorationMode) {
+    public APIRequestCreateAdSet setFullFunnelExplorationMode (EnumFullFunnelExplorationMode fullFunnelExplorationMode) {
       this.setParam("full_funnel_exploration_mode", fullFunnelExplorationMode);
       return this;
     }
@@ -9747,7 +9747,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setMultiOptimizationGoalWeight (AdSet.EnumMultiOptimizationGoalWeight multiOptimizationGoalWeight) {
+    public APIRequestCreateAdSet setMultiOptimizationGoalWeight (EnumMultiOptimizationGoalWeight multiOptimizationGoalWeight) {
       this.setParam("multi_optimization_goal_weight", multiOptimizationGoalWeight);
       return this;
     }
@@ -9761,7 +9761,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setOptimizationGoal (AdSet.EnumOptimizationGoal optimizationGoal) {
+    public APIRequestCreateAdSet setOptimizationGoal (EnumOptimizationGoal optimizationGoal) {
       this.setParam("optimization_goal", optimizationGoal);
       return this;
     }
@@ -9770,7 +9770,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setOptimizationSubEvent (AdSet.EnumOptimizationSubEvent optimizationSubEvent) {
+    public APIRequestCreateAdSet setOptimizationSubEvent (EnumOptimizationSubEvent optimizationSubEvent) {
       this.setParam("optimization_sub_event", optimizationSubEvent);
       return this;
     }
@@ -9811,7 +9811,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setRegionalRegulatedCategories (List<AdSet.EnumRegionalRegulatedCategories> regionalRegulatedCategories) {
+    public APIRequestCreateAdSet setRegionalRegulatedCategories (List<EnumRegionalRegulatedCategories> regionalRegulatedCategories) {
       this.setParam("regional_regulated_categories", regionalRegulatedCategories);
       return this;
     }
@@ -9853,7 +9853,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setStatus (AdSet.EnumStatus status) {
+    public APIRequestCreateAdSet setStatus (EnumStatus status) {
       this.setParam("status", status);
       return this;
     }
@@ -9913,7 +9913,7 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateAdSet setTuneForCategory (AdSet.EnumTuneForCategory tuneForCategory) {
+    public APIRequestCreateAdSet setTuneForCategory (EnumTuneForCategory tuneForCategory) {
       this.setParam("tune_for_category", tuneForCategory);
       return this;
     }
@@ -27835,6 +27835,7 @@ public class AdAccount extends APINode {
       "campaign_id",
       "campaign_time_start",
       "campaign_time_stop",
+      "cpm",
       "currency",
       "curve_budget_reach",
       "curve_reach",
@@ -28089,6 +28090,13 @@ public class AdAccount extends APINode {
     }
     public APIRequestGetReachFrequencyPredictions requestCampaignTimeStopField (boolean value) {
       this.requestField("campaign_time_stop", value);
+      return this;
+    }
+    public APIRequestGetReachFrequencyPredictions requestCpmField () {
+      return this.requestCpmField(true);
+    }
+    public APIRequestGetReachFrequencyPredictions requestCpmField (boolean value) {
+      this.requestField("cpm", value);
       return this;
     }
     public APIRequestGetReachFrequencyPredictions requestCurrencyField () {
@@ -29174,6 +29182,8 @@ public class AdAccount extends APINode {
       return lastResponse;
     }
     public static final String[] PARAMS = {
+      "recommendation_names",
+      "recommendation_stages",
     };
 
     public static final String[] FIELDS = {
@@ -29233,6 +29243,24 @@ public class AdAccount extends APINode {
       return this;
     }
 
+
+    public APIRequestGetRecommendations setRecommendationNames (List<AdAccountRecommendations.EnumRecommendationNames> recommendationNames) {
+      this.setParam("recommendation_names", recommendationNames);
+      return this;
+    }
+    public APIRequestGetRecommendations setRecommendationNames (String recommendationNames) {
+      this.setParam("recommendation_names", recommendationNames);
+      return this;
+    }
+
+    public APIRequestGetRecommendations setRecommendationStages (List<AdAccountRecommendations.EnumRecommendationStages> recommendationStages) {
+      this.setParam("recommendation_stages", recommendationStages);
+      return this;
+    }
+    public APIRequestGetRecommendations setRecommendationStages (String recommendationStages) {
+      this.setParam("recommendation_stages", recommendationStages);
+      return this;
+    }
 
     public APIRequestGetRecommendations requestAllFields () {
       return this.requestAllFields(true);
@@ -29935,7 +29963,9 @@ public class AdAccount extends APINode {
       "excluded_category",
       "include_nodes",
       "is_exclusion",
+      "is_reserved",
       "limit_type",
+      "optimization_goal",
       "regulated_categories",
       "regulated_countries",
       "whitelisted_types",
@@ -30045,12 +30075,30 @@ public class AdAccount extends APINode {
       return this;
     }
 
+    public APIRequestGetTargetingBrowse setIsReserved (Boolean isReserved) {
+      this.setParam("is_reserved", isReserved);
+      return this;
+    }
+    public APIRequestGetTargetingBrowse setIsReserved (String isReserved) {
+      this.setParam("is_reserved", isReserved);
+      return this;
+    }
+
     public APIRequestGetTargetingBrowse setLimitType (AdAccountTargetingUnified.EnumLimitType limitType) {
       this.setParam("limit_type", limitType);
       return this;
     }
     public APIRequestGetTargetingBrowse setLimitType (String limitType) {
       this.setParam("limit_type", limitType);
+      return this;
+    }
+
+    public APIRequestGetTargetingBrowse setOptimizationGoal (AdAccountTargetingUnified.EnumOptimizationGoal optimizationGoal) {
+      this.setParam("optimization_goal", optimizationGoal);
+      return this;
+    }
+    public APIRequestGetTargetingBrowse setOptimizationGoal (String optimizationGoal) {
+      this.setParam("optimization_goal", optimizationGoal);
       return this;
     }
 
@@ -30301,8 +30349,10 @@ public class AdAccount extends APINode {
       "is_account_level_brand_safety_exclusion",
       "is_account_level_employer_exclusion",
       "is_exclusion",
+      "is_reserved",
       "limit_type",
       "objective",
+      "optimization_goal",
       "promoted_object",
       "q",
       "regulated_categories",
@@ -30447,6 +30497,15 @@ public class AdAccount extends APINode {
       return this;
     }
 
+    public APIRequestGetTargetingSearch setIsReserved (Boolean isReserved) {
+      this.setParam("is_reserved", isReserved);
+      return this;
+    }
+    public APIRequestGetTargetingSearch setIsReserved (String isReserved) {
+      this.setParam("is_reserved", isReserved);
+      return this;
+    }
+
     public APIRequestGetTargetingSearch setLimitType (AdAccountTargetingUnified.EnumLimitType limitType) {
       this.setParam("limit_type", limitType);
       return this;
@@ -30462,6 +30521,15 @@ public class AdAccount extends APINode {
     }
     public APIRequestGetTargetingSearch setObjective (String objective) {
       this.setParam("objective", objective);
+      return this;
+    }
+
+    public APIRequestGetTargetingSearch setOptimizationGoal (AdAccountTargetingUnified.EnumOptimizationGoal optimizationGoal) {
+      this.setParam("optimization_goal", optimizationGoal);
+      return this;
+    }
+    public APIRequestGetTargetingSearch setOptimizationGoal (String optimizationGoal) {
+      this.setParam("optimization_goal", optimizationGoal);
       return this;
     }
 
@@ -34549,6 +34617,522 @@ public class AdAccount extends APINode {
       private String value;
 
       private EnumActionSource(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumAttributionCountType {
+      @SerializedName("ALL_CONVERSIONS")
+      VALUE_ALL_CONVERSIONS("ALL_CONVERSIONS"),
+      @SerializedName("FIRST_CONVERSION")
+      VALUE_FIRST_CONVERSION("FIRST_CONVERSION"),
+      ;
+
+      private String value;
+
+      private EnumAttributionCountType(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumAutomaticManualState {
+      @SerializedName("AUTOMATIC")
+      VALUE_AUTOMATIC("AUTOMATIC"),
+      @SerializedName("MANUAL")
+      VALUE_MANUAL("MANUAL"),
+      @SerializedName("UNSET")
+      VALUE_UNSET("UNSET"),
+      ;
+
+      private String value;
+
+      private EnumAutomaticManualState(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumBidStrategy {
+      @SerializedName("COST_CAP")
+      VALUE_COST_CAP("COST_CAP"),
+      @SerializedName("LOWEST_COST_WITHOUT_CAP")
+      VALUE_LOWEST_COST_WITHOUT_CAP("LOWEST_COST_WITHOUT_CAP"),
+      @SerializedName("LOWEST_COST_WITH_BID_CAP")
+      VALUE_LOWEST_COST_WITH_BID_CAP("LOWEST_COST_WITH_BID_CAP"),
+      @SerializedName("LOWEST_COST_WITH_MIN_ROAS")
+      VALUE_LOWEST_COST_WITH_MIN_ROAS("LOWEST_COST_WITH_MIN_ROAS"),
+      ;
+
+      private String value;
+
+      private EnumBidStrategy(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumBillingEvent {
+      @SerializedName("APP_INSTALLS")
+      VALUE_APP_INSTALLS("APP_INSTALLS"),
+      @SerializedName("CLICKS")
+      VALUE_CLICKS("CLICKS"),
+      @SerializedName("IMPRESSIONS")
+      VALUE_IMPRESSIONS("IMPRESSIONS"),
+      @SerializedName("LINK_CLICKS")
+      VALUE_LINK_CLICKS("LINK_CLICKS"),
+      @SerializedName("LISTING_INTERACTION")
+      VALUE_LISTING_INTERACTION("LISTING_INTERACTION"),
+      @SerializedName("NONE")
+      VALUE_NONE("NONE"),
+      @SerializedName("OFFER_CLAIMS")
+      VALUE_OFFER_CLAIMS("OFFER_CLAIMS"),
+      @SerializedName("PAGE_LIKES")
+      VALUE_PAGE_LIKES("PAGE_LIKES"),
+      @SerializedName("POST_ENGAGEMENT")
+      VALUE_POST_ENGAGEMENT("POST_ENGAGEMENT"),
+      @SerializedName("PURCHASE")
+      VALUE_PURCHASE("PURCHASE"),
+      @SerializedName("THRUPLAY")
+      VALUE_THRUPLAY("THRUPLAY"),
+      ;
+
+      private String value;
+
+      private EnumBillingEvent(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumBudgetSource {
+      @SerializedName("NONE")
+      VALUE_NONE("NONE"),
+      @SerializedName("RMN")
+      VALUE_RMN("RMN"),
+      ;
+
+      private String value;
+
+      private EnumBudgetSource(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumCostBiddingMode {
+      @SerializedName("BALANCED")
+      VALUE_BALANCED("BALANCED"),
+      @SerializedName("COST_FOCUSED")
+      VALUE_COST_FOCUSED("COST_FOCUSED"),
+      @SerializedName("VOLUME_FOCUSED")
+      VALUE_VOLUME_FOCUSED("VOLUME_FOCUSED"),
+      ;
+
+      private String value;
+
+      private EnumCostBiddingMode(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumCreativeSequenceRepetitionPattern {
+      @SerializedName("FULL_SEQUENCE")
+      VALUE_FULL_SEQUENCE("FULL_SEQUENCE"),
+      @SerializedName("LAST_AD")
+      VALUE_LAST_AD("LAST_AD"),
+      ;
+
+      private String value;
+
+      private EnumCreativeSequenceRepetitionPattern(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumDestinationType {
+      @SerializedName("APP")
+      VALUE_APP("APP"),
+      @SerializedName("APPLINKS_AUTOMATIC")
+      VALUE_APPLINKS_AUTOMATIC("APPLINKS_AUTOMATIC"),
+      @SerializedName("FACEBOOK")
+      VALUE_FACEBOOK("FACEBOOK"),
+      @SerializedName("FACEBOOK_LIVE")
+      VALUE_FACEBOOK_LIVE("FACEBOOK_LIVE"),
+      @SerializedName("FACEBOOK_PAGE")
+      VALUE_FACEBOOK_PAGE("FACEBOOK_PAGE"),
+      @SerializedName("IMAGINE")
+      VALUE_IMAGINE("IMAGINE"),
+      @SerializedName("INSTAGRAM_DIRECT")
+      VALUE_INSTAGRAM_DIRECT("INSTAGRAM_DIRECT"),
+      @SerializedName("INSTAGRAM_LIVE")
+      VALUE_INSTAGRAM_LIVE("INSTAGRAM_LIVE"),
+      @SerializedName("INSTAGRAM_PROFILE")
+      VALUE_INSTAGRAM_PROFILE("INSTAGRAM_PROFILE"),
+      @SerializedName("INSTAGRAM_PROFILE_AND_FACEBOOK_PAGE")
+      VALUE_INSTAGRAM_PROFILE_AND_FACEBOOK_PAGE("INSTAGRAM_PROFILE_AND_FACEBOOK_PAGE"),
+      @SerializedName("MESSAGING_INSTAGRAM_DIRECT_MESSENGER")
+      VALUE_MESSAGING_INSTAGRAM_DIRECT_MESSENGER("MESSAGING_INSTAGRAM_DIRECT_MESSENGER"),
+      @SerializedName("MESSAGING_INSTAGRAM_DIRECT_MESSENGER_WHATSAPP")
+      VALUE_MESSAGING_INSTAGRAM_DIRECT_MESSENGER_WHATSAPP("MESSAGING_INSTAGRAM_DIRECT_MESSENGER_WHATSAPP"),
+      @SerializedName("MESSAGING_INSTAGRAM_DIRECT_WHATSAPP")
+      VALUE_MESSAGING_INSTAGRAM_DIRECT_WHATSAPP("MESSAGING_INSTAGRAM_DIRECT_WHATSAPP"),
+      @SerializedName("MESSAGING_MESSENGER_WHATSAPP")
+      VALUE_MESSAGING_MESSENGER_WHATSAPP("MESSAGING_MESSENGER_WHATSAPP"),
+      @SerializedName("MESSENGER")
+      VALUE_MESSENGER("MESSENGER"),
+      @SerializedName("ON_AD")
+      VALUE_ON_AD("ON_AD"),
+      @SerializedName("ON_EVENT")
+      VALUE_ON_EVENT("ON_EVENT"),
+      @SerializedName("ON_PAGE")
+      VALUE_ON_PAGE("ON_PAGE"),
+      @SerializedName("ON_POST")
+      VALUE_ON_POST("ON_POST"),
+      @SerializedName("ON_VIDEO")
+      VALUE_ON_VIDEO("ON_VIDEO"),
+      @SerializedName("SHOP_AUTOMATIC")
+      VALUE_SHOP_AUTOMATIC("SHOP_AUTOMATIC"),
+      @SerializedName("WEBSITE")
+      VALUE_WEBSITE("WEBSITE"),
+      @SerializedName("WHATSAPP")
+      VALUE_WHATSAPP("WHATSAPP"),
+      ;
+
+      private String value;
+
+      private EnumDestinationType(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumExecutionOptions {
+      @SerializedName("include_recommendations")
+      VALUE_INCLUDE_RECOMMENDATIONS("include_recommendations"),
+      @SerializedName("validate_only")
+      VALUE_VALIDATE_ONLY("validate_only"),
+      ;
+
+      private String value;
+
+      private EnumExecutionOptions(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumFullFunnelExplorationMode {
+      @SerializedName("EXTENDED_EXPLORATION")
+      VALUE_EXTENDED_EXPLORATION("EXTENDED_EXPLORATION"),
+      @SerializedName("LIMITED_EXPLORATION")
+      VALUE_LIMITED_EXPLORATION("LIMITED_EXPLORATION"),
+      @SerializedName("NONE_EXPLORATION")
+      VALUE_NONE_EXPLORATION("NONE_EXPLORATION"),
+      ;
+
+      private String value;
+
+      private EnumFullFunnelExplorationMode(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumMultiOptimizationGoalWeight {
+      @SerializedName("BALANCED")
+      VALUE_BALANCED("BALANCED"),
+      @SerializedName("PREFER_EVENT")
+      VALUE_PREFER_EVENT("PREFER_EVENT"),
+      @SerializedName("PREFER_INSTALL")
+      VALUE_PREFER_INSTALL("PREFER_INSTALL"),
+      @SerializedName("UNDEFINED")
+      VALUE_UNDEFINED("UNDEFINED"),
+      ;
+
+      private String value;
+
+      private EnumMultiOptimizationGoalWeight(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumOptimizationGoal {
+      @SerializedName("ADVERTISER_SILOED_VALUE")
+      VALUE_ADVERTISER_SILOED_VALUE("ADVERTISER_SILOED_VALUE"),
+      @SerializedName("AD_RECALL_LIFT")
+      VALUE_AD_RECALL_LIFT("AD_RECALL_LIFT"),
+      @SerializedName("APP_INSTALLS")
+      VALUE_APP_INSTALLS("APP_INSTALLS"),
+      @SerializedName("APP_INSTALLS_AND_OFFSITE_CONVERSIONS")
+      VALUE_APP_INSTALLS_AND_OFFSITE_CONVERSIONS("APP_INSTALLS_AND_OFFSITE_CONVERSIONS"),
+      @SerializedName("AUTOMATIC_OBJECTIVE")
+      VALUE_AUTOMATIC_OBJECTIVE("AUTOMATIC_OBJECTIVE"),
+      @SerializedName("CONVERSATIONS")
+      VALUE_CONVERSATIONS("CONVERSATIONS"),
+      @SerializedName("DERIVED_EVENTS")
+      VALUE_DERIVED_EVENTS("DERIVED_EVENTS"),
+      @SerializedName("ENGAGED_PAGE_VIEWS")
+      VALUE_ENGAGED_PAGE_VIEWS("ENGAGED_PAGE_VIEWS"),
+      @SerializedName("ENGAGED_USERS")
+      VALUE_ENGAGED_USERS("ENGAGED_USERS"),
+      @SerializedName("EVENT_RESPONSES")
+      VALUE_EVENT_RESPONSES("EVENT_RESPONSES"),
+      @SerializedName("IMPRESSIONS")
+      VALUE_IMPRESSIONS("IMPRESSIONS"),
+      @SerializedName("IN_APP_VALUE")
+      VALUE_IN_APP_VALUE("IN_APP_VALUE"),
+      @SerializedName("LANDING_PAGE_VIEWS")
+      VALUE_LANDING_PAGE_VIEWS("LANDING_PAGE_VIEWS"),
+      @SerializedName("LEAD_GENERATION")
+      VALUE_LEAD_GENERATION("LEAD_GENERATION"),
+      @SerializedName("LINK_CLICKS")
+      VALUE_LINK_CLICKS("LINK_CLICKS"),
+      @SerializedName("MEANINGFUL_CALL_ATTEMPT")
+      VALUE_MEANINGFUL_CALL_ATTEMPT("MEANINGFUL_CALL_ATTEMPT"),
+      @SerializedName("MESSAGING_APPOINTMENT_CONVERSION")
+      VALUE_MESSAGING_APPOINTMENT_CONVERSION("MESSAGING_APPOINTMENT_CONVERSION"),
+      @SerializedName("MESSAGING_DEEP_CONVERSATION_AND_FOLLOW")
+      VALUE_MESSAGING_DEEP_CONVERSATION_AND_FOLLOW("MESSAGING_DEEP_CONVERSATION_AND_FOLLOW"),
+      @SerializedName("MESSAGING_PURCHASE_CONVERSION")
+      VALUE_MESSAGING_PURCHASE_CONVERSION("MESSAGING_PURCHASE_CONVERSION"),
+      @SerializedName("NONE")
+      VALUE_NONE("NONE"),
+      @SerializedName("OFFSITE_CONVERSIONS")
+      VALUE_OFFSITE_CONVERSIONS("OFFSITE_CONVERSIONS"),
+      @SerializedName("PAGE_LIKES")
+      VALUE_PAGE_LIKES("PAGE_LIKES"),
+      @SerializedName("POST_ENGAGEMENT")
+      VALUE_POST_ENGAGEMENT("POST_ENGAGEMENT"),
+      @SerializedName("PROFILE_AND_PAGE_ENGAGEMENT")
+      VALUE_PROFILE_AND_PAGE_ENGAGEMENT("PROFILE_AND_PAGE_ENGAGEMENT"),
+      @SerializedName("PROFILE_VISIT")
+      VALUE_PROFILE_VISIT("PROFILE_VISIT"),
+      @SerializedName("QUALITY_CALL")
+      VALUE_QUALITY_CALL("QUALITY_CALL"),
+      @SerializedName("QUALITY_LEAD")
+      VALUE_QUALITY_LEAD("QUALITY_LEAD"),
+      @SerializedName("REACH")
+      VALUE_REACH("REACH"),
+      @SerializedName("REMINDERS_SET")
+      VALUE_REMINDERS_SET("REMINDERS_SET"),
+      @SerializedName("SUBSCRIBERS")
+      VALUE_SUBSCRIBERS("SUBSCRIBERS"),
+      @SerializedName("THRUPLAY")
+      VALUE_THRUPLAY("THRUPLAY"),
+      @SerializedName("VALUE")
+      VALUE_VALUE("VALUE"),
+      @SerializedName("VISIT_INSTAGRAM_PROFILE")
+      VALUE_VISIT_INSTAGRAM_PROFILE("VISIT_INSTAGRAM_PROFILE"),
+      ;
+
+      private String value;
+
+      private EnumOptimizationGoal(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumOptimizationSubEvent {
+      @SerializedName("NONE")
+      VALUE_NONE("NONE"),
+      @SerializedName("POST_INTERACTION")
+      VALUE_POST_INTERACTION("POST_INTERACTION"),
+      @SerializedName("TRAVEL_INTENT")
+      VALUE_TRAVEL_INTENT("TRAVEL_INTENT"),
+      @SerializedName("TRAVEL_INTENT_BUCKET_01")
+      VALUE_TRAVEL_INTENT_BUCKET_01("TRAVEL_INTENT_BUCKET_01"),
+      @SerializedName("TRAVEL_INTENT_BUCKET_02")
+      VALUE_TRAVEL_INTENT_BUCKET_02("TRAVEL_INTENT_BUCKET_02"),
+      @SerializedName("TRAVEL_INTENT_BUCKET_03")
+      VALUE_TRAVEL_INTENT_BUCKET_03("TRAVEL_INTENT_BUCKET_03"),
+      @SerializedName("TRAVEL_INTENT_BUCKET_04")
+      VALUE_TRAVEL_INTENT_BUCKET_04("TRAVEL_INTENT_BUCKET_04"),
+      @SerializedName("TRAVEL_INTENT_BUCKET_05")
+      VALUE_TRAVEL_INTENT_BUCKET_05("TRAVEL_INTENT_BUCKET_05"),
+      @SerializedName("TRAVEL_INTENT_NO_DESTINATION_INTENT")
+      VALUE_TRAVEL_INTENT_NO_DESTINATION_INTENT("TRAVEL_INTENT_NO_DESTINATION_INTENT"),
+      @SerializedName("TRIP_CONSIDERATION")
+      VALUE_TRIP_CONSIDERATION("TRIP_CONSIDERATION"),
+      @SerializedName("VIDEO_SOUND_ON")
+      VALUE_VIDEO_SOUND_ON("VIDEO_SOUND_ON"),
+      ;
+
+      private String value;
+
+      private EnumOptimizationSubEvent(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumRegionalRegulatedCategories {
+      @SerializedName("0")
+      VALUE_0("0"),
+      @SerializedName("1")
+      VALUE_1("1"),
+      @SerializedName("2")
+      VALUE_2("2"),
+      @SerializedName("3")
+      VALUE_3("3"),
+      @SerializedName("4")
+      VALUE_4("4"),
+      @SerializedName("5")
+      VALUE_5("5"),
+      @SerializedName("6")
+      VALUE_6("6"),
+      @SerializedName("7")
+      VALUE_7("7"),
+      @SerializedName("8")
+      VALUE_8("8"),
+      @SerializedName("9")
+      VALUE_9("9"),
+      @SerializedName("10")
+      VALUE_10("10"),
+      @SerializedName("11")
+      VALUE_11("11"),
+      @SerializedName("12")
+      VALUE_12("12"),
+      @SerializedName("13")
+      VALUE_13("13"),
+      @SerializedName("14")
+      VALUE_14("14"),
+      @SerializedName("15")
+      VALUE_15("15"),
+      @SerializedName("16")
+      VALUE_16("16"),
+      @SerializedName("17")
+      VALUE_17("17"),
+      @SerializedName("18")
+      VALUE_18("18"),
+      @SerializedName("19")
+      VALUE_19("19"),
+      @SerializedName("20")
+      VALUE_20("20"),
+      @SerializedName("21")
+      VALUE_21("21"),
+      @SerializedName("22")
+      VALUE_22("22"),
+      @SerializedName("24")
+      VALUE_24("24"),
+      ;
+
+      private String value;
+
+      private EnumRegionalRegulatedCategories(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumStatus {
+      @SerializedName("ACTIVE")
+      VALUE_ACTIVE("ACTIVE"),
+      @SerializedName("ARCHIVED")
+      VALUE_ARCHIVED("ARCHIVED"),
+      @SerializedName("DELETED")
+      VALUE_DELETED("DELETED"),
+      @SerializedName("PAUSED")
+      VALUE_PAUSED("PAUSED"),
+      ;
+
+      private String value;
+
+      private EnumStatus(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumTuneForCategory {
+      @SerializedName("CREDIT")
+      VALUE_CREDIT("CREDIT"),
+      @SerializedName("EMPLOYMENT")
+      VALUE_EMPLOYMENT("EMPLOYMENT"),
+      @SerializedName("FINANCIAL_PRODUCTS_SERVICES")
+      VALUE_FINANCIAL_PRODUCTS_SERVICES("FINANCIAL_PRODUCTS_SERVICES"),
+      @SerializedName("HOUSING")
+      VALUE_HOUSING("HOUSING"),
+      @SerializedName("ISSUES_ELECTIONS_POLITICS")
+      VALUE_ISSUES_ELECTIONS_POLITICS("ISSUES_ELECTIONS_POLITICS"),
+      @SerializedName("NONE")
+      VALUE_NONE("NONE"),
+      @SerializedName("ONLINE_GAMBLING_AND_GAMING")
+      VALUE_ONLINE_GAMBLING_AND_GAMING("ONLINE_GAMBLING_AND_GAMING"),
+      ;
+
+      private String value;
+
+      private EnumTuneForCategory(String value) {
         this.value = value;
       }
 

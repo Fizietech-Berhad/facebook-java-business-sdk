@@ -45,6 +45,8 @@ public class ReachFrequencyEstimatesCurve extends APINode {
   private List<Long> mBudget = null;
   @SerializedName("conversion")
   private List<Long> mConversion = null;
+  @SerializedName("cpm")
+  private List<Long> mCpm = null;
   @SerializedName("impression")
   private List<Long> mImpression = null;
   @SerializedName("interpolated_reach")
@@ -226,6 +228,15 @@ public class ReachFrequencyEstimatesCurve extends APINode {
     return this;
   }
 
+  public List<Long> getFieldCpm() {
+    return mCpm;
+  }
+
+  public ReachFrequencyEstimatesCurve setFieldCpm(List<Long> value) {
+    this.mCpm = value;
+    return this;
+  }
+
   public List<Long> getFieldImpression() {
     return mImpression;
   }
@@ -299,6 +310,7 @@ public class ReachFrequencyEstimatesCurve extends APINode {
   public ReachFrequencyEstimatesCurve copyFrom(ReachFrequencyEstimatesCurve instance) {
     this.mBudget = instance.mBudget;
     this.mConversion = instance.mConversion;
+    this.mCpm = instance.mCpm;
     this.mImpression = instance.mImpression;
     this.mInterpolatedReach = instance.mInterpolatedReach;
     this.mNumPoints = instance.mNumPoints;

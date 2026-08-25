@@ -155,6 +155,8 @@ public class ProductItem extends APINode {
   private String mMobileLink = null;
   @SerializedName("name")
   private String mName = null;
+  @SerializedName("native_commerce")
+  private Boolean mNativeCommerce = null;
   @SerializedName("offer_disclaimer")
   private String mOfferDisclaimer = null;
   @SerializedName("offer_disclaimer_url")
@@ -175,6 +177,8 @@ public class ProductItem extends APINode {
   private String mPrice = null;
   @SerializedName("product_catalog")
   private ProductCatalog mProductCatalog = null;
+  @SerializedName("product_disclosures")
+  private List<ProductItemProductDisclosure> mProductDisclosures = null;
   @SerializedName("product_feed")
   private ProductFeed mProductFeed = null;
   @SerializedName("product_group")
@@ -695,6 +699,10 @@ public class ProductItem extends APINode {
     return mName;
   }
 
+  public Boolean getFieldNativeCommerce() {
+    return mNativeCommerce;
+  }
+
   public String getFieldOfferDisclaimer() {
     return mOfferDisclaimer;
   }
@@ -736,6 +744,10 @@ public class ProductItem extends APINode {
       mProductCatalog.context = getContext();
     }
     return mProductCatalog;
+  }
+
+  public List<ProductItemProductDisclosure> getFieldProductDisclosures() {
+    return mProductDisclosures;
   }
 
   public ProductFeed getFieldProductFeed() {
@@ -1627,6 +1639,7 @@ public class ProductItem extends APINode {
       "material",
       "mobile_link",
       "name",
+      "native_commerce",
       "offer_disclaimer",
       "offer_disclaimer_url",
       "ordering_index",
@@ -1637,6 +1650,7 @@ public class ProductItem extends APINode {
       "post_conversion_signal_based_enforcement_appeal_eligibility",
       "price",
       "product_catalog",
+      "product_disclosures",
       "product_feed",
       "product_group",
       "product_local_info",
@@ -2188,6 +2202,13 @@ public class ProductItem extends APINode {
       this.requestField("name", value);
       return this;
     }
+    public APIRequestGet requestNativeCommerceField () {
+      return this.requestNativeCommerceField(true);
+    }
+    public APIRequestGet requestNativeCommerceField (boolean value) {
+      this.requestField("native_commerce", value);
+      return this;
+    }
     public APIRequestGet requestOfferDisclaimerField () {
       return this.requestOfferDisclaimerField(true);
     }
@@ -2256,6 +2277,13 @@ public class ProductItem extends APINode {
     }
     public APIRequestGet requestProductCatalogField (boolean value) {
       this.requestField("product_catalog", value);
+      return this;
+    }
+    public APIRequestGet requestProductDisclosuresField () {
+      return this.requestProductDisclosuresField(true);
+    }
+    public APIRequestGet requestProductDisclosuresField (boolean value) {
+      this.requestField("product_disclosures", value);
       return this;
     }
     public APIRequestGet requestProductFeedField () {
@@ -4881,6 +4909,7 @@ public class ProductItem extends APINode {
     this.mMaterial = instance.mMaterial;
     this.mMobileLink = instance.mMobileLink;
     this.mName = instance.mName;
+    this.mNativeCommerce = instance.mNativeCommerce;
     this.mOfferDisclaimer = instance.mOfferDisclaimer;
     this.mOfferDisclaimerUrl = instance.mOfferDisclaimerUrl;
     this.mOrderingIndex = instance.mOrderingIndex;
@@ -4891,6 +4920,7 @@ public class ProductItem extends APINode {
     this.mPostConversionSignalBasedEnforcementAppealEligibility = instance.mPostConversionSignalBasedEnforcementAppealEligibility;
     this.mPrice = instance.mPrice;
     this.mProductCatalog = instance.mProductCatalog;
+    this.mProductDisclosures = instance.mProductDisclosures;
     this.mProductFeed = instance.mProductFeed;
     this.mProductGroup = instance.mProductGroup;
     this.mProductLocalInfo = instance.mProductLocalInfo;

@@ -2617,6 +2617,7 @@ public class ProductSet extends APINode {
       "material",
       "mobile_link",
       "name",
+      "native_commerce",
       "offer_disclaimer",
       "offer_disclaimer_url",
       "ordering_index",
@@ -2627,6 +2628,7 @@ public class ProductSet extends APINode {
       "post_conversion_signal_based_enforcement_appeal_eligibility",
       "price",
       "product_catalog",
+      "product_disclosures",
       "product_feed",
       "product_group",
       "product_local_info",
@@ -3181,6 +3183,13 @@ public class ProductSet extends APINode {
       this.requestField("name", value);
       return this;
     }
+    public APIRequestGetProducts requestNativeCommerceField () {
+      return this.requestNativeCommerceField(true);
+    }
+    public APIRequestGetProducts requestNativeCommerceField (boolean value) {
+      this.requestField("native_commerce", value);
+      return this;
+    }
     public APIRequestGetProducts requestOfferDisclaimerField () {
       return this.requestOfferDisclaimerField(true);
     }
@@ -3249,6 +3258,13 @@ public class ProductSet extends APINode {
     }
     public APIRequestGetProducts requestProductCatalogField (boolean value) {
       this.requestField("product_catalog", value);
+      return this;
+    }
+    public APIRequestGetProducts requestProductDisclosuresField () {
+      return this.requestProductDisclosuresField(true);
+    }
+    public APIRequestGetProducts requestProductDisclosuresField (boolean value) {
+      this.requestField("product_disclosures", value);
       return this;
     }
     public APIRequestGetProducts requestProductFeedField () {

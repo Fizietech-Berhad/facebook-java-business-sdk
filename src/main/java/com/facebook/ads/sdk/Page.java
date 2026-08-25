@@ -24294,6 +24294,7 @@ public class Page extends APINode {
       "backdated_time",
       "backdated_time_granularity",
       "caption",
+      "composer_entry_point",
       "composer_session_id",
       "direct_share_status",
       "feed_targeting",
@@ -24463,6 +24464,11 @@ public class Page extends APINode {
 
     public APIRequestCreatePhoto setCaption (String caption) {
       this.setParam("caption", caption);
+      return this;
+    }
+
+    public APIRequestCreatePhoto setComposerEntryPoint (String composerEntryPoint) {
+      this.setParam("composer_entry_point", composerEntryPoint);
       return this;
     }
 
@@ -39669,6 +39675,8 @@ public class Page extends APINode {
       VALUE_IPTC_METADATA_EDITED("IPTC_METADATA_EDITED"),
       @SerializedName("NONE")
       VALUE_NONE("NONE"),
+      @SerializedName("PAIGM_CLASSIFIER")
+      VALUE_PAIGM_CLASSIFIER("PAIGM_CLASSIFIER"),
       ;
 
       private String value;

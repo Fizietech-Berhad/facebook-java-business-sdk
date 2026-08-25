@@ -560,8 +560,8 @@ public class Application extends APINode {
     return new APIRequestGetAppAssets(this.getPrefixedId().toString(), context);
   }
 
-  public APIRequestCreateAsset createAsset() {
-    return new APIRequestCreateAsset(this.getPrefixedId().toString(), context);
+  public APIRequestCreateAsSet createAsSet() {
+    return new APIRequestCreateAsSet(this.getPrefixedId().toString(), context);
   }
 
   public APIRequestGetAuthorizedAdAccounts getAuthorizedAdAccounts() {
@@ -5063,7 +5063,7 @@ public class Application extends APINode {
 
   }
 
-  public static class APIRequestCreateAsset extends APIRequest<Application> {
+  public static class APIRequestCreateAsSet extends APIRequest<Application> {
 
     Application lastResponse = null;
     @Override
@@ -5106,7 +5106,7 @@ public class Application extends APINode {
         new Function<ResponseWrapper, Application>() {
            public Application apply(ResponseWrapper result) {
              try {
-               return APIRequestCreateAsset.this.parseResponse(result.getBody(), result.getHeader());
+               return APIRequestCreateAsSet.this.parseResponse(result.getBody(), result.getHeader());
              } catch (Exception e) {
                throw new RuntimeException(e);
              }
@@ -5116,47 +5116,47 @@ public class Application extends APINode {
       );
     };
 
-    public APIRequestCreateAsset(String nodeId, APIContext context) {
+    public APIRequestCreateAsSet(String nodeId, APIContext context) {
       super(context, nodeId, "/assets", "POST", Arrays.asList(PARAMS));
     }
 
     @Override
-    public APIRequestCreateAsset setParam(String param, Object value) {
+    public APIRequestCreateAsSet setParam(String param, Object value) {
       setParamInternal(param, value);
       return this;
     }
 
     @Override
-    public APIRequestCreateAsset setParams(Map<String, Object> params) {
+    public APIRequestCreateAsSet setParams(Map<String, Object> params) {
       setParamsInternal(params);
       return this;
     }
 
 
-    public APIRequestCreateAsset setAsset (File asset) {
+    public APIRequestCreateAsSet setAsset (File asset) {
       this.setParam("asset", asset);
       return this;
     }
-    public APIRequestCreateAsset setAsset (String asset) {
+    public APIRequestCreateAsSet setAsset (String asset) {
       this.setParam("asset", asset);
       return this;
     }
 
-    public APIRequestCreateAsset setComment (String comment) {
+    public APIRequestCreateAsSet setComment (String comment) {
       this.setParam("comment", comment);
       return this;
     }
 
-    public APIRequestCreateAsset setType (String type) {
+    public APIRequestCreateAsSet setType (String type) {
       this.setParam("type", type);
       return this;
     }
 
-    public APIRequestCreateAsset requestAllFields () {
+    public APIRequestCreateAsSet requestAllFields () {
       return this.requestAllFields(true);
     }
 
-    public APIRequestCreateAsset requestAllFields (boolean value) {
+    public APIRequestCreateAsSet requestAllFields (boolean value) {
       for (String field : FIELDS) {
         this.requestField(field, value);
       }
@@ -5164,12 +5164,12 @@ public class Application extends APINode {
     }
 
     @Override
-    public APIRequestCreateAsset requestFields (List<String> fields) {
+    public APIRequestCreateAsSet requestFields (List<String> fields) {
       return this.requestFields(fields, true);
     }
 
     @Override
-    public APIRequestCreateAsset requestFields (List<String> fields, boolean value) {
+    public APIRequestCreateAsSet requestFields (List<String> fields, boolean value) {
       for (String field : fields) {
         this.requestField(field, value);
       }
@@ -5177,13 +5177,13 @@ public class Application extends APINode {
     }
 
     @Override
-    public APIRequestCreateAsset requestField (String field) {
+    public APIRequestCreateAsSet requestField (String field) {
       this.requestField(field, true);
       return this;
     }
 
     @Override
-    public APIRequestCreateAsset requestField (String field, boolean value) {
+    public APIRequestCreateAsSet requestField (String field, boolean value) {
       this.requestFieldInternal(field, value);
       return this;
     }
@@ -7614,6 +7614,7 @@ public class Application extends APINode {
       "inactivity_window_hours",
       "install_id",
       "is_fb",
+      "is_paid",
       "meta_install_referrer",
       "used_install_referrer",
       "view_attr_window",
@@ -7819,6 +7820,15 @@ public class Application extends APINode {
     }
     public APIRequestCreateMmpAuditing setIsFb (String isFb) {
       this.setParam("is_fb", isFb);
+      return this;
+    }
+
+    public APIRequestCreateMmpAuditing setIsPaid (Boolean isPaid) {
+      this.setParam("is_paid", isPaid);
+      return this;
+    }
+    public APIRequestCreateMmpAuditing setIsPaid (String isPaid) {
+      this.setParam("is_paid", isPaid);
       return this;
     }
 

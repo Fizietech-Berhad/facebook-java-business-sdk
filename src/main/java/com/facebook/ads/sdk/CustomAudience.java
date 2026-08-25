@@ -4290,6 +4290,8 @@ public class CustomAudience extends APINode {
       VALUE_EXCLUSION_ONLY("EXCLUSION_ONLY"),
       @SerializedName("NONE")
       VALUE_NONE("NONE"),
+      @SerializedName("NO_DERIVATIVES")
+      VALUE_NO_DERIVATIVES("NO_DERIVATIVES"),
       ;
 
       private String value;

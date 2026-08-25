@@ -47,6 +47,8 @@ public class IGUserExportForCAM extends APINode {
   private List<String> mBadges = null;
   @SerializedName("biography")
   private String mBiography = null;
+  @SerializedName("category")
+  private String mCategory = null;
   @SerializedName("country")
   private String mCountry = null;
   @SerializedName("email")
@@ -272,6 +274,15 @@ public class IGUserExportForCAM extends APINode {
 
   public IGUserExportForCAM setFieldBiography(String value) {
     this.mBiography = value;
+    return this;
+  }
+
+  public String getFieldCategory() {
+    return mCategory;
+  }
+
+  public IGUserExportForCAM setFieldCategory(String value) {
+    this.mCategory = value;
     return this;
   }
 
@@ -2010,6 +2021,8 @@ public class IGUserExportForCAM extends APINode {
   public static enum EnumRecommendationType {
       @SerializedName("high_ad_performance")
       VALUE_HIGH_AD_PERFORMANCE("high_ad_performance"),
+      @SerializedName("interested_in_collaboration")
+      VALUE_INTERESTED_IN_COLLABORATION("interested_in_collaboration"),
       @SerializedName("most_ads_experience")
       VALUE_MOST_ADS_EXPERIENCE("most_ads_experience"),
       @SerializedName("most_relevant_for_me")
@@ -2146,6 +2159,7 @@ public class IGUserExportForCAM extends APINode {
     this.mAgeBucket = instance.mAgeBucket;
     this.mBadges = instance.mBadges;
     this.mBiography = instance.mBiography;
+    this.mCategory = instance.mCategory;
     this.mCountry = instance.mCountry;
     this.mEmail = instance.mEmail;
     this.mGender = instance.mGender;
