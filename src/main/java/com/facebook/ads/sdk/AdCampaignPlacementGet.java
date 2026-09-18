@@ -502,6 +502,8 @@ public class AdCampaignPlacementGet extends APINode {
       VALUE_MESSENGER("MESSENGER"),
       @SerializedName("OCULUS")
       VALUE_OCULUS("OCULUS"),
+      @SerializedName("STREAMING_SERVICES")
+      VALUE_STREAMING_SERVICES("STREAMING_SERVICES"),
       @SerializedName("THREADS")
       VALUE_THREADS("THREADS"),
       @SerializedName("WHATSAPP")

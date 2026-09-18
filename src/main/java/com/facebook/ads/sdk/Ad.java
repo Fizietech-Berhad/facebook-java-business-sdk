@@ -79,6 +79,8 @@ public class Ad extends APINode {
   private AdCreative mCreative = null;
   @SerializedName("creative_asset_groups_spec")
   private AdCreativeAssetGroupsSpec mCreativeAssetGroupsSpec = null;
+  @SerializedName("creative_audience_pairing_persona")
+  private CreativeAudiencePairingPersona mCreativeAudiencePairingPersona = null;
   @SerializedName("creative_automation_spec")
   private AdCreativeAutomationSpec mCreativeAutomationSpec = null;
   @SerializedName("demolink_hash")
@@ -468,6 +470,10 @@ public class Ad extends APINode {
 
   public AdCreativeAssetGroupsSpec getFieldCreativeAssetGroupsSpec() {
     return mCreativeAssetGroupsSpec;
+  }
+
+  public CreativeAudiencePairingPersona getFieldCreativeAudiencePairingPersona() {
+    return mCreativeAudiencePairingPersona;
   }
 
   public AdCreativeAutomationSpec getFieldCreativeAutomationSpec() {
@@ -1654,6 +1660,7 @@ public class Ad extends APINode {
       "created_time",
       "creative",
       "creative_asset_groups_spec",
+      "creative_audience_pairing_persona",
       "creative_automation_spec",
       "demolink_hash",
       "display_sequence",
@@ -1935,6 +1942,13 @@ public class Ad extends APINode {
     }
     public APIRequestGetCopies requestCreativeAssetGroupsSpecField (boolean value) {
       this.requestField("creative_asset_groups_spec", value);
+      return this;
+    }
+    public APIRequestGetCopies requestCreativeAudiencePairingPersonaField () {
+      return this.requestCreativeAudiencePairingPersonaField(true);
+    }
+    public APIRequestGetCopies requestCreativeAudiencePairingPersonaField (boolean value) {
+      this.requestField("creative_audience_pairing_persona", value);
       return this;
     }
     public APIRequestGetCopies requestCreativeAutomationSpecField () {
@@ -3651,6 +3665,7 @@ public class Ad extends APINode {
       "created_time",
       "creative",
       "creative_asset_groups_spec",
+      "creative_audience_pairing_persona",
       "creative_automation_spec",
       "demolink_hash",
       "display_sequence",
@@ -3943,6 +3958,13 @@ public class Ad extends APINode {
       this.requestField("creative_asset_groups_spec", value);
       return this;
     }
+    public APIRequestGet requestCreativeAudiencePairingPersonaField () {
+      return this.requestCreativeAudiencePairingPersonaField(true);
+    }
+    public APIRequestGet requestCreativeAudiencePairingPersonaField (boolean value) {
+      this.requestField("creative_audience_pairing_persona", value);
+      return this;
+    }
     public APIRequestGet requestCreativeAutomationSpecField () {
       return this.requestCreativeAutomationSpecField(true);
     }
@@ -4116,6 +4138,7 @@ public class Ad extends APINode {
       "conversion_domain",
       "creative",
       "creative_asset_groups_spec",
+      "creative_audience_pairing_persona",
       "creative_automation_spec",
       "display_sequence",
       "draft_adgroup_id",
@@ -4247,6 +4270,15 @@ public class Ad extends APINode {
     }
     public APIRequestUpdate setCreativeAssetGroupsSpec (String creativeAssetGroupsSpec) {
       this.setParam("creative_asset_groups_spec", creativeAssetGroupsSpec);
+      return this;
+    }
+
+    public APIRequestUpdate setCreativeAudiencePairingPersona (Map<String, String> creativeAudiencePairingPersona) {
+      this.setParam("creative_audience_pairing_persona", creativeAudiencePairingPersona);
+      return this;
+    }
+    public APIRequestUpdate setCreativeAudiencePairingPersona (String creativeAudiencePairingPersona) {
+      this.setParam("creative_audience_pairing_persona", creativeAudiencePairingPersona);
       return this;
     }
 
@@ -4630,6 +4662,7 @@ public class Ad extends APINode {
     this.mCreatedTime = instance.mCreatedTime;
     this.mCreative = instance.mCreative;
     this.mCreativeAssetGroupsSpec = instance.mCreativeAssetGroupsSpec;
+    this.mCreativeAudiencePairingPersona = instance.mCreativeAudiencePairingPersona;
     this.mCreativeAutomationSpec = instance.mCreativeAutomationSpec;
     this.mDemolinkHash = instance.mDemolinkHash;
     this.mDisplaySequence = instance.mDisplaySequence;

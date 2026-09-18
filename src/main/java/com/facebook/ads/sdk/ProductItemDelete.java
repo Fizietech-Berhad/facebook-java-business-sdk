@@ -40,33 +40,23 @@ import com.facebook.ads.sdk.APIException.MalformedResponseException;
  * pull request for this class.
  *
  */
-public class ProductSetPost extends APINode {
-  @SerializedName("filter")
-  private String mFilter = null;
-  @SerializedName("id")
-  private Long mId = null;
-  @SerializedName("name")
-  private String mName = null;
-  @SerializedName("parent_id")
-  private Long mParentId = null;
-  @SerializedName("product_count")
-  private Long mProductCount = null;
-  @SerializedName("retailer_id")
-  private String mRetailerId = null;
+public class ProductItemDelete extends APINode {
+  @SerializedName("success")
+  private Boolean mSuccess = null;
   protected static Gson gson = null;
 
-  public ProductSetPost() {
+  public ProductItemDelete() {
   }
 
   public String getId() {
-    return getFieldId().toString();
+    return null;
   }
-  public static ProductSetPost loadJSON(String json, APIContext context, String header) {
-    ProductSetPost productSetPost = getGson().fromJson(json, ProductSetPost.class);
+  public static ProductItemDelete loadJSON(String json, APIContext context, String header) {
+    ProductItemDelete productItemDelete = getGson().fromJson(json, ProductItemDelete.class);
     if (context.isDebug()) {
       JsonParser parser = new JsonParser();
       JsonElement o1 = parser.parse(json);
-      JsonElement o2 = parser.parse(productSetPost.toString());
+      JsonElement o2 = parser.parse(productItemDelete.toString());
       if (o1.getAsJsonObject().get("__fb_trace_id__") != null) {
         o2.getAsJsonObject().add("__fb_trace_id__", o1.getAsJsonObject().get("__fb_trace_id__"));
       }
@@ -76,14 +66,14 @@ public class ProductSetPost extends APINode {
         context.log("[Object]" + o2);
       }
     }
-    productSetPost.context = context;
-    productSetPost.rawValue = json;
-    productSetPost.header = header;
-    return productSetPost;
+    productItemDelete.context = context;
+    productItemDelete.rawValue = json;
+    productItemDelete.header = header;
+    return productItemDelete;
   }
 
-  public static APINodeList<ProductSetPost> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
-    APINodeList<ProductSetPost> productSetPosts = new APINodeList<ProductSetPost>(request, json, header);
+  public static APINodeList<ProductItemDelete> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
+    APINodeList<ProductItemDelete> productItemDeletes = new APINodeList<ProductItemDelete>(request, json, header);
     JsonArray arr;
     JsonObject obj;
     JsonParser parser = new JsonParser();
@@ -94,9 +84,9 @@ public class ProductSetPost extends APINode {
         // First, check if it's a pure JSON Array
         arr = result.getAsJsonArray();
         for (int i = 0; i < arr.size(); i++) {
-          productSetPosts.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+          productItemDeletes.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
         };
-        return productSetPosts;
+        return productItemDeletes;
       } else if (result.isJsonObject()) {
         obj = result.getAsJsonObject();
         if (obj.has("data")) {
@@ -106,20 +96,20 @@ public class ProductSetPost extends APINode {
                 JsonObject cursors = paging.get("cursors").getAsJsonObject();
                 String before = cursors.has("before") ? cursors.get("before").getAsString() : null;
                 String after = cursors.has("after") ? cursors.get("after").getAsString() : null;
-                productSetPosts.setCursors(before, after);
+                productItemDeletes.setCursors(before, after);
             }
             String previous = paging.has("previous") ? paging.get("previous").getAsString() : null;
             String next = paging.has("next") ? paging.get("next").getAsString() : null;
-            productSetPosts.setPaging(previous, next);
+            productItemDeletes.setPaging(previous, next);
             if (context.hasAppSecret()) {
-              productSetPosts.setAppSecret(context.getAppSecretProof());
+              productItemDeletes.setAppSecret(context.getAppSecretProof());
             }
           }
           if (obj.get("data").isJsonArray()) {
             // Second, check if it's a JSON array with "data"
             arr = obj.get("data").getAsJsonArray();
             for (int i = 0; i < arr.size(); i++) {
-              productSetPosts.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+              productItemDeletes.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
             };
           } else if (obj.get("data").isJsonObject()) {
             // Third, check if it's a JSON object with "data"
@@ -130,23 +120,23 @@ public class ProductSetPost extends APINode {
                 isRedownload = true;
                 obj = obj.getAsJsonObject(s);
                 for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-                  productSetPosts.add(loadJSON(entry.getValue().toString(), context, header));
+                  productItemDeletes.add(loadJSON(entry.getValue().toString(), context, header));
                 }
                 break;
               }
             }
             if (!isRedownload) {
-              productSetPosts.add(loadJSON(obj.toString(), context, header));
+              productItemDeletes.add(loadJSON(obj.toString(), context, header));
             }
           }
-          return productSetPosts;
+          return productItemDeletes;
         } else if (obj.has("images")) {
           // Fourth, check if it's a map of image objects
           obj = obj.get("images").getAsJsonObject();
           for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-              productSetPosts.add(loadJSON(entry.getValue().toString(), context, header));
+              productItemDeletes.add(loadJSON(entry.getValue().toString(), context, header));
           }
-          return productSetPosts;
+          return productItemDeletes;
         } else {
           // Fifth, check if it's an array of objects indexed by id
           boolean isIdIndexedArray = true;
@@ -163,20 +153,20 @@ public class ProductSetPost extends APINode {
               value.getAsJsonObject().get("id") != null &&
               value.getAsJsonObject().get("id").getAsString().equals(key)
             ) {
-              productSetPosts.add(loadJSON(value.toString(), context, header));
+              productItemDeletes.add(loadJSON(value.toString(), context, header));
             } else {
               isIdIndexedArray = false;
               break;
             }
           }
           if (isIdIndexedArray) {
-            return productSetPosts;
+            return productItemDeletes;
           }
 
           // Sixth, check if it's pure JsonObject
-          productSetPosts.clear();
-          productSetPosts.add(loadJSON(json, context, header));
-          return productSetPosts;
+          productItemDeletes.clear();
+          productItemDeletes.add(loadJSON(json, context, header));
+          return productItemDeletes;
         }
       }
     } catch (Exception e) {
@@ -204,57 +194,12 @@ public class ProductSetPost extends APINode {
   }
 
 
-  public String getFieldFilter() {
-    return mFilter;
+  public Boolean getFieldSuccess() {
+    return mSuccess;
   }
 
-  public ProductSetPost setFieldFilter(String value) {
-    this.mFilter = value;
-    return this;
-  }
-
-  public Long getFieldId() {
-    return mId;
-  }
-
-  public ProductSetPost setFieldId(Long value) {
-    this.mId = value;
-    return this;
-  }
-
-  public String getFieldName() {
-    return mName;
-  }
-
-  public ProductSetPost setFieldName(String value) {
-    this.mName = value;
-    return this;
-  }
-
-  public Long getFieldParentId() {
-    return mParentId;
-  }
-
-  public ProductSetPost setFieldParentId(Long value) {
-    this.mParentId = value;
-    return this;
-  }
-
-  public Long getFieldProductCount() {
-    return mProductCount;
-  }
-
-  public ProductSetPost setFieldProductCount(Long value) {
-    this.mProductCount = value;
-    return this;
-  }
-
-  public String getFieldRetailerId() {
-    return mRetailerId;
-  }
-
-  public ProductSetPost setFieldRetailerId(String value) {
-    this.mRetailerId = value;
+  public ProductItemDelete setFieldSuccess(Boolean value) {
+    this.mSuccess = value;
     return this;
   }
 
@@ -274,22 +219,17 @@ public class ProductSetPost extends APINode {
     return gson;
   }
 
-  public ProductSetPost copyFrom(ProductSetPost instance) {
-    this.mFilter = instance.mFilter;
-    this.mId = instance.mId;
-    this.mName = instance.mName;
-    this.mParentId = instance.mParentId;
-    this.mProductCount = instance.mProductCount;
-    this.mRetailerId = instance.mRetailerId;
+  public ProductItemDelete copyFrom(ProductItemDelete instance) {
+    this.mSuccess = instance.mSuccess;
     this.context = instance.context;
     this.rawValue = instance.rawValue;
     return this;
   }
 
-  public static APIRequest.ResponseParser<ProductSetPost> getParser() {
-    return new APIRequest.ResponseParser<ProductSetPost>() {
-      public APINodeList<ProductSetPost> parseResponse(String response, APIContext context, APIRequest<ProductSetPost> request, String header) throws MalformedResponseException {
-        return ProductSetPost.parseResponse(response, context, request, header);
+  public static APIRequest.ResponseParser<ProductItemDelete> getParser() {
+    return new APIRequest.ResponseParser<ProductItemDelete>() {
+      public APINodeList<ProductItemDelete> parseResponse(String response, APIContext context, APIRequest<ProductItemDelete> request, String header) throws MalformedResponseException {
+        return ProductItemDelete.parseResponse(response, context, request, header);
       }
     };
   }

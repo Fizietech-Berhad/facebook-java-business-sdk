@@ -3752,6 +3752,7 @@ public class IGUser extends APINode {
       "has_brand_partnership_experience",
       "id",
       "is_account_verified",
+      "is_brand_following_creator",
       "is_creator_following_brand",
       "is_paid_partnership_messages_enabled",
       "messaging_id",
@@ -4159,6 +4160,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetCreatorMarketPlaceCreators requestIsAccountVerifiedField (boolean value) {
       this.requestField("is_account_verified", value);
+      return this;
+    }
+    public APIRequestGetCreatorMarketPlaceCreators requestIsBrandFollowingCreatorField () {
+      return this.requestIsBrandFollowingCreatorField(true);
+    }
+    public APIRequestGetCreatorMarketPlaceCreators requestIsBrandFollowingCreatorField (boolean value) {
+      this.requestField("is_brand_following_creator", value);
       return this;
     }
     public APIRequestGetCreatorMarketPlaceCreators requestIsCreatorFollowingBrandField () {
@@ -4945,11 +4953,20 @@ public class IGUser extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "ingest_first_video_received_time",
+      "ingest_is_ready_to_start",
+      "ingest_key",
+      "ingest_last_heartbeat_time",
+      "ingest_state",
+      "ingest_url",
+      "ingest_video_height",
+      "ingest_video_width",
       "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
       "like_count",
+      "live_status",
       "media_audio_type",
       "media_product_type",
       "media_type",
@@ -5147,6 +5164,62 @@ public class IGUser extends APINode {
       this.requestField("ig_id", value);
       return this;
     }
+    public APIRequestGetLiveMedia requestIngestFirstVideoReceivedTimeField () {
+      return this.requestIngestFirstVideoReceivedTimeField(true);
+    }
+    public APIRequestGetLiveMedia requestIngestFirstVideoReceivedTimeField (boolean value) {
+      this.requestField("ingest_first_video_received_time", value);
+      return this;
+    }
+    public APIRequestGetLiveMedia requestIngestIsReadyToStartField () {
+      return this.requestIngestIsReadyToStartField(true);
+    }
+    public APIRequestGetLiveMedia requestIngestIsReadyToStartField (boolean value) {
+      this.requestField("ingest_is_ready_to_start", value);
+      return this;
+    }
+    public APIRequestGetLiveMedia requestIngestKeyField () {
+      return this.requestIngestKeyField(true);
+    }
+    public APIRequestGetLiveMedia requestIngestKeyField (boolean value) {
+      this.requestField("ingest_key", value);
+      return this;
+    }
+    public APIRequestGetLiveMedia requestIngestLastHeartbeatTimeField () {
+      return this.requestIngestLastHeartbeatTimeField(true);
+    }
+    public APIRequestGetLiveMedia requestIngestLastHeartbeatTimeField (boolean value) {
+      this.requestField("ingest_last_heartbeat_time", value);
+      return this;
+    }
+    public APIRequestGetLiveMedia requestIngestStateField () {
+      return this.requestIngestStateField(true);
+    }
+    public APIRequestGetLiveMedia requestIngestStateField (boolean value) {
+      this.requestField("ingest_state", value);
+      return this;
+    }
+    public APIRequestGetLiveMedia requestIngestUrlField () {
+      return this.requestIngestUrlField(true);
+    }
+    public APIRequestGetLiveMedia requestIngestUrlField (boolean value) {
+      this.requestField("ingest_url", value);
+      return this;
+    }
+    public APIRequestGetLiveMedia requestIngestVideoHeightField () {
+      return this.requestIngestVideoHeightField(true);
+    }
+    public APIRequestGetLiveMedia requestIngestVideoHeightField (boolean value) {
+      this.requestField("ingest_video_height", value);
+      return this;
+    }
+    public APIRequestGetLiveMedia requestIngestVideoWidthField () {
+      return this.requestIngestVideoWidthField(true);
+    }
+    public APIRequestGetLiveMedia requestIngestVideoWidthField (boolean value) {
+      this.requestField("ingest_video_width", value);
+      return this;
+    }
     public APIRequestGetLiveMedia requestIsAiGeneratedField () {
       return this.requestIsAiGeneratedField(true);
     }
@@ -5180,6 +5253,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetLiveMedia requestLikeCountField (boolean value) {
       this.requestField("like_count", value);
+      return this;
+    }
+    public APIRequestGetLiveMedia requestLiveStatusField () {
+      return this.requestLiveStatusField(true);
+    }
+    public APIRequestGetLiveMedia requestLiveStatusField (boolean value) {
+      this.requestField("live_status", value);
       return this;
     }
     public APIRequestGetLiveMedia requestMediaAudioTypeField () {
@@ -5334,11 +5414,20 @@ public class IGUser extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "ingest_first_video_received_time",
+      "ingest_is_ready_to_start",
+      "ingest_key",
+      "ingest_last_heartbeat_time",
+      "ingest_state",
+      "ingest_url",
+      "ingest_video_height",
+      "ingest_video_width",
       "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
       "like_count",
+      "live_status",
       "media_audio_type",
       "media_product_type",
       "media_type",
@@ -5536,6 +5625,62 @@ public class IGUser extends APINode {
       this.requestField("ig_id", value);
       return this;
     }
+    public APIRequestGetMedia requestIngestFirstVideoReceivedTimeField () {
+      return this.requestIngestFirstVideoReceivedTimeField(true);
+    }
+    public APIRequestGetMedia requestIngestFirstVideoReceivedTimeField (boolean value) {
+      this.requestField("ingest_first_video_received_time", value);
+      return this;
+    }
+    public APIRequestGetMedia requestIngestIsReadyToStartField () {
+      return this.requestIngestIsReadyToStartField(true);
+    }
+    public APIRequestGetMedia requestIngestIsReadyToStartField (boolean value) {
+      this.requestField("ingest_is_ready_to_start", value);
+      return this;
+    }
+    public APIRequestGetMedia requestIngestKeyField () {
+      return this.requestIngestKeyField(true);
+    }
+    public APIRequestGetMedia requestIngestKeyField (boolean value) {
+      this.requestField("ingest_key", value);
+      return this;
+    }
+    public APIRequestGetMedia requestIngestLastHeartbeatTimeField () {
+      return this.requestIngestLastHeartbeatTimeField(true);
+    }
+    public APIRequestGetMedia requestIngestLastHeartbeatTimeField (boolean value) {
+      this.requestField("ingest_last_heartbeat_time", value);
+      return this;
+    }
+    public APIRequestGetMedia requestIngestStateField () {
+      return this.requestIngestStateField(true);
+    }
+    public APIRequestGetMedia requestIngestStateField (boolean value) {
+      this.requestField("ingest_state", value);
+      return this;
+    }
+    public APIRequestGetMedia requestIngestUrlField () {
+      return this.requestIngestUrlField(true);
+    }
+    public APIRequestGetMedia requestIngestUrlField (boolean value) {
+      this.requestField("ingest_url", value);
+      return this;
+    }
+    public APIRequestGetMedia requestIngestVideoHeightField () {
+      return this.requestIngestVideoHeightField(true);
+    }
+    public APIRequestGetMedia requestIngestVideoHeightField (boolean value) {
+      this.requestField("ingest_video_height", value);
+      return this;
+    }
+    public APIRequestGetMedia requestIngestVideoWidthField () {
+      return this.requestIngestVideoWidthField(true);
+    }
+    public APIRequestGetMedia requestIngestVideoWidthField (boolean value) {
+      this.requestField("ingest_video_width", value);
+      return this;
+    }
     public APIRequestGetMedia requestIsAiGeneratedField () {
       return this.requestIsAiGeneratedField(true);
     }
@@ -5569,6 +5714,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetMedia requestLikeCountField (boolean value) {
       this.requestField("like_count", value);
+      return this;
+    }
+    public APIRequestGetMedia requestLiveStatusField () {
+      return this.requestLiveStatusField(true);
+    }
+    public APIRequestGetMedia requestLiveStatusField (boolean value) {
+      this.requestField("live_status", value);
       return this;
     }
     public APIRequestGetMedia requestMediaAudioTypeField () {
@@ -7132,11 +7284,20 @@ public class IGUser extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "ingest_first_video_received_time",
+      "ingest_is_ready_to_start",
+      "ingest_key",
+      "ingest_last_heartbeat_time",
+      "ingest_state",
+      "ingest_url",
+      "ingest_video_height",
+      "ingest_video_width",
       "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
       "like_count",
+      "live_status",
       "media_audio_type",
       "media_product_type",
       "media_type",
@@ -7324,6 +7485,62 @@ public class IGUser extends APINode {
       this.requestField("ig_id", value);
       return this;
     }
+    public APIRequestGetStories requestIngestFirstVideoReceivedTimeField () {
+      return this.requestIngestFirstVideoReceivedTimeField(true);
+    }
+    public APIRequestGetStories requestIngestFirstVideoReceivedTimeField (boolean value) {
+      this.requestField("ingest_first_video_received_time", value);
+      return this;
+    }
+    public APIRequestGetStories requestIngestIsReadyToStartField () {
+      return this.requestIngestIsReadyToStartField(true);
+    }
+    public APIRequestGetStories requestIngestIsReadyToStartField (boolean value) {
+      this.requestField("ingest_is_ready_to_start", value);
+      return this;
+    }
+    public APIRequestGetStories requestIngestKeyField () {
+      return this.requestIngestKeyField(true);
+    }
+    public APIRequestGetStories requestIngestKeyField (boolean value) {
+      this.requestField("ingest_key", value);
+      return this;
+    }
+    public APIRequestGetStories requestIngestLastHeartbeatTimeField () {
+      return this.requestIngestLastHeartbeatTimeField(true);
+    }
+    public APIRequestGetStories requestIngestLastHeartbeatTimeField (boolean value) {
+      this.requestField("ingest_last_heartbeat_time", value);
+      return this;
+    }
+    public APIRequestGetStories requestIngestStateField () {
+      return this.requestIngestStateField(true);
+    }
+    public APIRequestGetStories requestIngestStateField (boolean value) {
+      this.requestField("ingest_state", value);
+      return this;
+    }
+    public APIRequestGetStories requestIngestUrlField () {
+      return this.requestIngestUrlField(true);
+    }
+    public APIRequestGetStories requestIngestUrlField (boolean value) {
+      this.requestField("ingest_url", value);
+      return this;
+    }
+    public APIRequestGetStories requestIngestVideoHeightField () {
+      return this.requestIngestVideoHeightField(true);
+    }
+    public APIRequestGetStories requestIngestVideoHeightField (boolean value) {
+      this.requestField("ingest_video_height", value);
+      return this;
+    }
+    public APIRequestGetStories requestIngestVideoWidthField () {
+      return this.requestIngestVideoWidthField(true);
+    }
+    public APIRequestGetStories requestIngestVideoWidthField (boolean value) {
+      this.requestField("ingest_video_width", value);
+      return this;
+    }
     public APIRequestGetStories requestIsAiGeneratedField () {
       return this.requestIsAiGeneratedField(true);
     }
@@ -7357,6 +7574,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetStories requestLikeCountField (boolean value) {
       this.requestField("like_count", value);
+      return this;
+    }
+    public APIRequestGetStories requestLiveStatusField () {
+      return this.requestLiveStatusField(true);
+    }
+    public APIRequestGetStories requestLiveStatusField (boolean value) {
+      this.requestField("live_status", value);
       return this;
     }
     public APIRequestGetStories requestMediaAudioTypeField () {
@@ -7512,11 +7736,20 @@ public class IGUser extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "ingest_first_video_received_time",
+      "ingest_is_ready_to_start",
+      "ingest_key",
+      "ingest_last_heartbeat_time",
+      "ingest_state",
+      "ingest_url",
+      "ingest_video_height",
+      "ingest_video_width",
       "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
       "like_count",
+      "live_status",
       "media_audio_type",
       "media_product_type",
       "media_type",
@@ -7719,6 +7952,62 @@ public class IGUser extends APINode {
       this.requestField("ig_id", value);
       return this;
     }
+    public APIRequestGetTags requestIngestFirstVideoReceivedTimeField () {
+      return this.requestIngestFirstVideoReceivedTimeField(true);
+    }
+    public APIRequestGetTags requestIngestFirstVideoReceivedTimeField (boolean value) {
+      this.requestField("ingest_first_video_received_time", value);
+      return this;
+    }
+    public APIRequestGetTags requestIngestIsReadyToStartField () {
+      return this.requestIngestIsReadyToStartField(true);
+    }
+    public APIRequestGetTags requestIngestIsReadyToStartField (boolean value) {
+      this.requestField("ingest_is_ready_to_start", value);
+      return this;
+    }
+    public APIRequestGetTags requestIngestKeyField () {
+      return this.requestIngestKeyField(true);
+    }
+    public APIRequestGetTags requestIngestKeyField (boolean value) {
+      this.requestField("ingest_key", value);
+      return this;
+    }
+    public APIRequestGetTags requestIngestLastHeartbeatTimeField () {
+      return this.requestIngestLastHeartbeatTimeField(true);
+    }
+    public APIRequestGetTags requestIngestLastHeartbeatTimeField (boolean value) {
+      this.requestField("ingest_last_heartbeat_time", value);
+      return this;
+    }
+    public APIRequestGetTags requestIngestStateField () {
+      return this.requestIngestStateField(true);
+    }
+    public APIRequestGetTags requestIngestStateField (boolean value) {
+      this.requestField("ingest_state", value);
+      return this;
+    }
+    public APIRequestGetTags requestIngestUrlField () {
+      return this.requestIngestUrlField(true);
+    }
+    public APIRequestGetTags requestIngestUrlField (boolean value) {
+      this.requestField("ingest_url", value);
+      return this;
+    }
+    public APIRequestGetTags requestIngestVideoHeightField () {
+      return this.requestIngestVideoHeightField(true);
+    }
+    public APIRequestGetTags requestIngestVideoHeightField (boolean value) {
+      this.requestField("ingest_video_height", value);
+      return this;
+    }
+    public APIRequestGetTags requestIngestVideoWidthField () {
+      return this.requestIngestVideoWidthField(true);
+    }
+    public APIRequestGetTags requestIngestVideoWidthField (boolean value) {
+      this.requestField("ingest_video_width", value);
+      return this;
+    }
     public APIRequestGetTags requestIsAiGeneratedField () {
       return this.requestIsAiGeneratedField(true);
     }
@@ -7752,6 +8041,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetTags requestLikeCountField (boolean value) {
       this.requestField("like_count", value);
+      return this;
+    }
+    public APIRequestGetTags requestLiveStatusField () {
+      return this.requestLiveStatusField(true);
+    }
+    public APIRequestGetTags requestLiveStatusField (boolean value) {
+      this.requestField("live_status", value);
       return this;
     }
     public APIRequestGetTags requestMediaAudioTypeField () {

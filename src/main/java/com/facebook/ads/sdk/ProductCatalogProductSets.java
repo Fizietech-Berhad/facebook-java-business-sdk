@@ -193,8 +193,8 @@ public class ProductCatalogProductSets extends APINode {
     return getGson().toJson(this);
   }
 
-  public APIRequestGenget genget() {
-    return new APIRequestGenget(this.getId(), context);
+  public APIRequestGenpost genpost() {
+    return new APIRequestGenpost(this.getId(), context);
   }
 
 
@@ -209,62 +209,48 @@ public class ProductCatalogProductSets extends APINode {
 
 
 
-  public static class APIRequestGenget extends APIRequest<ProductCatalogProductSetsGet> {
+  public static class APIRequestGenpost extends APIRequest<ProductCatalogProductSetsPost> {
 
-    APINodeList<ProductCatalogProductSetsGet> lastResponse = null;
+    ProductCatalogProductSetsPost lastResponse = null;
     @Override
-    public APINodeList<ProductCatalogProductSetsGet> getLastResponse() {
+    public ProductCatalogProductSetsPost getLastResponse() {
       return lastResponse;
     }
     public static final String[] PARAMS = {
-      "ad_url",
-      "after",
-      "ancestor_id",
-      "before",
       "fields",
-      "filtering",
-      "has_children",
-      "integrated_checkout_eligibility",
-      "integrated_checkout_partner",
-      "limit",
-      "parent_id",
-      "product_set_usages",
-      "retailer_id",
-      "sort",
-      "summary",
     };
 
     public static final String[] FIELDS = {
     };
 
     @Override
-    public APINodeList<ProductCatalogProductSetsGet> parseResponse(String response, String header) throws APIException {
-      return ProductCatalogProductSetsGet.parseResponse(response, getContext(), this, header);
+    public ProductCatalogProductSetsPost parseResponse(String response, String header) throws APIException {
+      return ProductCatalogProductSetsPost.parseResponse(response, getContext(), this, header).head();
     }
 
     @Override
-    public APINodeList<ProductCatalogProductSetsGet> execute() throws APIException {
+    public ProductCatalogProductSetsPost execute() throws APIException {
       return execute(new HashMap<String, Object>());
     }
 
     @Override
-    public APINodeList<ProductCatalogProductSetsGet> execute(Map<String, Object> extraParams) throws APIException {
+    public ProductCatalogProductSetsPost execute(Map<String, Object> extraParams) throws APIException {
       ResponseWrapper rw = executeInternal(extraParams);
-      lastResponse = parseResponse(rw.getBody(),rw.getHeader());
+      lastResponse = parseResponse(rw.getBody(), rw.getHeader());
       return lastResponse;
     }
 
-    public ListenableFuture<APINodeList<ProductCatalogProductSetsGet>> executeAsync() throws APIException {
+    public ListenableFuture<ProductCatalogProductSetsPost> executeAsync() throws APIException {
       return executeAsync(new HashMap<String, Object>());
     };
 
-    public ListenableFuture<APINodeList<ProductCatalogProductSetsGet>> executeAsync(Map<String, Object> extraParams) throws APIException {
+    public ListenableFuture<ProductCatalogProductSetsPost> executeAsync(Map<String, Object> extraParams) throws APIException {
       return Futures.transform(
         executeAsyncInternal(extraParams),
-        new Function<ResponseWrapper, APINodeList<ProductCatalogProductSetsGet>>() {
-           public APINodeList<ProductCatalogProductSetsGet> apply(ResponseWrapper result) {
+        new Function<ResponseWrapper, ProductCatalogProductSetsPost>() {
+           public ProductCatalogProductSetsPost apply(ResponseWrapper result) {
              try {
-               return APIRequestGenget.this.parseResponse(result.getBody(), result.getHeader());
+               return APIRequestGenpost.this.parseResponse(result.getBody(), result.getHeader());
              } catch (Exception e) {
                throw new RuntimeException(e);
              }
@@ -274,123 +260,33 @@ public class ProductCatalogProductSets extends APINode {
       );
     };
 
-    public APIRequestGenget(String nodeId, APIContext context) {
-      super(context, nodeId, "/product_sets", "GET", Arrays.asList(PARAMS));
+    public APIRequestGenpost(String nodeId, APIContext context) {
+      super(context, nodeId, "/product_sets", "POST", Arrays.asList(PARAMS));
     }
 
     @Override
-    public APIRequestGenget setParam(String param, Object value) {
+    public APIRequestGenpost setParam(String param, Object value) {
       setParamInternal(param, value);
       return this;
     }
 
     @Override
-    public APIRequestGenget setParams(Map<String, Object> params) {
+    public APIRequestGenpost setParams(Map<String, Object> params) {
       setParamsInternal(params);
       return this;
     }
 
 
-    public APIRequestGenget setAdUrl (String adUrl) {
-      this.setParam("ad_url", adUrl);
-      return this;
-    }
-
-    public APIRequestGenget setAfter (String after) {
-      this.setParam("after", after);
-      return this;
-    }
-
-    public APIRequestGenget setAncestorId (Long ancestorId) {
-      this.setParam("ancestor_id", ancestorId);
-      return this;
-    }
-    public APIRequestGenget setAncestorId (String ancestorId) {
-      this.setParam("ancestor_id", ancestorId);
-      return this;
-    }
-
-    public APIRequestGenget setBefore (String before) {
-      this.setParam("before", before);
-      return this;
-    }
-
-    public APIRequestGenget setFields (String fields) {
+    public APIRequestGenpost setFields (String fields) {
       this.setParam("fields", fields);
       return this;
     }
 
-    public APIRequestGenget setFiltering (String filtering) {
-      this.setParam("filtering", filtering);
-      return this;
-    }
-
-    public APIRequestGenget setHasChildren (Boolean hasChildren) {
-      this.setParam("has_children", hasChildren);
-      return this;
-    }
-    public APIRequestGenget setHasChildren (String hasChildren) {
-      this.setParam("has_children", hasChildren);
-      return this;
-    }
-
-    public APIRequestGenget setIntegratedCheckoutEligibility (ProductCatalogProductSetsGet.EnumIntegratedCheckoutEligibility integratedCheckoutEligibility) {
-      this.setParam("integrated_checkout_eligibility", integratedCheckoutEligibility);
-      return this;
-    }
-    public APIRequestGenget setIntegratedCheckoutEligibility (String integratedCheckoutEligibility) {
-      this.setParam("integrated_checkout_eligibility", integratedCheckoutEligibility);
-      return this;
-    }
-
-    public APIRequestGenget setIntegratedCheckoutPartner (ProductCatalogProductSetsGet.EnumIntegratedCheckoutPartner integratedCheckoutPartner) {
-      this.setParam("integrated_checkout_partner", integratedCheckoutPartner);
-      return this;
-    }
-    public APIRequestGenget setIntegratedCheckoutPartner (String integratedCheckoutPartner) {
-      this.setParam("integrated_checkout_partner", integratedCheckoutPartner);
-      return this;
-    }
-
-    public APIRequestGenget setLimit (Long limit) {
-      this.setParam("limit", limit);
-      return this;
-    }
-    public APIRequestGenget setLimit (String limit) {
-      this.setParam("limit", limit);
-      return this;
-    }
-
-    public APIRequestGenget setParentId (String parentId) {
-      this.setParam("parent_id", parentId);
-      return this;
-    }
-
-    public APIRequestGenget setProductSetUsages (String productSetUsages) {
-      this.setParam("product_set_usages", productSetUsages);
-      return this;
-    }
-
-    public APIRequestGenget setRetailerId (String retailerId) {
-      this.setParam("retailer_id", retailerId);
-      return this;
-    }
-
-    public APIRequestGenget setSort (String sort) {
-      this.setParam("sort", sort);
-      return this;
-    }
-
-    public APIRequestGenget setSummary (String summary) {
-      this.setParam("summary", summary);
-      return this;
-    }
-
-    public APIRequestGenget requestAllFields () {
+    public APIRequestGenpost requestAllFields () {
       return this.requestAllFields(true);
     }
 
-    public APIRequestGenget requestAllFields (boolean value) {
+    public APIRequestGenpost requestAllFields (boolean value) {
       for (String field : FIELDS) {
         this.requestField(field, value);
       }
@@ -398,12 +294,12 @@ public class ProductCatalogProductSets extends APINode {
     }
 
     @Override
-    public APIRequestGenget requestFields (List<String> fields) {
+    public APIRequestGenpost requestFields (List<String> fields) {
       return this.requestFields(fields, true);
     }
 
     @Override
-    public APIRequestGenget requestFields (List<String> fields, boolean value) {
+    public APIRequestGenpost requestFields (List<String> fields, boolean value) {
       for (String field : fields) {
         this.requestField(field, value);
       }
@@ -411,13 +307,13 @@ public class ProductCatalogProductSets extends APINode {
     }
 
     @Override
-    public APIRequestGenget requestField (String field) {
+    public APIRequestGenpost requestField (String field) {
       this.requestField(field, true);
       return this;
     }
 
     @Override
-    public APIRequestGenget requestField (String field, boolean value) {
+    public APIRequestGenpost requestField (String field, boolean value) {
       this.requestFieldInternal(field, value);
       return this;
     }

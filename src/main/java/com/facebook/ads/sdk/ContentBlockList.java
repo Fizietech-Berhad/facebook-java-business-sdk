@@ -1130,11 +1130,20 @@ public class ContentBlockList extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "ingest_first_video_received_time",
+      "ingest_is_ready_to_start",
+      "ingest_key",
+      "ingest_last_heartbeat_time",
+      "ingest_state",
+      "ingest_url",
+      "ingest_video_height",
+      "ingest_video_width",
       "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
       "like_count",
+      "live_status",
       "media_audio_type",
       "media_product_type",
       "media_type",
@@ -1322,6 +1331,62 @@ public class ContentBlockList extends APINode {
       this.requestField("ig_id", value);
       return this;
     }
+    public APIRequestGetInstagramContent requestIngestFirstVideoReceivedTimeField () {
+      return this.requestIngestFirstVideoReceivedTimeField(true);
+    }
+    public APIRequestGetInstagramContent requestIngestFirstVideoReceivedTimeField (boolean value) {
+      this.requestField("ingest_first_video_received_time", value);
+      return this;
+    }
+    public APIRequestGetInstagramContent requestIngestIsReadyToStartField () {
+      return this.requestIngestIsReadyToStartField(true);
+    }
+    public APIRequestGetInstagramContent requestIngestIsReadyToStartField (boolean value) {
+      this.requestField("ingest_is_ready_to_start", value);
+      return this;
+    }
+    public APIRequestGetInstagramContent requestIngestKeyField () {
+      return this.requestIngestKeyField(true);
+    }
+    public APIRequestGetInstagramContent requestIngestKeyField (boolean value) {
+      this.requestField("ingest_key", value);
+      return this;
+    }
+    public APIRequestGetInstagramContent requestIngestLastHeartbeatTimeField () {
+      return this.requestIngestLastHeartbeatTimeField(true);
+    }
+    public APIRequestGetInstagramContent requestIngestLastHeartbeatTimeField (boolean value) {
+      this.requestField("ingest_last_heartbeat_time", value);
+      return this;
+    }
+    public APIRequestGetInstagramContent requestIngestStateField () {
+      return this.requestIngestStateField(true);
+    }
+    public APIRequestGetInstagramContent requestIngestStateField (boolean value) {
+      this.requestField("ingest_state", value);
+      return this;
+    }
+    public APIRequestGetInstagramContent requestIngestUrlField () {
+      return this.requestIngestUrlField(true);
+    }
+    public APIRequestGetInstagramContent requestIngestUrlField (boolean value) {
+      this.requestField("ingest_url", value);
+      return this;
+    }
+    public APIRequestGetInstagramContent requestIngestVideoHeightField () {
+      return this.requestIngestVideoHeightField(true);
+    }
+    public APIRequestGetInstagramContent requestIngestVideoHeightField (boolean value) {
+      this.requestField("ingest_video_height", value);
+      return this;
+    }
+    public APIRequestGetInstagramContent requestIngestVideoWidthField () {
+      return this.requestIngestVideoWidthField(true);
+    }
+    public APIRequestGetInstagramContent requestIngestVideoWidthField (boolean value) {
+      this.requestField("ingest_video_width", value);
+      return this;
+    }
     public APIRequestGetInstagramContent requestIsAiGeneratedField () {
       return this.requestIsAiGeneratedField(true);
     }
@@ -1355,6 +1420,13 @@ public class ContentBlockList extends APINode {
     }
     public APIRequestGetInstagramContent requestLikeCountField (boolean value) {
       this.requestField("like_count", value);
+      return this;
+    }
+    public APIRequestGetInstagramContent requestLiveStatusField () {
+      return this.requestLiveStatusField(true);
+    }
+    public APIRequestGetInstagramContent requestLiveStatusField (boolean value) {
+      this.requestField("live_status", value);
       return this;
     }
     public APIRequestGetInstagramContent requestMediaAudioTypeField () {

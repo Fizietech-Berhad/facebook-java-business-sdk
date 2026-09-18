@@ -47,6 +47,8 @@ public class Campaign extends APINode {
   private List<AdLabel> mAdlabels = null;
   @SerializedName("advantage_state_info")
   private AdCampaignGroupAdvantageState mAdvantageStateInfo = null;
+  @SerializedName("bid_constraints")
+  private AdCampaignGroupBidConstraints mBidConstraints = null;
   @SerializedName("bid_strategy")
   private EnumBidStrategy mBidStrategy = null;
   @SerializedName("boosted_object_id")
@@ -413,6 +415,10 @@ public class Campaign extends APINode {
 
   public AdCampaignGroupAdvantageState getFieldAdvantageStateInfo() {
     return mAdvantageStateInfo;
+  }
+
+  public AdCampaignGroupBidConstraints getFieldBidConstraints() {
+    return mBidConstraints;
   }
 
   public EnumBidStrategy getFieldBidStrategy() {
@@ -1211,6 +1217,7 @@ public class Campaign extends APINode {
       "created_time",
       "creative",
       "creative_asset_groups_spec",
+      "creative_audience_pairing_persona",
       "creative_automation_spec",
       "demolink_hash",
       "display_sequence",
@@ -1494,6 +1501,13 @@ public class Campaign extends APINode {
       this.requestField("creative_asset_groups_spec", value);
       return this;
     }
+    public APIRequestGetAds requestCreativeAudiencePairingPersonaField () {
+      return this.requestCreativeAudiencePairingPersonaField(true);
+    }
+    public APIRequestGetAds requestCreativeAudiencePairingPersonaField (boolean value) {
+      this.requestField("creative_audience_pairing_persona", value);
+      return this;
+    }
     public APIRequestGetAds requestCreativeAutomationSpecField () {
       return this.requestCreativeAutomationSpecField(true);
     }
@@ -1687,7 +1701,6 @@ public class Campaign extends APINode {
       "campaign_attribution",
       "campaign_id",
       "configured_status",
-      "cost_bidding_mode",
       "created_time",
       "creative_diversity_label",
       "creative_diversity_score",
@@ -2033,13 +2046,6 @@ public class Campaign extends APINode {
     }
     public APIRequestGetAdSets requestConfiguredStatusField (boolean value) {
       this.requestField("configured_status", value);
-      return this;
-    }
-    public APIRequestGetAdSets requestCostBiddingModeField () {
-      return this.requestCostBiddingModeField(true);
-    }
-    public APIRequestGetAdSets requestCostBiddingModeField (boolean value) {
-      this.requestField("cost_bidding_mode", value);
       return this;
     }
     public APIRequestGetAdSets requestCreatedTimeField () {
@@ -2843,6 +2849,7 @@ public class Campaign extends APINode {
       "account_id",
       "adlabels",
       "advantage_state_info",
+      "bid_constraints",
       "bid_strategy",
       "boosted_object_id",
       "brand_lift_studies",
@@ -3035,6 +3042,13 @@ public class Campaign extends APINode {
     }
     public APIRequestGetCopies requestAdvantageStateInfoField (boolean value) {
       this.requestField("advantage_state_info", value);
+      return this;
+    }
+    public APIRequestGetCopies requestBidConstraintsField () {
+      return this.requestBidConstraintsField(true);
+    }
+    public APIRequestGetCopies requestBidConstraintsField (boolean value) {
+      this.requestField("bid_constraints", value);
       return this;
     }
     public APIRequestGetCopies requestBidStrategyField () {
@@ -4290,6 +4304,7 @@ public class Campaign extends APINode {
       "account_id",
       "adlabels",
       "advantage_state_info",
+      "bid_constraints",
       "bid_strategy",
       "boosted_object_id",
       "brand_lift_studies",
@@ -4482,6 +4497,13 @@ public class Campaign extends APINode {
     }
     public APIRequestGet requestAdvantageStateInfoField (boolean value) {
       this.requestField("advantage_state_info", value);
+      return this;
+    }
+    public APIRequestGet requestBidConstraintsField () {
+      return this.requestBidConstraintsField(true);
+    }
+    public APIRequestGet requestBidConstraintsField (boolean value) {
+      this.requestField("bid_constraints", value);
       return this;
     }
     public APIRequestGet requestBidStrategyField () {
@@ -6085,6 +6107,7 @@ public class Campaign extends APINode {
     this.mAccountId = instance.mAccountId;
     this.mAdlabels = instance.mAdlabels;
     this.mAdvantageStateInfo = instance.mAdvantageStateInfo;
+    this.mBidConstraints = instance.mBidConstraints;
     this.mBidStrategy = instance.mBidStrategy;
     this.mBoostedObjectId = instance.mBoostedObjectId;
     this.mBrandLiftStudies = instance.mBrandLiftStudies;

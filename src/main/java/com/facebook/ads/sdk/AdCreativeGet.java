@@ -99,6 +99,8 @@ public class AdCreativeGet extends APINode {
   private Object mFacebookBrandedContent = null;
   @SerializedName("format_transformation_spec")
   private List<Object> mFormatTransformationSpec = null;
+  @SerializedName("generative_asset_spec")
+  private Object mGenerativeAssetSpec = null;
   @SerializedName("id")
   private Long mId = null;
   @SerializedName("image_crops")
@@ -598,6 +600,15 @@ public class AdCreativeGet extends APINode {
 
   public AdCreativeGet setFieldFormatTransformationSpec(List<Object> value) {
     this.mFormatTransformationSpec = value;
+    return this;
+  }
+
+  public Object getFieldGenerativeAssetSpec() {
+    return mGenerativeAssetSpec;
+  }
+
+  public AdCreativeGet setFieldGenerativeAssetSpec(Object value) {
+    this.mGenerativeAssetSpec = value;
     return this;
   }
 
@@ -1333,6 +1344,8 @@ public class AdCreativeGet extends APINode {
       VALUE_SHARE("SHARE"),
       @SerializedName("SHOP_NOW")
       VALUE_SHOP_NOW("SHOP_NOW"),
+      @SerializedName("SHOP_ON_RETAILER")
+      VALUE_SHOP_ON_RETAILER("SHOP_ON_RETAILER"),
       @SerializedName("SHOP_WITH_AI")
       VALUE_SHOP_WITH_AI("SHOP_WITH_AI"),
       @SerializedName("SIGN_UP")
@@ -1618,6 +1631,7 @@ public class AdCreativeGet extends APINode {
     this.mExistingPostTitle = instance.mExistingPostTitle;
     this.mFacebookBrandedContent = instance.mFacebookBrandedContent;
     this.mFormatTransformationSpec = instance.mFormatTransformationSpec;
+    this.mGenerativeAssetSpec = instance.mGenerativeAssetSpec;
     this.mId = instance.mId;
     this.mImageCrops = instance.mImageCrops;
     this.mImageHash = instance.mImageHash;

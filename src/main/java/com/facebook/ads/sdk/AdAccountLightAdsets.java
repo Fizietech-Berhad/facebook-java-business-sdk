@@ -1,0 +1,513 @@
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+package com.facebook.ads.sdk;
+
+import java.io.File;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.Type;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.common.base.Function;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.SettableFuture;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
+import com.facebook.ads.sdk.APIException.MalformedResponseException;
+
+/**
+ * This class is auto-generated.
+ *
+ * For any issues or feature requests related to this class, please let us know
+ * on github and we'll fix in our codegen framework. We'll not be able to accept
+ * pull request for this class.
+ *
+ */
+public class AdAccountLightAdsets extends APINode {
+  @SerializedName("id")
+  private String mId = null;
+  protected static Gson gson = null;
+
+  public AdAccountLightAdsets() {
+  }
+
+  public String getId() {
+    return getFieldId().toString();
+  }
+  public static AdAccountLightAdsets loadJSON(String json, APIContext context, String header) {
+    AdAccountLightAdsets adAccountLightAdsets = getGson().fromJson(json, AdAccountLightAdsets.class);
+    if (context.isDebug()) {
+      JsonParser parser = new JsonParser();
+      JsonElement o1 = parser.parse(json);
+      JsonElement o2 = parser.parse(adAccountLightAdsets.toString());
+      if (o1.getAsJsonObject().get("__fb_trace_id__") != null) {
+        o2.getAsJsonObject().add("__fb_trace_id__", o1.getAsJsonObject().get("__fb_trace_id__"));
+      }
+      if (!o1.equals(o2)) {
+        context.log("[Warning] When parsing response, object is not consistent with JSON:");
+        context.log("[JSON]" + o1);
+        context.log("[Object]" + o2);
+      }
+    }
+    adAccountLightAdsets.context = context;
+    adAccountLightAdsets.rawValue = json;
+    adAccountLightAdsets.header = header;
+    return adAccountLightAdsets;
+  }
+
+  public static APINodeList<AdAccountLightAdsets> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
+    APINodeList<AdAccountLightAdsets> adAccountLightAdsetss = new APINodeList<AdAccountLightAdsets>(request, json, header);
+    JsonArray arr;
+    JsonObject obj;
+    JsonParser parser = new JsonParser();
+    Exception exception = null;
+    try{
+      JsonElement result = parser.parse(json);
+      if (result.isJsonArray()) {
+        // First, check if it's a pure JSON Array
+        arr = result.getAsJsonArray();
+        for (int i = 0; i < arr.size(); i++) {
+          adAccountLightAdsetss.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+        };
+        return adAccountLightAdsetss;
+      } else if (result.isJsonObject()) {
+        obj = result.getAsJsonObject();
+        if (obj.has("data")) {
+          if (obj.has("paging")) {
+            JsonObject paging = obj.get("paging").getAsJsonObject();
+            if (paging.has("cursors")) {
+                JsonObject cursors = paging.get("cursors").getAsJsonObject();
+                String before = cursors.has("before") ? cursors.get("before").getAsString() : null;
+                String after = cursors.has("after") ? cursors.get("after").getAsString() : null;
+                adAccountLightAdsetss.setCursors(before, after);
+            }
+            String previous = paging.has("previous") ? paging.get("previous").getAsString() : null;
+            String next = paging.has("next") ? paging.get("next").getAsString() : null;
+            adAccountLightAdsetss.setPaging(previous, next);
+            if (context.hasAppSecret()) {
+              adAccountLightAdsetss.setAppSecret(context.getAppSecretProof());
+            }
+          }
+          if (obj.get("data").isJsonArray()) {
+            // Second, check if it's a JSON array with "data"
+            arr = obj.get("data").getAsJsonArray();
+            for (int i = 0; i < arr.size(); i++) {
+              adAccountLightAdsetss.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+            };
+          } else if (obj.get("data").isJsonObject()) {
+            // Third, check if it's a JSON object with "data"
+            obj = obj.get("data").getAsJsonObject();
+            boolean isRedownload = false;
+            for (String s : new String[]{"campaigns", "adsets", "ads"}) {
+              if (obj.has(s)) {
+                isRedownload = true;
+                obj = obj.getAsJsonObject(s);
+                for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
+                  adAccountLightAdsetss.add(loadJSON(entry.getValue().toString(), context, header));
+                }
+                break;
+              }
+            }
+            if (!isRedownload) {
+              adAccountLightAdsetss.add(loadJSON(obj.toString(), context, header));
+            }
+          }
+          return adAccountLightAdsetss;
+        } else if (obj.has("images")) {
+          // Fourth, check if it's a map of image objects
+          obj = obj.get("images").getAsJsonObject();
+          for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
+              adAccountLightAdsetss.add(loadJSON(entry.getValue().toString(), context, header));
+          }
+          return adAccountLightAdsetss;
+        } else {
+          // Fifth, check if it's an array of objects indexed by id
+          boolean isIdIndexedArray = true;
+          for (Map.Entry entry : obj.entrySet()) {
+            String key = (String) entry.getKey();
+            if (key.equals("__fb_trace_id__")) {
+              continue;
+            }
+            JsonElement value = (JsonElement) entry.getValue();
+            if (
+              value != null &&
+              value.isJsonObject() &&
+              value.getAsJsonObject().has("id") &&
+              value.getAsJsonObject().get("id") != null &&
+              value.getAsJsonObject().get("id").getAsString().equals(key)
+            ) {
+              adAccountLightAdsetss.add(loadJSON(value.toString(), context, header));
+            } else {
+              isIdIndexedArray = false;
+              break;
+            }
+          }
+          if (isIdIndexedArray) {
+            return adAccountLightAdsetss;
+          }
+
+          // Sixth, check if it's pure JsonObject
+          adAccountLightAdsetss.clear();
+          adAccountLightAdsetss.add(loadJSON(json, context, header));
+          return adAccountLightAdsetss;
+        }
+      }
+    } catch (Exception e) {
+      exception = e;
+    }
+    throw new MalformedResponseException(
+      "Invalid response string: " + json,
+      exception
+    );
+  }
+
+  @Override
+  public APIContext getContext() {
+    return context;
+  }
+
+  @Override
+  public void setContext(APIContext context) {
+    this.context = context;
+  }
+
+  @Override
+  public String toString() {
+    return getGson().toJson(this);
+  }
+
+  public APIRequestGenget genget() {
+    return new APIRequestGenget(this.getId(), context);
+  }
+
+
+  public String getFieldId() {
+    return mId;
+  }
+
+  public AdAccountLightAdsets setFieldId(String value) {
+    this.mId = value;
+    return this;
+  }
+
+
+
+  public static class APIRequestGenget extends APIRequest<AdAccountLightAdsetsGet> {
+
+    APINodeList<AdAccountLightAdsetsGet> lastResponse = null;
+    @Override
+    public APINodeList<AdAccountLightAdsetsGet> getLastResponse() {
+      return lastResponse;
+    }
+    public static final String[] PARAMS = {
+      "ad_draft_id",
+      "after",
+      "am_call_tags",
+      "before",
+      "comparison_time_ranges",
+      "date_preset",
+      "effective_status",
+      "fields",
+      "filtering",
+      "from_adtable",
+      "include_deleted",
+      "include_drafts",
+      "is_completed",
+      "limit",
+      "offset",
+      "sort",
+      "summary",
+      "time_range",
+      "updated_since",
+      "use_employee_draft",
+    };
+
+    public static final String[] FIELDS = {
+    };
+
+    @Override
+    public APINodeList<AdAccountLightAdsetsGet> parseResponse(String response, String header) throws APIException {
+      return AdAccountLightAdsetsGet.parseResponse(response, getContext(), this, header);
+    }
+
+    @Override
+    public APINodeList<AdAccountLightAdsetsGet> execute() throws APIException {
+      return execute(new HashMap<String, Object>());
+    }
+
+    @Override
+    public APINodeList<AdAccountLightAdsetsGet> execute(Map<String, Object> extraParams) throws APIException {
+      ResponseWrapper rw = executeInternal(extraParams);
+      lastResponse = parseResponse(rw.getBody(),rw.getHeader());
+      return lastResponse;
+    }
+
+    public ListenableFuture<APINodeList<AdAccountLightAdsetsGet>> executeAsync() throws APIException {
+      return executeAsync(new HashMap<String, Object>());
+    };
+
+    public ListenableFuture<APINodeList<AdAccountLightAdsetsGet>> executeAsync(Map<String, Object> extraParams) throws APIException {
+      return Futures.transform(
+        executeAsyncInternal(extraParams),
+        new Function<ResponseWrapper, APINodeList<AdAccountLightAdsetsGet>>() {
+           public APINodeList<AdAccountLightAdsetsGet> apply(ResponseWrapper result) {
+             try {
+               return APIRequestGenget.this.parseResponse(result.getBody(), result.getHeader());
+             } catch (Exception e) {
+               throw new RuntimeException(e);
+             }
+           }
+         },
+         MoreExecutors.directExecutor()
+      );
+    };
+
+    public APIRequestGenget(String nodeId, APIContext context) {
+      super(context, nodeId, "/light_adsets", "GET", Arrays.asList(PARAMS));
+    }
+
+    @Override
+    public APIRequestGenget setParam(String param, Object value) {
+      setParamInternal(param, value);
+      return this;
+    }
+
+    @Override
+    public APIRequestGenget setParams(Map<String, Object> params) {
+      setParamsInternal(params);
+      return this;
+    }
+
+
+    public APIRequestGenget setAdDraftId (Long adDraftId) {
+      this.setParam("ad_draft_id", adDraftId);
+      return this;
+    }
+    public APIRequestGenget setAdDraftId (String adDraftId) {
+      this.setParam("ad_draft_id", adDraftId);
+      return this;
+    }
+
+    public APIRequestGenget setAfter (String after) {
+      this.setParam("after", after);
+      return this;
+    }
+
+    public APIRequestGenget setAmCallTags (String amCallTags) {
+      this.setParam("am_call_tags", amCallTags);
+      return this;
+    }
+
+    public APIRequestGenget setBefore (String before) {
+      this.setParam("before", before);
+      return this;
+    }
+
+    public APIRequestGenget setComparisonTimeRanges (String comparisonTimeRanges) {
+      this.setParam("comparison_time_ranges", comparisonTimeRanges);
+      return this;
+    }
+
+    public APIRequestGenget setDatePreset (AdAccountLightAdsetsGet.EnumDatePreset datePreset) {
+      this.setParam("date_preset", datePreset);
+      return this;
+    }
+    public APIRequestGenget setDatePreset (String datePreset) {
+      this.setParam("date_preset", datePreset);
+      return this;
+    }
+
+    public APIRequestGenget setEffectiveStatus (List<String> effectiveStatus) {
+      this.setParam("effective_status", effectiveStatus);
+      return this;
+    }
+    public APIRequestGenget setEffectiveStatus (String effectiveStatus) {
+      this.setParam("effective_status", effectiveStatus);
+      return this;
+    }
+
+    public APIRequestGenget setFields (String fields) {
+      this.setParam("fields", fields);
+      return this;
+    }
+
+    public APIRequestGenget setFiltering (String filtering) {
+      this.setParam("filtering", filtering);
+      return this;
+    }
+
+    public APIRequestGenget setFromAdtable (Boolean fromAdtable) {
+      this.setParam("from_adtable", fromAdtable);
+      return this;
+    }
+    public APIRequestGenget setFromAdtable (String fromAdtable) {
+      this.setParam("from_adtable", fromAdtable);
+      return this;
+    }
+
+    public APIRequestGenget setIncludeDeleted (Boolean includeDeleted) {
+      this.setParam("include_deleted", includeDeleted);
+      return this;
+    }
+    public APIRequestGenget setIncludeDeleted (String includeDeleted) {
+      this.setParam("include_deleted", includeDeleted);
+      return this;
+    }
+
+    public APIRequestGenget setIncludeDrafts (Boolean includeDrafts) {
+      this.setParam("include_drafts", includeDrafts);
+      return this;
+    }
+    public APIRequestGenget setIncludeDrafts (String includeDrafts) {
+      this.setParam("include_drafts", includeDrafts);
+      return this;
+    }
+
+    public APIRequestGenget setIsCompleted (Boolean isCompleted) {
+      this.setParam("is_completed", isCompleted);
+      return this;
+    }
+    public APIRequestGenget setIsCompleted (String isCompleted) {
+      this.setParam("is_completed", isCompleted);
+      return this;
+    }
+
+    public APIRequestGenget setLimit (Long limit) {
+      this.setParam("limit", limit);
+      return this;
+    }
+    public APIRequestGenget setLimit (String limit) {
+      this.setParam("limit", limit);
+      return this;
+    }
+
+    public APIRequestGenget setOffset (Long offset) {
+      this.setParam("offset", offset);
+      return this;
+    }
+    public APIRequestGenget setOffset (String offset) {
+      this.setParam("offset", offset);
+      return this;
+    }
+
+    public APIRequestGenget setSort (List<String> sort) {
+      this.setParam("sort", sort);
+      return this;
+    }
+    public APIRequestGenget setSort (String sort) {
+      this.setParam("sort", sort);
+      return this;
+    }
+
+    public APIRequestGenget setSummary (String summary) {
+      this.setParam("summary", summary);
+      return this;
+    }
+
+    public APIRequestGenget setTimeRange (String timeRange) {
+      this.setParam("time_range", timeRange);
+      return this;
+    }
+
+    public APIRequestGenget setUpdatedSince (Long updatedSince) {
+      this.setParam("updated_since", updatedSince);
+      return this;
+    }
+    public APIRequestGenget setUpdatedSince (String updatedSince) {
+      this.setParam("updated_since", updatedSince);
+      return this;
+    }
+
+    public APIRequestGenget setUseEmployeeDraft (Boolean useEmployeeDraft) {
+      this.setParam("use_employee_draft", useEmployeeDraft);
+      return this;
+    }
+    public APIRequestGenget setUseEmployeeDraft (String useEmployeeDraft) {
+      this.setParam("use_employee_draft", useEmployeeDraft);
+      return this;
+    }
+
+    public APIRequestGenget requestAllFields () {
+      return this.requestAllFields(true);
+    }
+
+    public APIRequestGenget requestAllFields (boolean value) {
+      for (String field : FIELDS) {
+        this.requestField(field, value);
+      }
+      return this;
+    }
+
+    @Override
+    public APIRequestGenget requestFields (List<String> fields) {
+      return this.requestFields(fields, true);
+    }
+
+    @Override
+    public APIRequestGenget requestFields (List<String> fields, boolean value) {
+      for (String field : fields) {
+        this.requestField(field, value);
+      }
+      return this;
+    }
+
+    @Override
+    public APIRequestGenget requestField (String field) {
+      this.requestField(field, true);
+      return this;
+    }
+
+    @Override
+    public APIRequestGenget requestField (String field, boolean value) {
+      this.requestFieldInternal(field, value);
+      return this;
+    }
+
+  }
+
+
+  synchronized /*package*/ static Gson getGson() {
+    if (gson != null) {
+      return gson;
+    } else {
+      gson = new GsonBuilder()
+        .excludeFieldsWithModifiers(Modifier.STATIC)
+        .excludeFieldsWithModifiers(Modifier.PROTECTED)
+        .disableHtmlEscaping()
+        .create();
+    }
+    return gson;
+  }
+
+  public AdAccountLightAdsets copyFrom(AdAccountLightAdsets instance) {
+    this.mId = instance.mId;
+    this.context = instance.context;
+    this.rawValue = instance.rawValue;
+    return this;
+  }
+
+  public static APIRequest.ResponseParser<AdAccountLightAdsets> getParser() {
+    return new APIRequest.ResponseParser<AdAccountLightAdsets>() {
+      public APINodeList<AdAccountLightAdsets> parseResponse(String response, APIContext context, APIRequest<AdAccountLightAdsets> request, String header) throws MalformedResponseException {
+        return AdAccountLightAdsets.parseResponse(response, context, request, header);
+      }
+    };
+  }
+}

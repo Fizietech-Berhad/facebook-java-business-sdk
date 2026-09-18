@@ -217,6 +217,7 @@ public class ProductCatalogProducts extends APINode {
       return lastResponse;
     }
     public static final String[] PARAMS = {
+      "fields",
     };
 
     public static final String[] FIELDS = {
@@ -275,6 +276,11 @@ public class ProductCatalogProducts extends APINode {
       return this;
     }
 
+
+    public APIRequestGenpost setFields (String fields) {
+      this.setParam("fields", fields);
+      return this;
+    }
 
     public APIRequestGenpost requestAllFields () {
       return this.requestAllFields(true);

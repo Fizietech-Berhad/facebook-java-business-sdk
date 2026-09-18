@@ -59,6 +59,8 @@ public class Placement extends APINode {
   private List<String> mEffectiveOculusPositions = null;
   @SerializedName("effective_publisher_platforms")
   private List<String> mEffectivePublisherPlatforms = null;
+  @SerializedName("effective_streaming_services_positions")
+  private List<String> mEffectiveStreamingServicesPositions = null;
   @SerializedName("effective_threads_positions")
   private List<String> mEffectiveThreadsPositions = null;
   @SerializedName("effective_whatsapp_positions")
@@ -73,6 +75,8 @@ public class Placement extends APINode {
   private List<String> mOculusPositions = null;
   @SerializedName("publisher_platforms")
   private List<String> mPublisherPlatforms = null;
+  @SerializedName("streaming_services_positions")
+  private List<String> mStreamingServicesPositions = null;
   @SerializedName("threads_positions")
   private List<String> mThreadsPositions = null;
   @SerializedName("whatsapp_positions")
@@ -309,6 +313,15 @@ public class Placement extends APINode {
     return this;
   }
 
+  public List<String> getFieldEffectiveStreamingServicesPositions() {
+    return mEffectiveStreamingServicesPositions;
+  }
+
+  public Placement setFieldEffectiveStreamingServicesPositions(List<String> value) {
+    this.mEffectiveStreamingServicesPositions = value;
+    return this;
+  }
+
   public List<String> getFieldEffectiveThreadsPositions() {
     return mEffectiveThreadsPositions;
   }
@@ -369,6 +382,15 @@ public class Placement extends APINode {
 
   public Placement setFieldPublisherPlatforms(List<String> value) {
     this.mPublisherPlatforms = value;
+    return this;
+  }
+
+  public List<String> getFieldStreamingServicesPositions() {
+    return mStreamingServicesPositions;
+  }
+
+  public Placement setFieldStreamingServicesPositions(List<String> value) {
+    this.mStreamingServicesPositions = value;
     return this;
   }
 
@@ -458,6 +480,7 @@ public class Placement extends APINode {
     this.mEffectiveMessengerPositions = instance.mEffectiveMessengerPositions;
     this.mEffectiveOculusPositions = instance.mEffectiveOculusPositions;
     this.mEffectivePublisherPlatforms = instance.mEffectivePublisherPlatforms;
+    this.mEffectiveStreamingServicesPositions = instance.mEffectiveStreamingServicesPositions;
     this.mEffectiveThreadsPositions = instance.mEffectiveThreadsPositions;
     this.mEffectiveWhatsappPositions = instance.mEffectiveWhatsappPositions;
     this.mFacebookPositions = instance.mFacebookPositions;
@@ -465,6 +488,7 @@ public class Placement extends APINode {
     this.mMessengerPositions = instance.mMessengerPositions;
     this.mOculusPositions = instance.mOculusPositions;
     this.mPublisherPlatforms = instance.mPublisherPlatforms;
+    this.mStreamingServicesPositions = instance.mStreamingServicesPositions;
     this.mThreadsPositions = instance.mThreadsPositions;
     this.mWhatsappPositions = instance.mWhatsappPositions;
     this.context = instance.context;

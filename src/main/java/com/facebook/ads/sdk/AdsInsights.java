@@ -119,6 +119,22 @@ public class AdsInsights extends APINode {
   private List<AdsActionStats> mConfigurableAttributionActionvalue = null;
   @SerializedName("configurable_audience_overlap_reach")
   private List<AdsActionStats> mConfigurableAudienceOverlapReach = null;
+  @SerializedName("configurable_audience_overlap_with_conv_action")
+  private String mConfigurableAudienceOverlapWithConvAction = null;
+  @SerializedName("configurable_audience_overlap_with_conv_converters")
+  private String mConfigurableAudienceOverlapWithConvConverters = null;
+  @SerializedName("configurable_audience_overlap_with_conv_exposure_cost")
+  private String mConfigurableAudienceOverlapWithConvExposureCost = null;
+  @SerializedName("configurable_audience_overlap_with_conv_exposure_impressions")
+  private String mConfigurableAudienceOverlapWithConvExposureImpressions = null;
+  @SerializedName("configurable_audience_overlap_with_conv_exposure_reach")
+  private String mConfigurableAudienceOverlapWithConvExposureReach = null;
+  @SerializedName("configurable_placement_ptc_conversions")
+  private String mConfigurablePlacementPtcConversions = null;
+  @SerializedName("configurable_placement_ptc_converters")
+  private String mConfigurablePlacementPtcConverters = null;
+  @SerializedName("configurable_placement_ptc_reach")
+  private String mConfigurablePlacementPtcReach = null;
   @SerializedName("configurable_reachbyfrequency_action")
   private List<AdsActionStats> mConfigurableReachbyfrequencyAction = null;
   @SerializedName("configurable_reachbyfrequency_converters_count")
@@ -516,6 +532,10 @@ public class AdsInsights extends APINode {
   private String mCountry = null;
   @SerializedName("creative_automation_asset_id")
   private String mCreativeAutomationAssetId = null;
+  @SerializedName("creative_fingerprint_details")
+  private String mCreativeFingerprintDetails = null;
+  @SerializedName("creative_media_type_breakdown")
+  private String mCreativeMediaTypeBreakdown = null;
   @SerializedName("creative_relaxation_asset_type")
   private String mCreativeRelaxationAssetType = null;
   @SerializedName("crm_advertiser_l12_territory_ids")
@@ -1242,6 +1262,78 @@ public class AdsInsights extends APINode {
     this.mConfigurableAudienceOverlapReach = AdsActionStats.getGson().fromJson(value, type);
     return this;
   }
+  public String getFieldConfigurableAudienceOverlapWithConvAction() {
+    return mConfigurableAudienceOverlapWithConvAction;
+  }
+
+  public AdsInsights setFieldConfigurableAudienceOverlapWithConvAction(String value) {
+    this.mConfigurableAudienceOverlapWithConvAction = value;
+    return this;
+  }
+
+  public String getFieldConfigurableAudienceOverlapWithConvConverters() {
+    return mConfigurableAudienceOverlapWithConvConverters;
+  }
+
+  public AdsInsights setFieldConfigurableAudienceOverlapWithConvConverters(String value) {
+    this.mConfigurableAudienceOverlapWithConvConverters = value;
+    return this;
+  }
+
+  public String getFieldConfigurableAudienceOverlapWithConvExposureCost() {
+    return mConfigurableAudienceOverlapWithConvExposureCost;
+  }
+
+  public AdsInsights setFieldConfigurableAudienceOverlapWithConvExposureCost(String value) {
+    this.mConfigurableAudienceOverlapWithConvExposureCost = value;
+    return this;
+  }
+
+  public String getFieldConfigurableAudienceOverlapWithConvExposureImpressions() {
+    return mConfigurableAudienceOverlapWithConvExposureImpressions;
+  }
+
+  public AdsInsights setFieldConfigurableAudienceOverlapWithConvExposureImpressions(String value) {
+    this.mConfigurableAudienceOverlapWithConvExposureImpressions = value;
+    return this;
+  }
+
+  public String getFieldConfigurableAudienceOverlapWithConvExposureReach() {
+    return mConfigurableAudienceOverlapWithConvExposureReach;
+  }
+
+  public AdsInsights setFieldConfigurableAudienceOverlapWithConvExposureReach(String value) {
+    this.mConfigurableAudienceOverlapWithConvExposureReach = value;
+    return this;
+  }
+
+  public String getFieldConfigurablePlacementPtcConversions() {
+    return mConfigurablePlacementPtcConversions;
+  }
+
+  public AdsInsights setFieldConfigurablePlacementPtcConversions(String value) {
+    this.mConfigurablePlacementPtcConversions = value;
+    return this;
+  }
+
+  public String getFieldConfigurablePlacementPtcConverters() {
+    return mConfigurablePlacementPtcConverters;
+  }
+
+  public AdsInsights setFieldConfigurablePlacementPtcConverters(String value) {
+    this.mConfigurablePlacementPtcConverters = value;
+    return this;
+  }
+
+  public String getFieldConfigurablePlacementPtcReach() {
+    return mConfigurablePlacementPtcReach;
+  }
+
+  public AdsInsights setFieldConfigurablePlacementPtcReach(String value) {
+    this.mConfigurablePlacementPtcReach = value;
+    return this;
+  }
+
   public List<AdsActionStats> getFieldConfigurableReachbyfrequencyAction() {
     return mConfigurableReachbyfrequencyAction;
   }
@@ -3309,6 +3401,14 @@ public class AdsInsights extends APINode {
     return mCreativeAutomationAssetId;
   }
 
+  public String getFieldCreativeFingerprintDetails() {
+    return mCreativeFingerprintDetails;
+  }
+
+  public String getFieldCreativeMediaTypeBreakdown() {
+    return mCreativeMediaTypeBreakdown;
+  }
+
   public String getFieldCreativeRelaxationAssetType() {
     return mCreativeRelaxationAssetType;
   }
@@ -3789,6 +3889,10 @@ public class AdsInsights extends APINode {
       VALUE_COUNTRY("country"),
       @SerializedName("creative_automation_asset_id")
       VALUE_CREATIVE_AUTOMATION_ASSET_ID("creative_automation_asset_id"),
+      @SerializedName("creative_fingerprint_details")
+      VALUE_CREATIVE_FINGERPRINT_DETAILS("creative_fingerprint_details"),
+      @SerializedName("creative_media_type_breakdown")
+      VALUE_CREATIVE_MEDIA_TYPE_BREAKDOWN("creative_media_type_breakdown"),
       @SerializedName("creative_relaxation_asset_type")
       VALUE_CREATIVE_RELAXATION_ASSET_TYPE("creative_relaxation_asset_type"),
       @SerializedName("crm_advertiser_l12_territory_ids")
@@ -4136,6 +4240,14 @@ public class AdsInsights extends APINode {
     this.mConfigurableAttributionAction = instance.mConfigurableAttributionAction;
     this.mConfigurableAttributionActionvalue = instance.mConfigurableAttributionActionvalue;
     this.mConfigurableAudienceOverlapReach = instance.mConfigurableAudienceOverlapReach;
+    this.mConfigurableAudienceOverlapWithConvAction = instance.mConfigurableAudienceOverlapWithConvAction;
+    this.mConfigurableAudienceOverlapWithConvConverters = instance.mConfigurableAudienceOverlapWithConvConverters;
+    this.mConfigurableAudienceOverlapWithConvExposureCost = instance.mConfigurableAudienceOverlapWithConvExposureCost;
+    this.mConfigurableAudienceOverlapWithConvExposureImpressions = instance.mConfigurableAudienceOverlapWithConvExposureImpressions;
+    this.mConfigurableAudienceOverlapWithConvExposureReach = instance.mConfigurableAudienceOverlapWithConvExposureReach;
+    this.mConfigurablePlacementPtcConversions = instance.mConfigurablePlacementPtcConversions;
+    this.mConfigurablePlacementPtcConverters = instance.mConfigurablePlacementPtcConverters;
+    this.mConfigurablePlacementPtcReach = instance.mConfigurablePlacementPtcReach;
     this.mConfigurableReachbyfrequencyAction = instance.mConfigurableReachbyfrequencyAction;
     this.mConfigurableReachbyfrequencyConvertersCount = instance.mConfigurableReachbyfrequencyConvertersCount;
     this.mConfigurableReachbyfrequencyImpressionsCost = instance.mConfigurableReachbyfrequencyImpressionsCost;
@@ -4334,6 +4446,8 @@ public class AdsInsights extends APINode {
     this.mConversionDestination = instance.mConversionDestination;
     this.mCountry = instance.mCountry;
     this.mCreativeAutomationAssetId = instance.mCreativeAutomationAssetId;
+    this.mCreativeFingerprintDetails = instance.mCreativeFingerprintDetails;
+    this.mCreativeMediaTypeBreakdown = instance.mCreativeMediaTypeBreakdown;
     this.mCreativeRelaxationAssetType = instance.mCreativeRelaxationAssetType;
     this.mCrmAdvertiserL12TerritoryIds = instance.mCrmAdvertiserL12TerritoryIds;
     this.mCrmAdvertiserSubverticalId = instance.mCrmAdvertiserSubverticalId;

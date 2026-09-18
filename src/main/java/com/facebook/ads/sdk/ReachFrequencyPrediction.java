@@ -193,6 +193,8 @@ public class ReachFrequencyPrediction extends APINode {
   private Long mPredictionMode = null;
   @SerializedName("prediction_progress")
   private Long mPredictionProgress = null;
+  @SerializedName("product_type")
+  private String mProductType = null;
   @SerializedName("reference_id")
   private String mReferenceId = null;
   @SerializedName("reservation_status")
@@ -745,6 +747,10 @@ public class ReachFrequencyPrediction extends APINode {
     return mPredictionProgress;
   }
 
+  public String getFieldProductType() {
+    return mProductType;
+  }
+
   public String getFieldReferenceId() {
     return mReferenceId;
   }
@@ -902,6 +908,7 @@ public class ReachFrequencyPrediction extends APINode {
       "plan_type",
       "prediction_mode",
       "prediction_progress",
+      "product_type",
       "reference_id",
       "reservation_status",
       "start_time",
@@ -1543,6 +1550,13 @@ public class ReachFrequencyPrediction extends APINode {
       this.requestField("prediction_progress", value);
       return this;
     }
+    public APIRequestGet requestProductTypeField () {
+      return this.requestProductTypeField(true);
+    }
+    public APIRequestGet requestProductTypeField (boolean value) {
+      this.requestField("product_type", value);
+      return this;
+    }
     public APIRequestGet requestReferenceIdField () {
       return this.requestReferenceIdField(true);
     }
@@ -1757,6 +1771,29 @@ public class ReachFrequencyPrediction extends APINode {
       }
   }
 
+  public static enum EnumProductType {
+      @SerializedName("ADS_BURST")
+      VALUE_ADS_BURST("ADS_BURST"),
+      @SerializedName("ADS_SUPER_BURST")
+      VALUE_ADS_SUPER_BURST("ADS_SUPER_BURST"),
+      @SerializedName("REELS_TRENDING_ADS")
+      VALUE_REELS_TRENDING_ADS("REELS_TRENDING_ADS"),
+      @SerializedName("STANDARD")
+      VALUE_STANDARD("STANDARD"),
+      ;
+
+      private String value;
+
+      private EnumProductType(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
 
   synchronized /*package*/ static Gson getGson() {
     if (gson != null) {
@@ -1848,6 +1885,7 @@ public class ReachFrequencyPrediction extends APINode {
     this.mPlanType = instance.mPlanType;
     this.mPredictionMode = instance.mPredictionMode;
     this.mPredictionProgress = instance.mPredictionProgress;
+    this.mProductType = instance.mProductType;
     this.mReferenceId = instance.mReferenceId;
     this.mReservationStatus = instance.mReservationStatus;
     this.mStartTime = instance.mStartTime;

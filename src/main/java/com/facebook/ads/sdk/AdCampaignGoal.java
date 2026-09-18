@@ -53,6 +53,10 @@ public class AdCampaignGoal extends APINode {
   private List<String> mExistingCustomersAudienceLabelExclusions = null;
   @SerializedName("existing_customers_audience_label_inclusions")
   private List<String> mExistingCustomersAudienceLabelInclusions = null;
+  @SerializedName("existing_customers_auto_exclusion_retention_days")
+  private Long mExistingCustomersAutoExclusionRetentionDays = null;
+  @SerializedName("existing_customers_exclusion_auto_selection_state")
+  private Long mExistingCustomersExclusionAutoSelectionState = null;
   @SerializedName("existing_customers_exclusions")
   private List<String> mExistingCustomersExclusions = null;
   @SerializedName("existing_customers_inclusions")
@@ -270,6 +274,24 @@ public class AdCampaignGoal extends APINode {
     return this;
   }
 
+  public Long getFieldExistingCustomersAutoExclusionRetentionDays() {
+    return mExistingCustomersAutoExclusionRetentionDays;
+  }
+
+  public AdCampaignGoal setFieldExistingCustomersAutoExclusionRetentionDays(Long value) {
+    this.mExistingCustomersAutoExclusionRetentionDays = value;
+    return this;
+  }
+
+  public Long getFieldExistingCustomersExclusionAutoSelectionState() {
+    return mExistingCustomersExclusionAutoSelectionState;
+  }
+
+  public AdCampaignGoal setFieldExistingCustomersExclusionAutoSelectionState(Long value) {
+    this.mExistingCustomersExclusionAutoSelectionState = value;
+    return this;
+  }
+
   public List<String> getFieldExistingCustomersExclusions() {
     return mExistingCustomersExclusions;
   }
@@ -347,6 +369,8 @@ public class AdCampaignGoal extends APINode {
     this.mEngagedAudiencesInclusions = instance.mEngagedAudiencesInclusions;
     this.mExistingCustomersAudienceLabelExclusions = instance.mExistingCustomersAudienceLabelExclusions;
     this.mExistingCustomersAudienceLabelInclusions = instance.mExistingCustomersAudienceLabelInclusions;
+    this.mExistingCustomersAutoExclusionRetentionDays = instance.mExistingCustomersAutoExclusionRetentionDays;
+    this.mExistingCustomersExclusionAutoSelectionState = instance.mExistingCustomersExclusionAutoSelectionState;
     this.mExistingCustomersExclusions = instance.mExistingCustomersExclusions;
     this.mExistingCustomersInclusions = instance.mExistingCustomersInclusions;
     this.mIsCaExpansionEnabled = instance.mIsCaExpansionEnabled;

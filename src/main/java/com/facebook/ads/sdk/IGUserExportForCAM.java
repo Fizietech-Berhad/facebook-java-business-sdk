@@ -61,6 +61,8 @@ public class IGUserExportForCAM extends APINode {
   private String mId = null;
   @SerializedName("is_account_verified")
   private Boolean mIsAccountVerified = null;
+  @SerializedName("is_brand_following_creator")
+  private Boolean mIsBrandFollowingCreator = null;
   @SerializedName("is_creator_following_brand")
   private Boolean mIsCreatorFollowingBrand = null;
   @SerializedName("is_paid_partnership_messages_enabled")
@@ -340,6 +342,15 @@ public class IGUserExportForCAM extends APINode {
     return this;
   }
 
+  public Boolean getFieldIsBrandFollowingCreator() {
+    return mIsBrandFollowingCreator;
+  }
+
+  public IGUserExportForCAM setFieldIsBrandFollowingCreator(Boolean value) {
+    this.mIsBrandFollowingCreator = value;
+    return this;
+  }
+
   public Boolean getFieldIsCreatorFollowingBrand() {
     return mIsCreatorFollowingBrand;
   }
@@ -449,6 +460,7 @@ public class IGUserExportForCAM extends APINode {
       return lastResponse;
     }
     public static final String[] PARAMS = {
+      "platform",
     };
 
     public static final String[] FIELDS = {
@@ -507,6 +519,15 @@ public class IGUserExportForCAM extends APINode {
       return this;
     }
 
+
+    public APIRequestGetBrandedContentMedia setPlatform (List<EnumPlatform> platform) {
+      this.setParam("platform", platform);
+      return this;
+    }
+    public APIRequestGetBrandedContentMedia setPlatform (String platform) {
+      this.setParam("platform", platform);
+      return this;
+    }
 
     public APIRequestGetBrandedContentMedia requestAllFields () {
       return this.requestAllFields(true);
@@ -709,6 +730,7 @@ public class IGUserExportForCAM extends APINode {
       return lastResponse;
     }
     public static final String[] PARAMS = {
+      "platform",
     };
 
     public static final String[] FIELDS = {
@@ -768,6 +790,15 @@ public class IGUserExportForCAM extends APINode {
     }
 
 
+    public APIRequestGetPastPartnershipAdsMedia setPlatform (List<EnumPlatform> platform) {
+      this.setParam("platform", platform);
+      return this;
+    }
+    public APIRequestGetPastPartnershipAdsMedia setPlatform (String platform) {
+      this.setParam("platform", platform);
+      return this;
+    }
+
     public APIRequestGetPastPartnershipAdsMedia requestAllFields () {
       return this.requestAllFields(true);
     }
@@ -814,6 +845,7 @@ public class IGUserExportForCAM extends APINode {
       return lastResponse;
     }
     public static final String[] PARAMS = {
+      "platform",
     };
 
     public static final String[] FIELDS = {
@@ -872,6 +904,15 @@ public class IGUserExportForCAM extends APINode {
       return this;
     }
 
+
+    public APIRequestGetRecentMedia setPlatform (List<EnumPlatform> platform) {
+      this.setParam("platform", platform);
+      return this;
+    }
+    public APIRequestGetRecentMedia setPlatform (String platform) {
+      this.setParam("platform", platform);
+      return this;
+    }
 
     public APIRequestGetRecentMedia requestAllFields () {
       return this.requestAllFields(true);
@@ -2073,6 +2114,8 @@ public class IGUserExportForCAM extends APINode {
   }
 
   public static enum EnumMetrics {
+      @SerializedName("ACCOUNT_INTERACTIONS")
+      VALUE_ACCOUNT_INTERACTIONS("ACCOUNT_INTERACTIONS"),
       @SerializedName("CREATOR_ENGAGED_ACCOUNTS")
       VALUE_CREATOR_ENGAGED_ACCOUNTS("CREATOR_ENGAGED_ACCOUNTS"),
       @SerializedName("CREATOR_REACH")
@@ -2083,6 +2126,8 @@ public class IGUserExportForCAM extends APINode {
       VALUE_REELS_INTERACTION_RATE("REELS_INTERACTION_RATE"),
       @SerializedName("TOTAL_FOLLOWERS")
       VALUE_TOTAL_FOLLOWERS("TOTAL_FOLLOWERS"),
+      @SerializedName("TOTAL_VIEWS")
+      VALUE_TOTAL_VIEWS("TOTAL_VIEWS"),
       ;
 
       private String value;
@@ -2166,6 +2211,7 @@ public class IGUserExportForCAM extends APINode {
     this.mHasBrandPartnershipExperience = instance.mHasBrandPartnershipExperience;
     this.mId = instance.mId;
     this.mIsAccountVerified = instance.mIsAccountVerified;
+    this.mIsBrandFollowingCreator = instance.mIsBrandFollowingCreator;
     this.mIsCreatorFollowingBrand = instance.mIsCreatorFollowingBrand;
     this.mIsPaidPartnershipMessagesEnabled = instance.mIsPaidPartnershipMessagesEnabled;
     this.mMessagingId = instance.mMessagingId;

@@ -53,6 +53,8 @@ public class AdLimitsEnforcementData extends APINode {
   private Boolean mIsAdmin = null;
   @SerializedName("page_name")
   private String mPageName = null;
+  @SerializedName("show_page_limit_removed_notice")
+  private Boolean mShowPageLimitRemovedNotice = null;
   protected static Gson gson = null;
 
   public AdLimitsEnforcementData() {
@@ -258,6 +260,15 @@ public class AdLimitsEnforcementData extends APINode {
     return this;
   }
 
+  public Boolean getFieldShowPageLimitRemovedNotice() {
+    return mShowPageLimitRemovedNotice;
+  }
+
+  public AdLimitsEnforcementData setFieldShowPageLimitRemovedNotice(Boolean value) {
+    this.mShowPageLimitRemovedNotice = value;
+    return this;
+  }
+
 
 
 
@@ -281,6 +292,7 @@ public class AdLimitsEnforcementData extends APINode {
     this.mAdVolumeOnScope = instance.mAdVolumeOnScope;
     this.mIsAdmin = instance.mIsAdmin;
     this.mPageName = instance.mPageName;
+    this.mShowPageLimitRemovedNotice = instance.mShowPageLimitRemovedNotice;
     this.context = instance.context;
     this.rawValue = instance.rawValue;
     return this;

@@ -216,6 +216,146 @@ public class ProductCatalogItemsBatchPost extends APINode {
 
 
 
+  public static enum EnumItemSubType {
+      @SerializedName("APPLIANCES")
+      VALUE_APPLIANCES("APPLIANCES"),
+      @SerializedName("BABY_FEEDING")
+      VALUE_BABY_FEEDING("BABY_FEEDING"),
+      @SerializedName("BABY_TRANSPORT")
+      VALUE_BABY_TRANSPORT("BABY_TRANSPORT"),
+      @SerializedName("BEAUTY")
+      VALUE_BEAUTY("BEAUTY"),
+      @SerializedName("BEDDING")
+      VALUE_BEDDING("BEDDING"),
+      @SerializedName("CAMERAS")
+      VALUE_CAMERAS("CAMERAS"),
+      @SerializedName("CAMERAS_AND_PHOTOS")
+      VALUE_CAMERAS_AND_PHOTOS("CAMERAS_AND_PHOTOS"),
+      @SerializedName("CELL_PHONES_AND_SMART_WATCHES")
+      VALUE_CELL_PHONES_AND_SMART_WATCHES("CELL_PHONES_AND_SMART_WATCHES"),
+      @SerializedName("CLEANING_SUPPLIES")
+      VALUE_CLEANING_SUPPLIES("CLEANING_SUPPLIES"),
+      @SerializedName("CLOTHING")
+      VALUE_CLOTHING("CLOTHING"),
+      @SerializedName("CLOTHING_ACCESSORIES")
+      VALUE_CLOTHING_ACCESSORIES("CLOTHING_ACCESSORIES"),
+      @SerializedName("CLO_OFFER")
+      VALUE_CLO_OFFER("CLO_OFFER"),
+      @SerializedName("COMPUTERS_AND_TABLETS")
+      VALUE_COMPUTERS_AND_TABLETS("COMPUTERS_AND_TABLETS"),
+      @SerializedName("COMPUTERS_LAPTOPS_AND_TABLETS")
+      VALUE_COMPUTERS_LAPTOPS_AND_TABLETS("COMPUTERS_LAPTOPS_AND_TABLETS"),
+      @SerializedName("COMPUTER_COMPONENTS")
+      VALUE_COMPUTER_COMPONENTS("COMPUTER_COMPONENTS"),
+      @SerializedName("DIAPERING_AND_POTTY_TRAINING")
+      VALUE_DIAPERING_AND_POTTY_TRAINING("DIAPERING_AND_POTTY_TRAINING"),
+      @SerializedName("ELECTRONICS_ACCESSORIES")
+      VALUE_ELECTRONICS_ACCESSORIES("ELECTRONICS_ACCESSORIES"),
+      @SerializedName("ELECTRONIC_ACCESSORIES_AND_CABLES")
+      VALUE_ELECTRONIC_ACCESSORIES_AND_CABLES("ELECTRONIC_ACCESSORIES_AND_CABLES"),
+      @SerializedName("EMPTY")
+      VALUE_EMPTY("EMPTY"),
+      @SerializedName("FURNITURE")
+      VALUE_FURNITURE("FURNITURE"),
+      @SerializedName("HEALTH")
+      VALUE_HEALTH("HEALTH"),
+      @SerializedName("HOME")
+      VALUE_HOME("HOME"),
+      @SerializedName("HOME_GOODS")
+      VALUE_HOME_GOODS("HOME_GOODS"),
+      @SerializedName("HOUSEHOLD_AND_CLEANING_SUPPLIES")
+      VALUE_HOUSEHOLD_AND_CLEANING_SUPPLIES("HOUSEHOLD_AND_CLEANING_SUPPLIES"),
+      @SerializedName("JEWELRY")
+      VALUE_JEWELRY("JEWELRY"),
+      @SerializedName("LARGE_APPLIANCES")
+      VALUE_LARGE_APPLIANCES("LARGE_APPLIANCES"),
+      @SerializedName("LOCAL_SERVICE_BUSINESS_ITEM")
+      VALUE_LOCAL_SERVICE_BUSINESS_ITEM("LOCAL_SERVICE_BUSINESS_ITEM"),
+      @SerializedName("LOCAL_SERVICE_BUSINESS_RESTAURANT")
+      VALUE_LOCAL_SERVICE_BUSINESS_RESTAURANT("LOCAL_SERVICE_BUSINESS_RESTAURANT"),
+      @SerializedName("NURSERY")
+      VALUE_NURSERY("NURSERY"),
+      @SerializedName("PRINTERS_AND_SCANNERS")
+      VALUE_PRINTERS_AND_SCANNERS("PRINTERS_AND_SCANNERS"),
+      @SerializedName("PRINTERS_SCANNERS_AND_FAX_MACHINES")
+      VALUE_PRINTERS_SCANNERS_AND_FAX_MACHINES("PRINTERS_SCANNERS_AND_FAX_MACHINES"),
+      @SerializedName("PRODUCT_DISCOUNT")
+      VALUE_PRODUCT_DISCOUNT("PRODUCT_DISCOUNT"),
+      @SerializedName("PROJECTORS")
+      VALUE_PROJECTORS("PROJECTORS"),
+      @SerializedName("SHOES")
+      VALUE_SHOES("SHOES"),
+      @SerializedName("SHOES_AND_FOOTWEAR")
+      VALUE_SHOES_AND_FOOTWEAR("SHOES_AND_FOOTWEAR"),
+      @SerializedName("SOFTWARE")
+      VALUE_SOFTWARE("SOFTWARE"),
+      @SerializedName("TELEVISIONS_AND_MONITORS")
+      VALUE_TELEVISIONS_AND_MONITORS("TELEVISIONS_AND_MONITORS"),
+      @SerializedName("TEST_CHILD_SUB_VERTICAL")
+      VALUE_TEST_CHILD_SUB_VERTICAL("TEST_CHILD_SUB_VERTICAL"),
+      @SerializedName("TEST_GRAND_CHILD_SUB_VERTICAL")
+      VALUE_TEST_GRAND_CHILD_SUB_VERTICAL("TEST_GRAND_CHILD_SUB_VERTICAL"),
+      @SerializedName("TEST_SUB_VERTICAL")
+      VALUE_TEST_SUB_VERTICAL("TEST_SUB_VERTICAL"),
+      @SerializedName("TEST_SUB_VERTICAL_ALIAS")
+      VALUE_TEST_SUB_VERTICAL_ALIAS("TEST_SUB_VERTICAL_ALIAS"),
+      @SerializedName("TEST_SUB_VERTICAL_DATA_OBJECT")
+      VALUE_TEST_SUB_VERTICAL_DATA_OBJECT("TEST_SUB_VERTICAL_DATA_OBJECT"),
+      @SerializedName("THIRD_PARTY_ELECTRONICS")
+      VALUE_THIRD_PARTY_ELECTRONICS("THIRD_PARTY_ELECTRONICS"),
+      @SerializedName("THIRD_PARTY_TOYS_AND_GAMES")
+      VALUE_THIRD_PARTY_TOYS_AND_GAMES("THIRD_PARTY_TOYS_AND_GAMES"),
+      @SerializedName("TOYS")
+      VALUE_TOYS("TOYS"),
+      @SerializedName("TOYS_AND_GAMES")
+      VALUE_TOYS_AND_GAMES("TOYS_AND_GAMES"),
+      @SerializedName("TVS_AND_MONITORS")
+      VALUE_TVS_AND_MONITORS("TVS_AND_MONITORS"),
+      @SerializedName("VEHICLE_MANUFACTURER")
+      VALUE_VEHICLE_MANUFACTURER("VEHICLE_MANUFACTURER"),
+      @SerializedName("VIDEO_GAMES_AND_CONSOLES")
+      VALUE_VIDEO_GAMES_AND_CONSOLES("VIDEO_GAMES_AND_CONSOLES"),
+      @SerializedName("VIDEO_GAME_CONSOLES_AND_VIDEO_GAMES")
+      VALUE_VIDEO_GAME_CONSOLES_AND_VIDEO_GAMES("VIDEO_GAME_CONSOLES_AND_VIDEO_GAMES"),
+      @SerializedName("VIDEO_PROJECTORS")
+      VALUE_VIDEO_PROJECTORS("VIDEO_PROJECTORS"),
+      @SerializedName("WATCHES")
+      VALUE_WATCHES("WATCHES"),
+      ;
+
+      private String value;
+
+      private EnumItemSubType(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumRequestOrigin {
+      @SerializedName("BULK_ITEM_EDITOR")
+      VALUE_BULK_ITEM_EDITOR("BULK_ITEM_EDITOR"),
+      @SerializedName("STORM")
+      VALUE_STORM("STORM"),
+      @SerializedName("UNSPECIFIED")
+      VALUE_UNSPECIFIED("UNSPECIFIED"),
+      ;
+
+      private String value;
+
+      private EnumRequestOrigin(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
 
   synchronized /*package*/ static Gson getGson() {
     if (gson != null) {

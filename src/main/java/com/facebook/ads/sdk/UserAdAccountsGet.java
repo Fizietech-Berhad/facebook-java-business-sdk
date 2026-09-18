@@ -40,23 +40,21 @@ import com.facebook.ads.sdk.APIException.MalformedResponseException;
  * pull request for this class.
  *
  */
-public class ProductItemPost extends APINode {
-  @SerializedName("success")
-  private Boolean mSuccess = null;
+public class UserAdAccountsGet extends APINode {
   protected static Gson gson = null;
 
-  public ProductItemPost() {
+  public UserAdAccountsGet() {
   }
 
   public String getId() {
     return null;
   }
-  public static ProductItemPost loadJSON(String json, APIContext context, String header) {
-    ProductItemPost productItemPost = getGson().fromJson(json, ProductItemPost.class);
+  public static UserAdAccountsGet loadJSON(String json, APIContext context, String header) {
+    UserAdAccountsGet userAdAccountsGet = getGson().fromJson(json, UserAdAccountsGet.class);
     if (context.isDebug()) {
       JsonParser parser = new JsonParser();
       JsonElement o1 = parser.parse(json);
-      JsonElement o2 = parser.parse(productItemPost.toString());
+      JsonElement o2 = parser.parse(userAdAccountsGet.toString());
       if (o1.getAsJsonObject().get("__fb_trace_id__") != null) {
         o2.getAsJsonObject().add("__fb_trace_id__", o1.getAsJsonObject().get("__fb_trace_id__"));
       }
@@ -66,14 +64,14 @@ public class ProductItemPost extends APINode {
         context.log("[Object]" + o2);
       }
     }
-    productItemPost.context = context;
-    productItemPost.rawValue = json;
-    productItemPost.header = header;
-    return productItemPost;
+    userAdAccountsGet.context = context;
+    userAdAccountsGet.rawValue = json;
+    userAdAccountsGet.header = header;
+    return userAdAccountsGet;
   }
 
-  public static APINodeList<ProductItemPost> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
-    APINodeList<ProductItemPost> productItemPosts = new APINodeList<ProductItemPost>(request, json, header);
+  public static APINodeList<UserAdAccountsGet> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
+    APINodeList<UserAdAccountsGet> userAdAccountsGets = new APINodeList<UserAdAccountsGet>(request, json, header);
     JsonArray arr;
     JsonObject obj;
     JsonParser parser = new JsonParser();
@@ -84,9 +82,9 @@ public class ProductItemPost extends APINode {
         // First, check if it's a pure JSON Array
         arr = result.getAsJsonArray();
         for (int i = 0; i < arr.size(); i++) {
-          productItemPosts.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+          userAdAccountsGets.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
         };
-        return productItemPosts;
+        return userAdAccountsGets;
       } else if (result.isJsonObject()) {
         obj = result.getAsJsonObject();
         if (obj.has("data")) {
@@ -96,20 +94,20 @@ public class ProductItemPost extends APINode {
                 JsonObject cursors = paging.get("cursors").getAsJsonObject();
                 String before = cursors.has("before") ? cursors.get("before").getAsString() : null;
                 String after = cursors.has("after") ? cursors.get("after").getAsString() : null;
-                productItemPosts.setCursors(before, after);
+                userAdAccountsGets.setCursors(before, after);
             }
             String previous = paging.has("previous") ? paging.get("previous").getAsString() : null;
             String next = paging.has("next") ? paging.get("next").getAsString() : null;
-            productItemPosts.setPaging(previous, next);
+            userAdAccountsGets.setPaging(previous, next);
             if (context.hasAppSecret()) {
-              productItemPosts.setAppSecret(context.getAppSecretProof());
+              userAdAccountsGets.setAppSecret(context.getAppSecretProof());
             }
           }
           if (obj.get("data").isJsonArray()) {
             // Second, check if it's a JSON array with "data"
             arr = obj.get("data").getAsJsonArray();
             for (int i = 0; i < arr.size(); i++) {
-              productItemPosts.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+              userAdAccountsGets.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
             };
           } else if (obj.get("data").isJsonObject()) {
             // Third, check if it's a JSON object with "data"
@@ -120,23 +118,23 @@ public class ProductItemPost extends APINode {
                 isRedownload = true;
                 obj = obj.getAsJsonObject(s);
                 for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-                  productItemPosts.add(loadJSON(entry.getValue().toString(), context, header));
+                  userAdAccountsGets.add(loadJSON(entry.getValue().toString(), context, header));
                 }
                 break;
               }
             }
             if (!isRedownload) {
-              productItemPosts.add(loadJSON(obj.toString(), context, header));
+              userAdAccountsGets.add(loadJSON(obj.toString(), context, header));
             }
           }
-          return productItemPosts;
+          return userAdAccountsGets;
         } else if (obj.has("images")) {
           // Fourth, check if it's a map of image objects
           obj = obj.get("images").getAsJsonObject();
           for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-              productItemPosts.add(loadJSON(entry.getValue().toString(), context, header));
+              userAdAccountsGets.add(loadJSON(entry.getValue().toString(), context, header));
           }
-          return productItemPosts;
+          return userAdAccountsGets;
         } else {
           // Fifth, check if it's an array of objects indexed by id
           boolean isIdIndexedArray = true;
@@ -153,20 +151,20 @@ public class ProductItemPost extends APINode {
               value.getAsJsonObject().get("id") != null &&
               value.getAsJsonObject().get("id").getAsString().equals(key)
             ) {
-              productItemPosts.add(loadJSON(value.toString(), context, header));
+              userAdAccountsGets.add(loadJSON(value.toString(), context, header));
             } else {
               isIdIndexedArray = false;
               break;
             }
           }
           if (isIdIndexedArray) {
-            return productItemPosts;
+            return userAdAccountsGets;
           }
 
           // Sixth, check if it's pure JsonObject
-          productItemPosts.clear();
-          productItemPosts.add(loadJSON(json, context, header));
-          return productItemPosts;
+          userAdAccountsGets.clear();
+          userAdAccountsGets.add(loadJSON(json, context, header));
+          return userAdAccountsGets;
         }
       }
     } catch (Exception e) {
@@ -194,15 +192,6 @@ public class ProductItemPost extends APINode {
   }
 
 
-  public Boolean getFieldSuccess() {
-    return mSuccess;
-  }
-
-  public ProductItemPost setFieldSuccess(Boolean value) {
-    this.mSuccess = value;
-    return this;
-  }
-
 
 
 
@@ -219,17 +208,16 @@ public class ProductItemPost extends APINode {
     return gson;
   }
 
-  public ProductItemPost copyFrom(ProductItemPost instance) {
-    this.mSuccess = instance.mSuccess;
+  public UserAdAccountsGet copyFrom(UserAdAccountsGet instance) {
     this.context = instance.context;
     this.rawValue = instance.rawValue;
     return this;
   }
 
-  public static APIRequest.ResponseParser<ProductItemPost> getParser() {
-    return new APIRequest.ResponseParser<ProductItemPost>() {
-      public APINodeList<ProductItemPost> parseResponse(String response, APIContext context, APIRequest<ProductItemPost> request, String header) throws MalformedResponseException {
-        return ProductItemPost.parseResponse(response, context, request, header);
+  public static APIRequest.ResponseParser<UserAdAccountsGet> getParser() {
+    return new APIRequest.ResponseParser<UserAdAccountsGet>() {
+      public APINodeList<UserAdAccountsGet> parseResponse(String response, APIContext context, APIRequest<UserAdAccountsGet> request, String header) throws MalformedResponseException {
+        return UserAdAccountsGet.parseResponse(response, context, request, header);
       }
     };
   }

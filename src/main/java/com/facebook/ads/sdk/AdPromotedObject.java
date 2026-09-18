@@ -41,6 +41,8 @@ import com.facebook.ads.sdk.APIException.MalformedResponseException;
  *
  */
 public class AdPromotedObject extends APINode {
+  @SerializedName("ads_signal_source_type")
+  private String mAdsSignalSourceType = null;
   @SerializedName("application_id")
   private String mApplicationId = null;
   @SerializedName("boosted_product_set_id")
@@ -293,6 +295,15 @@ public class AdPromotedObject extends APINode {
     return getGson().toJson(this);
   }
 
+
+  public String getFieldAdsSignalSourceType() {
+    return mAdsSignalSourceType;
+  }
+
+  public AdPromotedObject setFieldAdsSignalSourceType(String value) {
+    this.mAdsSignalSourceType = value;
+    return this;
+  }
 
   public String getFieldApplicationId() {
     return mApplicationId;
@@ -989,6 +1000,7 @@ public class AdPromotedObject extends APINode {
   }
 
   public AdPromotedObject copyFrom(AdPromotedObject instance) {
+    this.mAdsSignalSourceType = instance.mAdsSignalSourceType;
     this.mApplicationId = instance.mApplicationId;
     this.mBoostedProductSetId = instance.mBoostedProductSetId;
     this.mConversionGoalId = instance.mConversionGoalId;

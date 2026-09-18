@@ -1587,6 +1587,7 @@ public class CustomAudience extends APINode {
       "created_time",
       "creative",
       "creative_asset_groups_spec",
+      "creative_audience_pairing_persona",
       "creative_automation_spec",
       "demolink_hash",
       "display_sequence",
@@ -1850,6 +1851,13 @@ public class CustomAudience extends APINode {
     }
     public APIRequestGetAds requestCreativeAssetGroupsSpecField (boolean value) {
       this.requestField("creative_asset_groups_spec", value);
+      return this;
+    }
+    public APIRequestGetAds requestCreativeAudiencePairingPersonaField () {
+      return this.requestCreativeAudiencePairingPersonaField(true);
+    }
+    public APIRequestGetAds requestCreativeAudiencePairingPersonaField (boolean value) {
+      this.requestField("creative_audience_pairing_persona", value);
       return this;
     }
     public APIRequestGetAds requestCreativeAutomationSpecField () {

@@ -220,7 +220,9 @@ public class AdAccountAdVideos extends APINode {
       "ad_account_id",
       "after",
       "before",
+      "date_format",
       "fields",
+      "filtering",
       "has_integrity_violation",
       "limit",
       "max_aspect_ratio",
@@ -312,8 +314,18 @@ public class AdAccountAdVideos extends APINode {
       return this;
     }
 
+    public APIRequestGenget setDateFormat (String dateFormat) {
+      this.setParam("date_format", dateFormat);
+      return this;
+    }
+
     public APIRequestGenget setFields (String fields) {
       this.setParam("fields", fields);
+      return this;
+    }
+
+    public APIRequestGenget setFiltering (String filtering) {
+      this.setParam("filtering", filtering);
       return this;
     }
 

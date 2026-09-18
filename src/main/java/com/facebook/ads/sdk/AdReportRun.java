@@ -440,6 +440,14 @@ public class AdReportRun extends APINode {
       "configurable_attribution_action",
       "configurable_attribution_actionvalue",
       "configurable_audience_overlap_reach",
+      "configurable_audience_overlap_with_conv_action",
+      "configurable_audience_overlap_with_conv_converters",
+      "configurable_audience_overlap_with_conv_exposure_cost",
+      "configurable_audience_overlap_with_conv_exposure_impressions",
+      "configurable_audience_overlap_with_conv_exposure_reach",
+      "configurable_placement_ptc_conversions",
+      "configurable_placement_ptc_converters",
+      "configurable_placement_ptc_reach",
       "configurable_reachbyfrequency_action",
       "configurable_reachbyfrequency_converters_count",
       "configurable_reachbyfrequency_impressions_cost",
@@ -985,6 +993,62 @@ public class AdReportRun extends APINode {
     }
     public APIRequestGetInsights requestConfigurableAudienceOverlapReachField (boolean value) {
       this.requestField("configurable_audience_overlap_reach", value);
+      return this;
+    }
+    public APIRequestGetInsights requestConfigurableAudienceOverlapWithConvActionField () {
+      return this.requestConfigurableAudienceOverlapWithConvActionField(true);
+    }
+    public APIRequestGetInsights requestConfigurableAudienceOverlapWithConvActionField (boolean value) {
+      this.requestField("configurable_audience_overlap_with_conv_action", value);
+      return this;
+    }
+    public APIRequestGetInsights requestConfigurableAudienceOverlapWithConvConvertersField () {
+      return this.requestConfigurableAudienceOverlapWithConvConvertersField(true);
+    }
+    public APIRequestGetInsights requestConfigurableAudienceOverlapWithConvConvertersField (boolean value) {
+      this.requestField("configurable_audience_overlap_with_conv_converters", value);
+      return this;
+    }
+    public APIRequestGetInsights requestConfigurableAudienceOverlapWithConvExposureCostField () {
+      return this.requestConfigurableAudienceOverlapWithConvExposureCostField(true);
+    }
+    public APIRequestGetInsights requestConfigurableAudienceOverlapWithConvExposureCostField (boolean value) {
+      this.requestField("configurable_audience_overlap_with_conv_exposure_cost", value);
+      return this;
+    }
+    public APIRequestGetInsights requestConfigurableAudienceOverlapWithConvExposureImpressionsField () {
+      return this.requestConfigurableAudienceOverlapWithConvExposureImpressionsField(true);
+    }
+    public APIRequestGetInsights requestConfigurableAudienceOverlapWithConvExposureImpressionsField (boolean value) {
+      this.requestField("configurable_audience_overlap_with_conv_exposure_impressions", value);
+      return this;
+    }
+    public APIRequestGetInsights requestConfigurableAudienceOverlapWithConvExposureReachField () {
+      return this.requestConfigurableAudienceOverlapWithConvExposureReachField(true);
+    }
+    public APIRequestGetInsights requestConfigurableAudienceOverlapWithConvExposureReachField (boolean value) {
+      this.requestField("configurable_audience_overlap_with_conv_exposure_reach", value);
+      return this;
+    }
+    public APIRequestGetInsights requestConfigurablePlacementPtcConversionsField () {
+      return this.requestConfigurablePlacementPtcConversionsField(true);
+    }
+    public APIRequestGetInsights requestConfigurablePlacementPtcConversionsField (boolean value) {
+      this.requestField("configurable_placement_ptc_conversions", value);
+      return this;
+    }
+    public APIRequestGetInsights requestConfigurablePlacementPtcConvertersField () {
+      return this.requestConfigurablePlacementPtcConvertersField(true);
+    }
+    public APIRequestGetInsights requestConfigurablePlacementPtcConvertersField (boolean value) {
+      this.requestField("configurable_placement_ptc_converters", value);
+      return this;
+    }
+    public APIRequestGetInsights requestConfigurablePlacementPtcReachField () {
+      return this.requestConfigurablePlacementPtcReachField(true);
+    }
+    public APIRequestGetInsights requestConfigurablePlacementPtcReachField (boolean value) {
+      this.requestField("configurable_placement_ptc_reach", value);
       return this;
     }
     public APIRequestGetInsights requestConfigurableReachbyfrequencyActionField () {
@@ -2698,6 +2762,10 @@ public class AdReportRun extends APINode {
       VALUE_COUNTRY("country"),
       @SerializedName("creative_automation_asset_id")
       VALUE_CREATIVE_AUTOMATION_ASSET_ID("creative_automation_asset_id"),
+      @SerializedName("creative_fingerprint_details")
+      VALUE_CREATIVE_FINGERPRINT_DETAILS("creative_fingerprint_details"),
+      @SerializedName("creative_media_type_breakdown")
+      VALUE_CREATIVE_MEDIA_TYPE_BREAKDOWN("creative_media_type_breakdown"),
       @SerializedName("creative_relaxation_asset_type")
       VALUE_CREATIVE_RELAXATION_ASSET_TYPE("creative_relaxation_asset_type"),
       @SerializedName("crm_advertiser_l12_territory_ids")

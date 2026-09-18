@@ -217,6 +217,12 @@ public class ProductCatalogItemsBatch extends APINode {
       return lastResponse;
     }
     public static final String[] PARAMS = {
+      "allow_upsert",
+      "item_sub_type",
+      "item_type",
+      "request_origin",
+      "requests",
+      "version",
     };
 
     public static final String[] FIELDS = {
@@ -275,6 +281,52 @@ public class ProductCatalogItemsBatch extends APINode {
       return this;
     }
 
+
+    public APIRequestGenpost setAllowUpsert (Boolean allowUpsert) {
+      this.setParam("allow_upsert", allowUpsert);
+      return this;
+    }
+    public APIRequestGenpost setAllowUpsert (String allowUpsert) {
+      this.setParam("allow_upsert", allowUpsert);
+      return this;
+    }
+
+    public APIRequestGenpost setItemSubType (ProductCatalogItemsBatchPost.EnumItemSubType itemSubType) {
+      this.setParam("item_sub_type", itemSubType);
+      return this;
+    }
+    public APIRequestGenpost setItemSubType (String itemSubType) {
+      this.setParam("item_sub_type", itemSubType);
+      return this;
+    }
+
+    public APIRequestGenpost setItemType (String itemType) {
+      this.setParam("item_type", itemType);
+      return this;
+    }
+
+    public APIRequestGenpost setRequestOrigin (ProductCatalogItemsBatchPost.EnumRequestOrigin requestOrigin) {
+      this.setParam("request_origin", requestOrigin);
+      return this;
+    }
+    public APIRequestGenpost setRequestOrigin (String requestOrigin) {
+      this.setParam("request_origin", requestOrigin);
+      return this;
+    }
+
+    public APIRequestGenpost setRequests (String requests) {
+      this.setParam("requests", requests);
+      return this;
+    }
+
+    public APIRequestGenpost setVersion (Long version) {
+      this.setParam("version", version);
+      return this;
+    }
+    public APIRequestGenpost setVersion (String version) {
+      this.setParam("version", version);
+      return this;
+    }
 
     public APIRequestGenpost requestAllFields () {
       return this.requestAllFields(true);

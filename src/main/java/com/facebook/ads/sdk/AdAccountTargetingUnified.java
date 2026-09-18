@@ -1233,6 +1233,8 @@ public class AdAccountTargetingUnified extends APINode {
       VALUE_EFFECTIVE_OCULUS_POSITIONS("effective_oculus_positions"),
       @SerializedName("effective_publisher_platforms")
       VALUE_EFFECTIVE_PUBLISHER_PLATFORMS("effective_publisher_platforms"),
+      @SerializedName("effective_streaming_services_positions")
+      VALUE_EFFECTIVE_STREAMING_SERVICES_POSITIONS("effective_streaming_services_positions"),
       @SerializedName("effective_threads_positions")
       VALUE_EFFECTIVE_THREADS_POSITIONS("effective_threads_positions"),
       @SerializedName("effective_whatsapp_positions")
@@ -1391,6 +1393,8 @@ public class AdAccountTargetingUnified extends APINode {
       VALUE_RTB_FLAG("rtb_flag"),
       @SerializedName("site_category")
       VALUE_SITE_CATEGORY("site_category"),
+      @SerializedName("streaming_services_positions")
+      VALUE_STREAMING_SERVICES_POSITIONS("streaming_services_positions"),
       @SerializedName("subscriber_universe")
       VALUE_SUBSCRIBER_UNIVERSE("subscriber_universe"),
       @SerializedName("tafe_ca_mitigation_strategy")

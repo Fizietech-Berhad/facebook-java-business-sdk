@@ -63,6 +63,22 @@ public class IGMedia extends APINode {
   private String mId = null;
   @SerializedName("ig_id")
   private String mIgId = null;
+  @SerializedName("ingest_first_video_received_time")
+  private Long mIngestFirstVideoReceivedTime = null;
+  @SerializedName("ingest_is_ready_to_start")
+  private Boolean mIngestIsReadyToStart = null;
+  @SerializedName("ingest_key")
+  private String mIngestKey = null;
+  @SerializedName("ingest_last_heartbeat_time")
+  private Long mIngestLastHeartbeatTime = null;
+  @SerializedName("ingest_state")
+  private String mIngestState = null;
+  @SerializedName("ingest_url")
+  private String mIngestUrl = null;
+  @SerializedName("ingest_video_height")
+  private Long mIngestVideoHeight = null;
+  @SerializedName("ingest_video_width")
+  private Long mIngestVideoWidth = null;
   @SerializedName("is_ai_generated")
   private Boolean mIsAiGenerated = null;
   @SerializedName("is_comment_enabled")
@@ -73,6 +89,8 @@ public class IGMedia extends APINode {
   private String mLegacyInstagramMediaId = null;
   @SerializedName("like_count")
   private Long mLikeCount = null;
+  @SerializedName("live_status")
+  private String mLiveStatus = null;
   @SerializedName("media_audio_type")
   private String mMediaAudioType = null;
   @SerializedName("media_product_type")
@@ -426,6 +444,38 @@ public class IGMedia extends APINode {
     return mIgId;
   }
 
+  public Long getFieldIngestFirstVideoReceivedTime() {
+    return mIngestFirstVideoReceivedTime;
+  }
+
+  public Boolean getFieldIngestIsReadyToStart() {
+    return mIngestIsReadyToStart;
+  }
+
+  public String getFieldIngestKey() {
+    return mIngestKey;
+  }
+
+  public Long getFieldIngestLastHeartbeatTime() {
+    return mIngestLastHeartbeatTime;
+  }
+
+  public String getFieldIngestState() {
+    return mIngestState;
+  }
+
+  public String getFieldIngestUrl() {
+    return mIngestUrl;
+  }
+
+  public Long getFieldIngestVideoHeight() {
+    return mIngestVideoHeight;
+  }
+
+  public Long getFieldIngestVideoWidth() {
+    return mIngestVideoWidth;
+  }
+
   public Boolean getFieldIsAiGenerated() {
     return mIsAiGenerated;
   }
@@ -444,6 +494,10 @@ public class IGMedia extends APINode {
 
   public Long getFieldLikeCount() {
     return mLikeCount;
+  }
+
+  public String getFieldLiveStatus() {
+    return mLiveStatus;
   }
 
   public String getFieldMediaAudioType() {
@@ -912,11 +966,20 @@ public class IGMedia extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "ingest_first_video_received_time",
+      "ingest_is_ready_to_start",
+      "ingest_key",
+      "ingest_last_heartbeat_time",
+      "ingest_state",
+      "ingest_url",
+      "ingest_video_height",
+      "ingest_video_width",
       "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
       "like_count",
+      "live_status",
       "media_audio_type",
       "media_product_type",
       "media_type",
@@ -1104,6 +1167,62 @@ public class IGMedia extends APINode {
       this.requestField("ig_id", value);
       return this;
     }
+    public APIRequestGetChildren requestIngestFirstVideoReceivedTimeField () {
+      return this.requestIngestFirstVideoReceivedTimeField(true);
+    }
+    public APIRequestGetChildren requestIngestFirstVideoReceivedTimeField (boolean value) {
+      this.requestField("ingest_first_video_received_time", value);
+      return this;
+    }
+    public APIRequestGetChildren requestIngestIsReadyToStartField () {
+      return this.requestIngestIsReadyToStartField(true);
+    }
+    public APIRequestGetChildren requestIngestIsReadyToStartField (boolean value) {
+      this.requestField("ingest_is_ready_to_start", value);
+      return this;
+    }
+    public APIRequestGetChildren requestIngestKeyField () {
+      return this.requestIngestKeyField(true);
+    }
+    public APIRequestGetChildren requestIngestKeyField (boolean value) {
+      this.requestField("ingest_key", value);
+      return this;
+    }
+    public APIRequestGetChildren requestIngestLastHeartbeatTimeField () {
+      return this.requestIngestLastHeartbeatTimeField(true);
+    }
+    public APIRequestGetChildren requestIngestLastHeartbeatTimeField (boolean value) {
+      this.requestField("ingest_last_heartbeat_time", value);
+      return this;
+    }
+    public APIRequestGetChildren requestIngestStateField () {
+      return this.requestIngestStateField(true);
+    }
+    public APIRequestGetChildren requestIngestStateField (boolean value) {
+      this.requestField("ingest_state", value);
+      return this;
+    }
+    public APIRequestGetChildren requestIngestUrlField () {
+      return this.requestIngestUrlField(true);
+    }
+    public APIRequestGetChildren requestIngestUrlField (boolean value) {
+      this.requestField("ingest_url", value);
+      return this;
+    }
+    public APIRequestGetChildren requestIngestVideoHeightField () {
+      return this.requestIngestVideoHeightField(true);
+    }
+    public APIRequestGetChildren requestIngestVideoHeightField (boolean value) {
+      this.requestField("ingest_video_height", value);
+      return this;
+    }
+    public APIRequestGetChildren requestIngestVideoWidthField () {
+      return this.requestIngestVideoWidthField(true);
+    }
+    public APIRequestGetChildren requestIngestVideoWidthField (boolean value) {
+      this.requestField("ingest_video_width", value);
+      return this;
+    }
     public APIRequestGetChildren requestIsAiGeneratedField () {
       return this.requestIsAiGeneratedField(true);
     }
@@ -1137,6 +1256,13 @@ public class IGMedia extends APINode {
     }
     public APIRequestGetChildren requestLikeCountField (boolean value) {
       this.requestField("like_count", value);
+      return this;
+    }
+    public APIRequestGetChildren requestLiveStatusField () {
+      return this.requestLiveStatusField(true);
+    }
+    public APIRequestGetChildren requestLiveStatusField (boolean value) {
+      this.requestField("live_status", value);
       return this;
     }
     public APIRequestGetChildren requestMediaAudioTypeField () {
@@ -2124,6 +2250,7 @@ public class IGMedia extends APINode {
       "name",
       "price_string",
       "product_id",
+      "product_url",
       "review_status",
       "stripped_price_string",
       "stripped_sale_price_string",
@@ -2261,6 +2388,13 @@ public class IGMedia extends APINode {
     }
     public APIRequestGetProductTags requestProductIdField (boolean value) {
       this.requestField("product_id", value);
+      return this;
+    }
+    public APIRequestGetProductTags requestProductUrlField () {
+      return this.requestProductUrlField(true);
+    }
+    public APIRequestGetProductTags requestProductUrlField (boolean value) {
+      this.requestField("product_url", value);
       return this;
     }
     public APIRequestGetProductTags requestReviewStatusField () {
@@ -2559,11 +2693,20 @@ public class IGMedia extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "ingest_first_video_received_time",
+      "ingest_is_ready_to_start",
+      "ingest_key",
+      "ingest_last_heartbeat_time",
+      "ingest_state",
+      "ingest_url",
+      "ingest_video_height",
+      "ingest_video_width",
       "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
       "like_count",
+      "live_status",
       "media_audio_type",
       "media_product_type",
       "media_type",
@@ -2794,6 +2937,62 @@ public class IGMedia extends APINode {
       this.requestField("ig_id", value);
       return this;
     }
+    public APIRequestGet requestIngestFirstVideoReceivedTimeField () {
+      return this.requestIngestFirstVideoReceivedTimeField(true);
+    }
+    public APIRequestGet requestIngestFirstVideoReceivedTimeField (boolean value) {
+      this.requestField("ingest_first_video_received_time", value);
+      return this;
+    }
+    public APIRequestGet requestIngestIsReadyToStartField () {
+      return this.requestIngestIsReadyToStartField(true);
+    }
+    public APIRequestGet requestIngestIsReadyToStartField (boolean value) {
+      this.requestField("ingest_is_ready_to_start", value);
+      return this;
+    }
+    public APIRequestGet requestIngestKeyField () {
+      return this.requestIngestKeyField(true);
+    }
+    public APIRequestGet requestIngestKeyField (boolean value) {
+      this.requestField("ingest_key", value);
+      return this;
+    }
+    public APIRequestGet requestIngestLastHeartbeatTimeField () {
+      return this.requestIngestLastHeartbeatTimeField(true);
+    }
+    public APIRequestGet requestIngestLastHeartbeatTimeField (boolean value) {
+      this.requestField("ingest_last_heartbeat_time", value);
+      return this;
+    }
+    public APIRequestGet requestIngestStateField () {
+      return this.requestIngestStateField(true);
+    }
+    public APIRequestGet requestIngestStateField (boolean value) {
+      this.requestField("ingest_state", value);
+      return this;
+    }
+    public APIRequestGet requestIngestUrlField () {
+      return this.requestIngestUrlField(true);
+    }
+    public APIRequestGet requestIngestUrlField (boolean value) {
+      this.requestField("ingest_url", value);
+      return this;
+    }
+    public APIRequestGet requestIngestVideoHeightField () {
+      return this.requestIngestVideoHeightField(true);
+    }
+    public APIRequestGet requestIngestVideoHeightField (boolean value) {
+      this.requestField("ingest_video_height", value);
+      return this;
+    }
+    public APIRequestGet requestIngestVideoWidthField () {
+      return this.requestIngestVideoWidthField(true);
+    }
+    public APIRequestGet requestIngestVideoWidthField (boolean value) {
+      this.requestField("ingest_video_width", value);
+      return this;
+    }
     public APIRequestGet requestIsAiGeneratedField () {
       return this.requestIsAiGeneratedField(true);
     }
@@ -2827,6 +3026,13 @@ public class IGMedia extends APINode {
     }
     public APIRequestGet requestLikeCountField (boolean value) {
       this.requestField("like_count", value);
+      return this;
+    }
+    public APIRequestGet requestLiveStatusField () {
+      return this.requestLiveStatusField(true);
+    }
+    public APIRequestGet requestLiveStatusField (boolean value) {
+      this.requestField("live_status", value);
       return this;
     }
     public APIRequestGet requestMediaAudioTypeField () {
@@ -2966,6 +3172,7 @@ public class IGMedia extends APINode {
     }
     public static final String[] PARAMS = {
       "comment_enabled",
+      "status",
     };
 
     public static final String[] FIELDS = {
@@ -3034,6 +3241,15 @@ public class IGMedia extends APINode {
       return this;
     }
 
+    public APIRequestUpdate setStatus (IGMedia.EnumStatus status) {
+      this.setParam("status", status);
+      return this;
+    }
+    public APIRequestUpdate setStatus (String status) {
+      this.setParam("status", status);
+      return this;
+    }
+
     public APIRequestUpdate requestAllFields () {
       return this.requestAllFields(true);
     }
@@ -3070,6 +3286,25 @@ public class IGMedia extends APINode {
       return this;
     }
 
+  }
+
+  public static enum EnumStatus {
+      @SerializedName("ENDED")
+      VALUE_ENDED("ENDED"),
+      @SerializedName("STARTED")
+      VALUE_STARTED("STARTED"),
+      ;
+
+      private String value;
+
+      private EnumStatus(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
   }
 
   public static enum EnumBoostableMediaCallsite {
@@ -3117,11 +3352,20 @@ public class IGMedia extends APINode {
     this.mHasSlider = instance.mHasSlider;
     this.mId = instance.mId;
     this.mIgId = instance.mIgId;
+    this.mIngestFirstVideoReceivedTime = instance.mIngestFirstVideoReceivedTime;
+    this.mIngestIsReadyToStart = instance.mIngestIsReadyToStart;
+    this.mIngestKey = instance.mIngestKey;
+    this.mIngestLastHeartbeatTime = instance.mIngestLastHeartbeatTime;
+    this.mIngestState = instance.mIngestState;
+    this.mIngestUrl = instance.mIngestUrl;
+    this.mIngestVideoHeight = instance.mIngestVideoHeight;
+    this.mIngestVideoWidth = instance.mIngestVideoWidth;
     this.mIsAiGenerated = instance.mIsAiGenerated;
     this.mIsCommentEnabled = instance.mIsCommentEnabled;
     this.mIsSharedToFeed = instance.mIsSharedToFeed;
     this.mLegacyInstagramMediaId = instance.mLegacyInstagramMediaId;
     this.mLikeCount = instance.mLikeCount;
+    this.mLiveStatus = instance.mLiveStatus;
     this.mMediaAudioType = instance.mMediaAudioType;
     this.mMediaProductType = instance.mMediaProductType;
     this.mMediaType = instance.mMediaType;

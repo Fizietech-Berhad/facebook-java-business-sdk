@@ -46,19 +46,29 @@ public class AdAccountGet extends APINode {
   @SerializedName("account_currency_ratio_to_usd")
   private Double mAccountCurrencyRatioToUsd = null;
   @SerializedName("account_id")
-  private String mAccountId = null;
+  private Long mAccountId = null;
   @SerializedName("account_status")
   private Long mAccountStatus = null;
   @SerializedName("active_billing_date_preference")
   private Object mActiveBillingDatePreference = null;
   @SerializedName("activities")
   private Object mActivities = null;
+  @SerializedName("ad_account_creation_request")
+  private Object mAdAccountCreationRequest = null;
   @SerializedName("ad_account_promotable_objects")
   private Object mAdAccountPromotableObjects = null;
   @SerializedName("ad_column_sizes")
   private Object mAdColumnSizes = null;
   @SerializedName("ad_limits_insights")
   private Object mAdLimitsInsights = null;
+  @SerializedName("ad_place_page_sets")
+  private Object mAdPlacePageSets = null;
+  @SerializedName("ad_quick_views")
+  private Object mAdQuickViews = null;
+  @SerializedName("ad_report_builder_reports")
+  private Object mAdReportBuilderReports = null;
+  @SerializedName("ad_studies")
+  private Object mAdStudies = null;
   @SerializedName("adcreatives")
   private Object mAdcreatives = null;
   @SerializedName("addrafts")
@@ -75,6 +85,8 @@ public class AdAccountGet extends APINode {
   private Object mAdrulesLibrary = null;
   @SerializedName("ads")
   private Object mAds = null;
+  @SerializedName("ads_creation_saved_state")
+  private Object mAdsCreationSavedState = null;
   @SerializedName("ads_paused")
   private Boolean mAdsPaused = null;
   @SerializedName("ads_volume")
@@ -129,8 +141,12 @@ public class AdAccountGet extends APINode {
   private Double mAssetScore = null;
   @SerializedName("assigned_partners")
   private Object mAssignedPartners = null;
+  @SerializedName("assigned_users")
+  private Object mAssignedUsers = null;
   @SerializedName("attr_window_deprecation_group")
   private String mAttrWindowDeprecationGroup = null;
+  @SerializedName("audiencesharing_recipientaccounts")
+  private Object mAudiencesharingRecipientaccounts = null;
   @SerializedName("auth_flow_for_trust_tier_state")
   private EnumAuthFlowForTrustTierState mAuthFlowForTrustTierState = null;
   @SerializedName("authorized_country_for_political_ads")
@@ -207,6 +223,8 @@ public class AdAccountGet extends APINode {
   private Object mCreatedTime = null;
   @SerializedName("creation_packages")
   private Object mCreationPackages = null;
+  @SerializedName("creative_text_suggestions")
+  private Object mCreativeTextSuggestions = null;
   @SerializedName("ctwa_smb_enforcing_days_left")
   private Long mCtwaSmbEnforcingDaysLeft = null;
   @SerializedName("ctx_advertiser_sabr_lifetime_duration_recommendation")
@@ -227,6 +245,8 @@ public class AdAccountGet extends APINode {
   private Object mCustomAudienceInfo = null;
   @SerializedName("customaudiences")
   private Object mCustomaudiences = null;
+  @SerializedName("customaudiencestos")
+  private Object mCustomaudiencestos = null;
   @SerializedName("customconversions")
   private Object mCustomconversions = null;
   @SerializedName("customer_po_number")
@@ -301,8 +321,12 @@ public class AdAccountGet extends APINode {
   private String mId = null;
   @SerializedName("if_viewer_has_permission_to_advertise")
   private Boolean mIfViewerHasPermissionToAdvertise = null;
+  @SerializedName("impacting_ad_studies")
+  private Object mImpactingAdStudies = null;
   @SerializedName("incremental_conversion_optimization_ad_studies")
   private List<Object> mIncrementalConversionOptimizationAdStudies = null;
+  @SerializedName("insights")
+  private Object mInsights = null;
   @SerializedName("instagram_accounts")
   private Object mInstagramAccounts = null;
   @SerializedName("invoicing_emails")
@@ -365,6 +389,10 @@ public class AdAccountGet extends APINode {
   private Boolean mIsRetailMediaNetwork = null;
   @SerializedName("is_shopless_awpt_eligible")
   private Boolean mIsShoplessAwptEligible = null;
+  @SerializedName("is_simplified_creation_only_111_eligible")
+  private Boolean mIsSimplifiedCreationOnly111Eligible = null;
+  @SerializedName("is_simplified_creation_segment_eligible")
+  private Boolean mIsSimplifiedCreationSegmentEligible = null;
   @SerializedName("is_tax_id_required")
   private Boolean mIsTaxIdRequired = null;
   @SerializedName("is_tier_0")
@@ -397,6 +425,14 @@ public class AdAccountGet extends APINode {
   private Object mLiableAddress = null;
   @SerializedName("liable_addresses")
   private Object mLiableAddresses = null;
+  @SerializedName("liable_to_org")
+  private Object mLiableToOrg = null;
+  @SerializedName("light_adsets")
+  private Object mLightAdsets = null;
+  @SerializedName("light_campaigns")
+  private Object mLightCampaigns = null;
+  @SerializedName("lightads")
+  private Object mLightads = null;
   @SerializedName("live_video_advertiser_details")
   private Object mLiveVideoAdvertiserDetails = null;
   @SerializedName("marketing_message_enablement_status")
@@ -429,8 +465,12 @@ public class AdAccountGet extends APINode {
   private Long mMooDefaultConversionBid = null;
   @SerializedName("name")
   private String mName = null;
+  @SerializedName("naming_templates")
+  private Object mNamingTemplates = null;
   @SerializedName("next_bill_date")
-  private Long mNextBillDate = null;
+  private Object mNextBillDate = null;
+  @SerializedName("offline_conversion_data_sets")
+  private Object mOfflineConversionDataSets = null;
   @SerializedName("offsite_pixels_tos_accepted")
   private Boolean mOffsitePixelsTosAccepted = null;
   @SerializedName("onbehalf_requests")
@@ -440,7 +480,7 @@ public class AdAccountGet extends APINode {
   @SerializedName("opportunity_score_weight")
   private Long mOpportunityScoreWeight = null;
   @SerializedName("owner")
-  private String mOwner = null;
+  private Long mOwner = null;
   @SerializedName("owner_business")
   private Object mOwnerBusiness = null;
   @SerializedName("page_authorized_country_for_political_ads")
@@ -455,6 +495,8 @@ public class AdAccountGet extends APINode {
   private Object mPendingBillingDatePreference = null;
   @SerializedName("prepay_account_balance")
   private Object mPrepayAccountBalance = null;
+  @SerializedName("promote_pages")
+  private Object mPromotePages = null;
   @SerializedName("promotion_metadata")
   private List<Object> mPromotionMetadata = null;
   @SerializedName("promotion_metadata_live_crawl")
@@ -489,6 +531,8 @@ public class AdAccountGet extends APINode {
   private Object mSoldToAddress = null;
   @SerializedName("sold_to_addresses")
   private Object mSoldToAddresses = null;
+  @SerializedName("sold_to_org")
+  private Object mSoldToOrg = null;
   @SerializedName("spend_cap")
   private String mSpendCap = null;
   @SerializedName("spend_cap_history")
@@ -539,10 +583,14 @@ public class AdAccountGet extends APINode {
   private List<String> mUserTasks = null;
   @SerializedName("user_tos_accepted")
   private Map<Long, Long> mUserTosAccepted = null;
+  @SerializedName("userpermissions")
+  private Object mUserpermissions = null;
   @SerializedName("users")
   private Object mUsers = null;
   @SerializedName("value_rule_set")
   private Object mValueRuleSet = null;
+  @SerializedName("video_ads")
+  private Object mVideoAds = null;
   @SerializedName("viewable_business")
   private Object mViewableBusiness = null;
   @SerializedName("viewable_businesses")
@@ -716,11 +764,11 @@ public class AdAccountGet extends APINode {
     return this;
   }
 
-  public String getFieldAccountId() {
+  public Long getFieldAccountId() {
     return mAccountId;
   }
 
-  public AdAccountGet setFieldAccountId(String value) {
+  public AdAccountGet setFieldAccountId(Long value) {
     this.mAccountId = value;
     return this;
   }
@@ -752,6 +800,15 @@ public class AdAccountGet extends APINode {
     return this;
   }
 
+  public Object getFieldAdAccountCreationRequest() {
+    return mAdAccountCreationRequest;
+  }
+
+  public AdAccountGet setFieldAdAccountCreationRequest(Object value) {
+    this.mAdAccountCreationRequest = value;
+    return this;
+  }
+
   public Object getFieldAdAccountPromotableObjects() {
     return mAdAccountPromotableObjects;
   }
@@ -776,6 +833,42 @@ public class AdAccountGet extends APINode {
 
   public AdAccountGet setFieldAdLimitsInsights(Object value) {
     this.mAdLimitsInsights = value;
+    return this;
+  }
+
+  public Object getFieldAdPlacePageSets() {
+    return mAdPlacePageSets;
+  }
+
+  public AdAccountGet setFieldAdPlacePageSets(Object value) {
+    this.mAdPlacePageSets = value;
+    return this;
+  }
+
+  public Object getFieldAdQuickViews() {
+    return mAdQuickViews;
+  }
+
+  public AdAccountGet setFieldAdQuickViews(Object value) {
+    this.mAdQuickViews = value;
+    return this;
+  }
+
+  public Object getFieldAdReportBuilderReports() {
+    return mAdReportBuilderReports;
+  }
+
+  public AdAccountGet setFieldAdReportBuilderReports(Object value) {
+    this.mAdReportBuilderReports = value;
+    return this;
+  }
+
+  public Object getFieldAdStudies() {
+    return mAdStudies;
+  }
+
+  public AdAccountGet setFieldAdStudies(Object value) {
+    this.mAdStudies = value;
     return this;
   }
 
@@ -848,6 +941,15 @@ public class AdAccountGet extends APINode {
 
   public AdAccountGet setFieldAds(Object value) {
     this.mAds = value;
+    return this;
+  }
+
+  public Object getFieldAdsCreationSavedState() {
+    return mAdsCreationSavedState;
+  }
+
+  public AdAccountGet setFieldAdsCreationSavedState(Object value) {
+    this.mAdsCreationSavedState = value;
     return this;
   }
 
@@ -1094,12 +1196,30 @@ public class AdAccountGet extends APINode {
     return this;
   }
 
+  public Object getFieldAssignedUsers() {
+    return mAssignedUsers;
+  }
+
+  public AdAccountGet setFieldAssignedUsers(Object value) {
+    this.mAssignedUsers = value;
+    return this;
+  }
+
   public String getFieldAttrWindowDeprecationGroup() {
     return mAttrWindowDeprecationGroup;
   }
 
   public AdAccountGet setFieldAttrWindowDeprecationGroup(String value) {
     this.mAttrWindowDeprecationGroup = value;
+    return this;
+  }
+
+  public Object getFieldAudiencesharingRecipientaccounts() {
+    return mAudiencesharingRecipientaccounts;
+  }
+
+  public AdAccountGet setFieldAudiencesharingRecipientaccounts(Object value) {
+    this.mAudiencesharingRecipientaccounts = value;
     return this;
   }
 
@@ -1445,6 +1565,15 @@ public class AdAccountGet extends APINode {
     return this;
   }
 
+  public Object getFieldCreativeTextSuggestions() {
+    return mCreativeTextSuggestions;
+  }
+
+  public AdAccountGet setFieldCreativeTextSuggestions(Object value) {
+    this.mCreativeTextSuggestions = value;
+    return this;
+  }
+
   public Long getFieldCtwaSmbEnforcingDaysLeft() {
     return mCtwaSmbEnforcingDaysLeft;
   }
@@ -1532,6 +1661,15 @@ public class AdAccountGet extends APINode {
 
   public AdAccountGet setFieldCustomaudiences(Object value) {
     this.mCustomaudiences = value;
+    return this;
+  }
+
+  public Object getFieldCustomaudiencestos() {
+    return mCustomaudiencestos;
+  }
+
+  public AdAccountGet setFieldCustomaudiencestos(Object value) {
+    this.mCustomaudiencestos = value;
     return this;
   }
 
@@ -1868,12 +2006,30 @@ public class AdAccountGet extends APINode {
     return this;
   }
 
+  public Object getFieldImpactingAdStudies() {
+    return mImpactingAdStudies;
+  }
+
+  public AdAccountGet setFieldImpactingAdStudies(Object value) {
+    this.mImpactingAdStudies = value;
+    return this;
+  }
+
   public List<Object> getFieldIncrementalConversionOptimizationAdStudies() {
     return mIncrementalConversionOptimizationAdStudies;
   }
 
   public AdAccountGet setFieldIncrementalConversionOptimizationAdStudies(List<Object> value) {
     this.mIncrementalConversionOptimizationAdStudies = value;
+    return this;
+  }
+
+  public Object getFieldInsights() {
+    return mInsights;
+  }
+
+  public AdAccountGet setFieldInsights(Object value) {
+    this.mInsights = value;
     return this;
   }
 
@@ -2156,6 +2312,24 @@ public class AdAccountGet extends APINode {
     return this;
   }
 
+  public Boolean getFieldIsSimplifiedCreationOnly111Eligible() {
+    return mIsSimplifiedCreationOnly111Eligible;
+  }
+
+  public AdAccountGet setFieldIsSimplifiedCreationOnly111Eligible(Boolean value) {
+    this.mIsSimplifiedCreationOnly111Eligible = value;
+    return this;
+  }
+
+  public Boolean getFieldIsSimplifiedCreationSegmentEligible() {
+    return mIsSimplifiedCreationSegmentEligible;
+  }
+
+  public AdAccountGet setFieldIsSimplifiedCreationSegmentEligible(Boolean value) {
+    this.mIsSimplifiedCreationSegmentEligible = value;
+    return this;
+  }
+
   public Boolean getFieldIsTaxIdRequired() {
     return mIsTaxIdRequired;
   }
@@ -2297,6 +2471,42 @@ public class AdAccountGet extends APINode {
 
   public AdAccountGet setFieldLiableAddresses(Object value) {
     this.mLiableAddresses = value;
+    return this;
+  }
+
+  public Object getFieldLiableToOrg() {
+    return mLiableToOrg;
+  }
+
+  public AdAccountGet setFieldLiableToOrg(Object value) {
+    this.mLiableToOrg = value;
+    return this;
+  }
+
+  public Object getFieldLightAdsets() {
+    return mLightAdsets;
+  }
+
+  public AdAccountGet setFieldLightAdsets(Object value) {
+    this.mLightAdsets = value;
+    return this;
+  }
+
+  public Object getFieldLightCampaigns() {
+    return mLightCampaigns;
+  }
+
+  public AdAccountGet setFieldLightCampaigns(Object value) {
+    this.mLightCampaigns = value;
+    return this;
+  }
+
+  public Object getFieldLightads() {
+    return mLightads;
+  }
+
+  public AdAccountGet setFieldLightads(Object value) {
+    this.mLightads = value;
     return this;
   }
 
@@ -2444,12 +2654,30 @@ public class AdAccountGet extends APINode {
     return this;
   }
 
-  public Long getFieldNextBillDate() {
+  public Object getFieldNamingTemplates() {
+    return mNamingTemplates;
+  }
+
+  public AdAccountGet setFieldNamingTemplates(Object value) {
+    this.mNamingTemplates = value;
+    return this;
+  }
+
+  public Object getFieldNextBillDate() {
     return mNextBillDate;
   }
 
-  public AdAccountGet setFieldNextBillDate(Long value) {
+  public AdAccountGet setFieldNextBillDate(Object value) {
     this.mNextBillDate = value;
+    return this;
+  }
+
+  public Object getFieldOfflineConversionDataSets() {
+    return mOfflineConversionDataSets;
+  }
+
+  public AdAccountGet setFieldOfflineConversionDataSets(Object value) {
+    this.mOfflineConversionDataSets = value;
     return this;
   }
 
@@ -2489,11 +2717,11 @@ public class AdAccountGet extends APINode {
     return this;
   }
 
-  public String getFieldOwner() {
+  public Long getFieldOwner() {
     return mOwner;
   }
 
-  public AdAccountGet setFieldOwner(String value) {
+  public AdAccountGet setFieldOwner(Long value) {
     this.mOwner = value;
     return this;
   }
@@ -2558,6 +2786,15 @@ public class AdAccountGet extends APINode {
 
   public AdAccountGet setFieldPrepayAccountBalance(Object value) {
     this.mPrepayAccountBalance = value;
+    return this;
+  }
+
+  public Object getFieldPromotePages() {
+    return mPromotePages;
+  }
+
+  public AdAccountGet setFieldPromotePages(Object value) {
+    this.mPromotePages = value;
     return this;
   }
 
@@ -2711,6 +2948,15 @@ public class AdAccountGet extends APINode {
 
   public AdAccountGet setFieldSoldToAddresses(Object value) {
     this.mSoldToAddresses = value;
+    return this;
+  }
+
+  public Object getFieldSoldToOrg() {
+    return mSoldToOrg;
+  }
+
+  public AdAccountGet setFieldSoldToOrg(Object value) {
+    this.mSoldToOrg = value;
     return this;
   }
 
@@ -2939,6 +3185,15 @@ public class AdAccountGet extends APINode {
     return this;
   }
 
+  public Object getFieldUserpermissions() {
+    return mUserpermissions;
+  }
+
+  public AdAccountGet setFieldUserpermissions(Object value) {
+    this.mUserpermissions = value;
+    return this;
+  }
+
   public Object getFieldUsers() {
     return mUsers;
   }
@@ -2954,6 +3209,15 @@ public class AdAccountGet extends APINode {
 
   public AdAccountGet setFieldValueRuleSet(Object value) {
     this.mValueRuleSet = value;
+    return this;
+  }
+
+  public Object getFieldVideoAds() {
+    return mVideoAds;
+  }
+
+  public AdAccountGet setFieldVideoAds(Object value) {
+    this.mVideoAds = value;
     return this;
   }
 
@@ -3754,9 +4018,14 @@ public class AdAccountGet extends APINode {
     this.mAccountStatus = instance.mAccountStatus;
     this.mActiveBillingDatePreference = instance.mActiveBillingDatePreference;
     this.mActivities = instance.mActivities;
+    this.mAdAccountCreationRequest = instance.mAdAccountCreationRequest;
     this.mAdAccountPromotableObjects = instance.mAdAccountPromotableObjects;
     this.mAdColumnSizes = instance.mAdColumnSizes;
     this.mAdLimitsInsights = instance.mAdLimitsInsights;
+    this.mAdPlacePageSets = instance.mAdPlacePageSets;
+    this.mAdQuickViews = instance.mAdQuickViews;
+    this.mAdReportBuilderReports = instance.mAdReportBuilderReports;
+    this.mAdStudies = instance.mAdStudies;
     this.mAdcreatives = instance.mAdcreatives;
     this.mAddrafts = instance.mAddrafts;
     this.mAdimages = instance.mAdimages;
@@ -3765,6 +4034,7 @@ public class AdAccountGet extends APINode {
     this.mAdrulesHistory = instance.mAdrulesHistory;
     this.mAdrulesLibrary = instance.mAdrulesLibrary;
     this.mAds = instance.mAds;
+    this.mAdsCreationSavedState = instance.mAdsCreationSavedState;
     this.mAdsPaused = instance.mAdsPaused;
     this.mAdsVolume = instance.mAdsVolume;
     this.mAdsets = instance.mAdsets;
@@ -3792,7 +4062,9 @@ public class AdAccountGet extends APINode {
     this.mAssetFeedSpecFromInstagramMedia = instance.mAssetFeedSpecFromInstagramMedia;
     this.mAssetScore = instance.mAssetScore;
     this.mAssignedPartners = instance.mAssignedPartners;
+    this.mAssignedUsers = instance.mAssignedUsers;
     this.mAttrWindowDeprecationGroup = instance.mAttrWindowDeprecationGroup;
+    this.mAudiencesharingRecipientaccounts = instance.mAudiencesharingRecipientaccounts;
     this.mAuthFlowForTrustTierState = instance.mAuthFlowForTrustTierState;
     this.mAuthorizedCountryForPoliticalAds = instance.mAuthorizedCountryForPoliticalAds;
     this.mAutomaticCreativeOptimizationTestFrameworkEnrolled = instance.mAutomaticCreativeOptimizationTestFrameworkEnrolled;
@@ -3831,6 +4103,7 @@ public class AdAccountGet extends APINode {
     this.mCpasCampaignGroupDefaultBudget = instance.mCpasCampaignGroupDefaultBudget;
     this.mCreatedTime = instance.mCreatedTime;
     this.mCreationPackages = instance.mCreationPackages;
+    this.mCreativeTextSuggestions = instance.mCreativeTextSuggestions;
     this.mCtwaSmbEnforcingDaysLeft = instance.mCtwaSmbEnforcingDaysLeft;
     this.mCtxAdvertiserSabrLifetimeDurationRecommendation = instance.mCtxAdvertiserSabrLifetimeDurationRecommendation;
     this.mCtxDfoObjectiveDefaults = instance.mCtxDfoObjectiveDefaults;
@@ -3841,6 +4114,7 @@ public class AdAccountGet extends APINode {
     this.mCurrentUnpaidUnrepaidInvoice = instance.mCurrentUnpaidUnrepaidInvoice;
     this.mCustomAudienceInfo = instance.mCustomAudienceInfo;
     this.mCustomaudiences = instance.mCustomaudiences;
+    this.mCustomaudiencestos = instance.mCustomaudiencestos;
     this.mCustomconversions = instance.mCustomconversions;
     this.mCustomerPoNumber = instance.mCustomerPoNumber;
     this.mDailySpendLimit = instance.mDailySpendLimit;
@@ -3878,7 +4152,9 @@ public class AdAccountGet extends APINode {
     this.mHasValueRuleSet = instance.mHasValueRuleSet;
     this.mId = instance.mId;
     this.mIfViewerHasPermissionToAdvertise = instance.mIfViewerHasPermissionToAdvertise;
+    this.mImpactingAdStudies = instance.mImpactingAdStudies;
     this.mIncrementalConversionOptimizationAdStudies = instance.mIncrementalConversionOptimizationAdStudies;
+    this.mInsights = instance.mInsights;
     this.mInstagramAccounts = instance.mInstagramAccounts;
     this.mInvoicingEmails = instance.mInvoicingEmails;
     this.mIosFourteenCampaignLimits = instance.mIosFourteenCampaignLimits;
@@ -3910,6 +4186,8 @@ public class AdAccountGet extends APINode {
     this.mIsPrepayAccount = instance.mIsPrepayAccount;
     this.mIsRetailMediaNetwork = instance.mIsRetailMediaNetwork;
     this.mIsShoplessAwptEligible = instance.mIsShoplessAwptEligible;
+    this.mIsSimplifiedCreationOnly111Eligible = instance.mIsSimplifiedCreationOnly111Eligible;
+    this.mIsSimplifiedCreationSegmentEligible = instance.mIsSimplifiedCreationSegmentEligible;
     this.mIsTaxIdRequired = instance.mIsTaxIdRequired;
     this.mIsTier0 = instance.mIsTier0;
     this.mIsTier0Full = instance.mIsTier0Full;
@@ -3926,6 +4204,10 @@ public class AdAccountGet extends APINode {
     this.mLastUsedTime = instance.mLastUsedTime;
     this.mLiableAddress = instance.mLiableAddress;
     this.mLiableAddresses = instance.mLiableAddresses;
+    this.mLiableToOrg = instance.mLiableToOrg;
+    this.mLightAdsets = instance.mLightAdsets;
+    this.mLightCampaigns = instance.mLightCampaigns;
+    this.mLightads = instance.mLightads;
     this.mLiveVideoAdvertiserDetails = instance.mLiveVideoAdvertiserDetails;
     this.mMarketingMessageEnablementStatus = instance.mMarketingMessageEnablementStatus;
     this.mMarketingMessagesSettings = instance.mMarketingMessagesSettings;
@@ -3942,7 +4224,9 @@ public class AdAccountGet extends APINode {
     this.mModeledReportingType = instance.mModeledReportingType;
     this.mMooDefaultConversionBid = instance.mMooDefaultConversionBid;
     this.mName = instance.mName;
+    this.mNamingTemplates = instance.mNamingTemplates;
     this.mNextBillDate = instance.mNextBillDate;
+    this.mOfflineConversionDataSets = instance.mOfflineConversionDataSets;
     this.mOffsitePixelsTosAccepted = instance.mOffsitePixelsTosAccepted;
     this.mOnbehalfRequests = instance.mOnbehalfRequests;
     this.mOpportunityScore = instance.mOpportunityScore;
@@ -3955,6 +4239,7 @@ public class AdAccountGet extends APINode {
     this.mPaymentOptions = instance.mPaymentOptions;
     this.mPendingBillingDatePreference = instance.mPendingBillingDatePreference;
     this.mPrepayAccountBalance = instance.mPrepayAccountBalance;
+    this.mPromotePages = instance.mPromotePages;
     this.mPromotionMetadata = instance.mPromotionMetadata;
     this.mPromotionMetadataLiveCrawl = instance.mPromotionMetadataLiveCrawl;
     this.mPublisherBlockLists = instance.mPublisherBlockLists;
@@ -3972,6 +4257,7 @@ public class AdAccountGet extends APINode {
     this.mSiteLinksLiveCrawl = instance.mSiteLinksLiveCrawl;
     this.mSoldToAddress = instance.mSoldToAddress;
     this.mSoldToAddresses = instance.mSoldToAddresses;
+    this.mSoldToOrg = instance.mSoldToOrg;
     this.mSpendCap = instance.mSpendCap;
     this.mSpendCapHistory = instance.mSpendCapHistory;
     this.mSpendlimits = instance.mSpendlimits;
@@ -3997,8 +4283,10 @@ public class AdAccountGet extends APINode {
     this.mUserSettings = instance.mUserSettings;
     this.mUserTasks = instance.mUserTasks;
     this.mUserTosAccepted = instance.mUserTosAccepted;
+    this.mUserpermissions = instance.mUserpermissions;
     this.mUsers = instance.mUsers;
     this.mValueRuleSet = instance.mValueRuleSet;
+    this.mVideoAds = instance.mVideoAds;
     this.mViewableBusiness = instance.mViewableBusiness;
     this.mViewableBusinesses = instance.mViewableBusinesses;
     this.context = instance.context;

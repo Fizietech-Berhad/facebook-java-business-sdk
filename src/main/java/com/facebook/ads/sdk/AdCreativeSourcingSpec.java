@@ -67,6 +67,8 @@ public class AdCreativeSourcingSpec extends APINode {
   private Object mProductMediaMetadataSpec = null;
   @SerializedName("promotion_metadata_spec")
   private List<AdCreativePromotionMetadataSpec> mPromotionMetadataSpec = null;
+  @SerializedName("selected_video_id")
+  private String mSelectedVideoId = null;
   @SerializedName("site_links_data_consented")
   private Object mSiteLinksDataConsented = null;
   @SerializedName("site_links_spec")
@@ -350,6 +352,15 @@ public class AdCreativeSourcingSpec extends APINode {
     this.mPromotionMetadataSpec = AdCreativePromotionMetadataSpec.getGson().fromJson(value, type);
     return this;
   }
+  public String getFieldSelectedVideoId() {
+    return mSelectedVideoId;
+  }
+
+  public AdCreativeSourcingSpec setFieldSelectedVideoId(String value) {
+    this.mSelectedVideoId = value;
+    return this;
+  }
+
   public Object getFieldSiteLinksDataConsented() {
     return mSiteLinksDataConsented;
   }
@@ -430,6 +441,7 @@ public class AdCreativeSourcingSpec extends APINode {
     this.mPcaSpec = instance.mPcaSpec;
     this.mProductMediaMetadataSpec = instance.mProductMediaMetadataSpec;
     this.mPromotionMetadataSpec = instance.mPromotionMetadataSpec;
+    this.mSelectedVideoId = instance.mSelectedVideoId;
     this.mSiteLinksDataConsented = instance.mSiteLinksDataConsented;
     this.mSiteLinksSpec = instance.mSiteLinksSpec;
     this.mSourceUrl = instance.mSourceUrl;

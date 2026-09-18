@@ -3537,6 +3537,7 @@ public class AdAccount extends APINode {
       "link_og_id",
       "link_url",
       "marketing_message_structured_spec",
+      "media_optimization_spec",
       "media_sourcing_spec",
       "name",
       "object_id",
@@ -3904,6 +3905,15 @@ public class AdAccount extends APINode {
     }
     public APIRequestCreateAdCreative setMarketingMessageStructuredSpec (String marketingMessageStructuredSpec) {
       this.setParam("marketing_message_structured_spec", marketingMessageStructuredSpec);
+      return this;
+    }
+
+    public APIRequestCreateAdCreative setMediaOptimizationSpec (Map<String, String> mediaOptimizationSpec) {
+      this.setParam("media_optimization_spec", mediaOptimizationSpec);
+      return this;
+    }
+    public APIRequestCreateAdCreative setMediaOptimizationSpec (String mediaOptimizationSpec) {
+      this.setParam("media_optimization_spec", mediaOptimizationSpec);
       return this;
     }
 
@@ -6554,6 +6564,7 @@ public class AdAccount extends APINode {
       "created_time",
       "creative",
       "creative_asset_groups_spec",
+      "creative_audience_pairing_persona",
       "creative_automation_spec",
       "demolink_hash",
       "display_sequence",
@@ -6837,6 +6848,13 @@ public class AdAccount extends APINode {
       this.requestField("creative_asset_groups_spec", value);
       return this;
     }
+    public APIRequestGetAds requestCreativeAudiencePairingPersonaField () {
+      return this.requestCreativeAudiencePairingPersonaField(true);
+    }
+    public APIRequestGetAds requestCreativeAudiencePairingPersonaField (boolean value) {
+      this.requestField("creative_audience_pairing_persona", value);
+      return this;
+    }
     public APIRequestGetAds requestCreativeAutomationSpecField () {
       return this.requestCreativeAutomationSpecField(true);
     }
@@ -7011,6 +7029,7 @@ public class AdAccount extends APINode {
       "conversion_domain",
       "creative",
       "creative_asset_groups_spec",
+      "creative_audience_pairing_persona",
       "creative_automation_spec",
       "dataset_split_specs",
       "date_format",
@@ -7164,6 +7183,15 @@ public class AdAccount extends APINode {
     }
     public APIRequestCreateAd setCreativeAssetGroupsSpec (String creativeAssetGroupsSpec) {
       this.setParam("creative_asset_groups_spec", creativeAssetGroupsSpec);
+      return this;
+    }
+
+    public APIRequestCreateAd setCreativeAudiencePairingPersona (Map<String, String> creativeAudiencePairingPersona) {
+      this.setParam("creative_audience_pairing_persona", creativeAudiencePairingPersona);
+      return this;
+    }
+    public APIRequestCreateAd setCreativeAudiencePairingPersona (String creativeAudiencePairingPersona) {
+      this.setParam("creative_audience_pairing_persona", creativeAudiencePairingPersona);
       return this;
     }
 
@@ -7889,6 +7917,7 @@ public class AdAccount extends APINode {
       "created_time",
       "creative",
       "creative_asset_groups_spec",
+      "creative_audience_pairing_persona",
       "creative_automation_spec",
       "demolink_hash",
       "display_sequence",
@@ -8154,6 +8183,13 @@ public class AdAccount extends APINode {
       this.requestField("creative_asset_groups_spec", value);
       return this;
     }
+    public APIRequestGetAdsByLabels requestCreativeAudiencePairingPersonaField () {
+      return this.requestCreativeAudiencePairingPersonaField(true);
+    }
+    public APIRequestGetAdsByLabels requestCreativeAudiencePairingPersonaField (boolean value) {
+      this.requestField("creative_audience_pairing_persona", value);
+      return this;
+    }
     public APIRequestGetAdsByLabels requestCreativeAutomationSpecField () {
       return this.requestCreativeAutomationSpecField(true);
     }
@@ -8348,7 +8384,6 @@ public class AdAccount extends APINode {
       "campaign_attribution",
       "campaign_id",
       "configured_status",
-      "cost_bidding_mode",
       "created_time",
       "creative_diversity_label",
       "creative_diversity_score",
@@ -8703,13 +8738,6 @@ public class AdAccount extends APINode {
     }
     public APIRequestGetAdSets requestConfiguredStatusField (boolean value) {
       this.requestField("configured_status", value);
-      return this;
-    }
-    public APIRequestGetAdSets requestCostBiddingModeField () {
-      return this.requestCostBiddingModeField(true);
-    }
-    public APIRequestGetAdSets requestCostBiddingModeField (boolean value) {
-      this.requestField("cost_bidding_mode", value);
       return this;
     }
     public APIRequestGetAdSets requestCreatedTimeField () {
@@ -9195,7 +9223,6 @@ public class AdAccount extends APINode {
       "campaign_attribution",
       "campaign_id",
       "campaign_spec",
-      "cost_bidding_mode",
       "creative_sequence",
       "creative_sequence_repetition_pattern",
       "daily_budget",
@@ -9463,15 +9490,6 @@ public class AdAccount extends APINode {
     }
     public APIRequestCreateAdSet setCampaignSpec (String campaignSpec) {
       this.setParam("campaign_spec", campaignSpec);
-      return this;
-    }
-
-    public APIRequestCreateAdSet setCostBiddingMode (EnumCostBiddingMode costBiddingMode) {
-      this.setParam("cost_bidding_mode", costBiddingMode);
-      return this;
-    }
-    public APIRequestCreateAdSet setCostBiddingMode (String costBiddingMode) {
-      this.setParam("cost_bidding_mode", costBiddingMode);
       return this;
     }
 
@@ -10009,7 +10027,6 @@ public class AdAccount extends APINode {
       "campaign_attribution",
       "campaign_id",
       "configured_status",
-      "cost_bidding_mode",
       "created_time",
       "creative_diversity_label",
       "creative_diversity_score",
@@ -10337,13 +10354,6 @@ public class AdAccount extends APINode {
     }
     public APIRequestGetAdSetsByLabels requestConfiguredStatusField (boolean value) {
       this.requestField("configured_status", value);
-      return this;
-    }
-    public APIRequestGetAdSetsByLabels requestCostBiddingModeField () {
-      return this.requestCostBiddingModeField(true);
-    }
-    public APIRequestGetAdSetsByLabels requestCostBiddingModeField (boolean value) {
-      this.requestField("cost_bidding_mode", value);
       return this;
     }
     public APIRequestGetAdSetsByLabels requestCreatedTimeField () {
@@ -13695,7 +13705,6 @@ public class AdAccount extends APINode {
       "campaign_attribution",
       "campaign_id",
       "configured_status",
-      "cost_bidding_mode",
       "created_time",
       "creative_diversity_label",
       "creative_diversity_score",
@@ -14005,13 +14014,6 @@ public class AdAccount extends APINode {
     }
     public APIRequestGetAffectedAdSets requestConfiguredStatusField (boolean value) {
       this.requestField("configured_status", value);
-      return this;
-    }
-    public APIRequestGetAffectedAdSets requestCostBiddingModeField () {
-      return this.requestCostBiddingModeField(true);
-    }
-    public APIRequestGetAffectedAdSets requestCostBiddingModeField (boolean value) {
-      this.requestField("cost_bidding_mode", value);
       return this;
     }
     public APIRequestGetAffectedAdSets requestCreatedTimeField () {
@@ -18260,6 +18262,7 @@ public class AdAccount extends APINode {
       "account_id",
       "adlabels",
       "advantage_state_info",
+      "bid_constraints",
       "bid_strategy",
       "boosted_object_id",
       "brand_lift_studies",
@@ -18452,6 +18455,13 @@ public class AdAccount extends APINode {
     }
     public APIRequestGetCampaigns requestAdvantageStateInfoField (boolean value) {
       this.requestField("advantage_state_info", value);
+      return this;
+    }
+    public APIRequestGetCampaigns requestBidConstraintsField () {
+      return this.requestBidConstraintsField(true);
+    }
+    public APIRequestGetCampaigns requestBidConstraintsField (boolean value) {
+      this.requestField("bid_constraints", value);
       return this;
     }
     public APIRequestGetCampaigns requestBidStrategyField () {
@@ -19158,6 +19168,7 @@ public class AdAccount extends APINode {
       "account_id",
       "adlabels",
       "advantage_state_info",
+      "bid_constraints",
       "bid_strategy",
       "boosted_object_id",
       "brand_lift_studies",
@@ -19332,6 +19343,13 @@ public class AdAccount extends APINode {
     }
     public APIRequestGetCampaignsByLabels requestAdvantageStateInfoField (boolean value) {
       this.requestField("advantage_state_info", value);
+      return this;
+    }
+    public APIRequestGetCampaignsByLabels requestBidConstraintsField () {
+      return this.requestBidConstraintsField(true);
+    }
+    public APIRequestGetCampaignsByLabels requestBidConstraintsField (boolean value) {
+      this.requestField("bid_constraints", value);
       return this;
     }
     public APIRequestGetCampaignsByLabels requestBidStrategyField () {
@@ -21845,7 +21863,6 @@ public class AdAccount extends APINode {
       "campaign_attribution",
       "campaign_id",
       "configured_status",
-      "cost_bidding_mode",
       "created_time",
       "creative_diversity_label",
       "creative_diversity_score",
@@ -22160,13 +22177,6 @@ public class AdAccount extends APINode {
     }
     public APIRequestGetDeprecatedTargetingAdSets requestConfiguredStatusField (boolean value) {
       this.requestField("configured_status", value);
-      return this;
-    }
-    public APIRequestGetDeprecatedTargetingAdSets requestCostBiddingModeField () {
-      return this.requestCostBiddingModeField(true);
-    }
-    public APIRequestGetDeprecatedTargetingAdSets requestCostBiddingModeField (boolean value) {
-      this.requestField("cost_bidding_mode", value);
       return this;
     }
     public APIRequestGetDeprecatedTargetingAdSets requestCreatedTimeField () {
@@ -27899,6 +27909,7 @@ public class AdAccount extends APINode {
       "plan_type",
       "prediction_mode",
       "prediction_progress",
+      "product_type",
       "reference_id",
       "reservation_status",
       "start_time",
@@ -28540,6 +28551,13 @@ public class AdAccount extends APINode {
       this.requestField("prediction_progress", value);
       return this;
     }
+    public APIRequestGetReachFrequencyPredictions requestProductTypeField () {
+      return this.requestProductTypeField(true);
+    }
+    public APIRequestGetReachFrequencyPredictions requestProductTypeField (boolean value) {
+      this.requestField("product_type", value);
+      return this;
+    }
     public APIRequestGetReachFrequencyPredictions requestReferenceIdField () {
       return this.requestReferenceIdField(true);
     }
@@ -28695,11 +28713,11 @@ public class AdAccount extends APINode {
       "is_higher_average_frequency",
       "is_reach_and_frequency_io_buying",
       "is_reserved_buying",
-      "meta_moment_maker_spec",
       "num_curve_points",
       "objective",
       "optimization_goal",
       "prediction_mode",
+      "product_type",
       "reach",
       "rf_prediction_id",
       "rf_prediction_id_to_release",
@@ -28994,15 +29012,6 @@ public class AdAccount extends APINode {
       return this;
     }
 
-    public APIRequestCreateReachFrequencyPrediction setMetaMomentMakerSpec (Map<String, String> metaMomentMakerSpec) {
-      this.setParam("meta_moment_maker_spec", metaMomentMakerSpec);
-      return this;
-    }
-    public APIRequestCreateReachFrequencyPrediction setMetaMomentMakerSpec (String metaMomentMakerSpec) {
-      this.setParam("meta_moment_maker_spec", metaMomentMakerSpec);
-      return this;
-    }
-
     public APIRequestCreateReachFrequencyPrediction setNumCurvePoints (Long numCurvePoints) {
       this.setParam("num_curve_points", numCurvePoints);
       return this;
@@ -29028,6 +29037,15 @@ public class AdAccount extends APINode {
     }
     public APIRequestCreateReachFrequencyPrediction setPredictionMode (String predictionMode) {
       this.setParam("prediction_mode", predictionMode);
+      return this;
+    }
+
+    public APIRequestCreateReachFrequencyPrediction setProductType (ReachFrequencyPrediction.EnumProductType productType) {
+      this.setParam("product_type", productType);
+      return this;
+    }
+    public APIRequestCreateReachFrequencyPrediction setProductType (String productType) {
+      this.setParam("product_type", productType);
       return this;
     }
 
@@ -34745,27 +34763,6 @@ public class AdAccount extends APINode {
       }
   }
 
-  public static enum EnumCostBiddingMode {
-      @SerializedName("BALANCED")
-      VALUE_BALANCED("BALANCED"),
-      @SerializedName("COST_FOCUSED")
-      VALUE_COST_FOCUSED("COST_FOCUSED"),
-      @SerializedName("VOLUME_FOCUSED")
-      VALUE_VOLUME_FOCUSED("VOLUME_FOCUSED"),
-      ;
-
-      private String value;
-
-      private EnumCostBiddingMode(String value) {
-        this.value = value;
-      }
-
-      @Override
-      public String toString() {
-        return value;
-      }
-  }
-
   public static enum EnumCreativeSequenceRepetitionPattern {
       @SerializedName("FULL_SEQUENCE")
       VALUE_FULL_SEQUENCE("FULL_SEQUENCE"),
@@ -35076,6 +35073,8 @@ public class AdAccount extends APINode {
       VALUE_22("22"),
       @SerializedName("24")
       VALUE_24("24"),
+      @SerializedName("25")
+      VALUE_25("25"),
       ;
 
       private String value;

@@ -85,8 +85,6 @@ public class AdSet extends APINode {
   private String mCampaignId = null;
   @SerializedName("configured_status")
   private EnumConfiguredStatus mConfiguredStatus = null;
-  @SerializedName("cost_bidding_mode")
-  private String mCostBiddingMode = null;
   @SerializedName("created_time")
   private String mCreatedTime = null;
   @SerializedName("creative_diversity_label")
@@ -745,15 +743,6 @@ public class AdSet extends APINode {
 
   public AdSet setFieldConfiguredStatus(EnumConfiguredStatus value) {
     this.mConfiguredStatus = value;
-    return this;
-  }
-
-  public String getFieldCostBiddingMode() {
-    return mCostBiddingMode;
-  }
-
-  public AdSet setFieldCostBiddingMode(String value) {
-    this.mCostBiddingMode = value;
     return this;
   }
 
@@ -3138,6 +3127,7 @@ public class AdSet extends APINode {
       "created_time",
       "creative",
       "creative_asset_groups_spec",
+      "creative_audience_pairing_persona",
       "creative_automation_spec",
       "demolink_hash",
       "display_sequence",
@@ -3419,6 +3409,13 @@ public class AdSet extends APINode {
     }
     public APIRequestGetAds requestCreativeAssetGroupsSpecField (boolean value) {
       this.requestField("creative_asset_groups_spec", value);
+      return this;
+    }
+    public APIRequestGetAds requestCreativeAudiencePairingPersonaField () {
+      return this.requestCreativeAudiencePairingPersonaField(true);
+    }
+    public APIRequestGetAds requestCreativeAudiencePairingPersonaField (boolean value) {
+      this.requestField("creative_audience_pairing_persona", value);
       return this;
     }
     public APIRequestGetAds requestCreativeAutomationSpecField () {
@@ -4127,7 +4124,6 @@ public class AdSet extends APINode {
       "campaign_attribution",
       "campaign_id",
       "configured_status",
-      "cost_bidding_mode",
       "created_time",
       "creative_diversity_label",
       "creative_diversity_score",
@@ -4473,13 +4469,6 @@ public class AdSet extends APINode {
     }
     public APIRequestGetCopies requestConfiguredStatusField (boolean value) {
       this.requestField("configured_status", value);
-      return this;
-    }
-    public APIRequestGetCopies requestCostBiddingModeField () {
-      return this.requestCostBiddingModeField(true);
-    }
-    public APIRequestGetCopies requestCostBiddingModeField (boolean value) {
-      this.requestField("cost_bidding_mode", value);
       return this;
     }
     public APIRequestGetCopies requestCreatedTimeField () {
@@ -6453,7 +6442,6 @@ public class AdSet extends APINode {
       "campaign_attribution",
       "campaign_id",
       "configured_status",
-      "cost_bidding_mode",
       "created_time",
       "creative_diversity_label",
       "creative_diversity_score",
@@ -6799,13 +6787,6 @@ public class AdSet extends APINode {
     }
     public APIRequestGet requestConfiguredStatusField (boolean value) {
       this.requestField("configured_status", value);
-      return this;
-    }
-    public APIRequestGet requestCostBiddingModeField () {
-      return this.requestCostBiddingModeField(true);
-    }
-    public APIRequestGet requestCostBiddingModeField (boolean value) {
-      this.requestField("cost_bidding_mode", value);
       return this;
     }
     public APIRequestGet requestCreatedTimeField () {
@@ -7288,7 +7269,6 @@ public class AdSet extends APINode {
       "budget_schedule_specs",
       "campaign_attribution",
       "campaign_spec",
-      "cost_bidding_mode",
       "creative_sequence",
       "creative_sequence_repetition_pattern",
       "daily_budget",
@@ -7529,15 +7509,6 @@ public class AdSet extends APINode {
     }
     public APIRequestUpdate setCampaignSpec (String campaignSpec) {
       this.setParam("campaign_spec", campaignSpec);
-      return this;
-    }
-
-    public APIRequestUpdate setCostBiddingMode (AdSet.EnumCostBiddingMode costBiddingMode) {
-      this.setParam("cost_bidding_mode", costBiddingMode);
-      return this;
-    }
-    public APIRequestUpdate setCostBiddingMode (String costBiddingMode) {
-      this.setParam("cost_bidding_mode", costBiddingMode);
       return this;
     }
 
@@ -8323,27 +8294,6 @@ public class AdSet extends APINode {
       }
   }
 
-  public static enum EnumCostBiddingMode {
-      @SerializedName("BALANCED")
-      VALUE_BALANCED("BALANCED"),
-      @SerializedName("COST_FOCUSED")
-      VALUE_COST_FOCUSED("COST_FOCUSED"),
-      @SerializedName("VOLUME_FOCUSED")
-      VALUE_VOLUME_FOCUSED("VOLUME_FOCUSED"),
-      ;
-
-      private String value;
-
-      private EnumCostBiddingMode(String value) {
-        this.value = value;
-      }
-
-      @Override
-      public String toString() {
-        return value;
-      }
-  }
-
   public static enum EnumCreativeSequenceRepetitionPattern {
       @SerializedName("FULL_SEQUENCE")
       VALUE_FULL_SEQUENCE("FULL_SEQUENCE"),
@@ -8573,6 +8523,8 @@ public class AdSet extends APINode {
       VALUE_22("22"),
       @SerializedName("24")
       VALUE_24("24"),
+      @SerializedName("25")
+      VALUE_25("25"),
       ;
 
       private String value;
@@ -8674,7 +8626,6 @@ public class AdSet extends APINode {
     this.mCampaignAttribution = instance.mCampaignAttribution;
     this.mCampaignId = instance.mCampaignId;
     this.mConfiguredStatus = instance.mConfiguredStatus;
-    this.mCostBiddingMode = instance.mCostBiddingMode;
     this.mCreatedTime = instance.mCreatedTime;
     this.mCreativeDiversityLabel = instance.mCreativeDiversityLabel;
     this.mCreativeDiversityScore = instance.mCreativeDiversityScore;

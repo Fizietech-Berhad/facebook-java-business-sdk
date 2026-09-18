@@ -1073,6 +1073,7 @@ public class AdLabel extends APINode {
       "created_time",
       "creative",
       "creative_asset_groups_spec",
+      "creative_audience_pairing_persona",
       "creative_automation_spec",
       "demolink_hash",
       "display_sequence",
@@ -1320,6 +1321,13 @@ public class AdLabel extends APINode {
       this.requestField("creative_asset_groups_spec", value);
       return this;
     }
+    public APIRequestGetAds requestCreativeAudiencePairingPersonaField () {
+      return this.requestCreativeAudiencePairingPersonaField(true);
+    }
+    public APIRequestGetAds requestCreativeAudiencePairingPersonaField (boolean value) {
+      this.requestField("creative_audience_pairing_persona", value);
+      return this;
+    }
     public APIRequestGetAds requestCreativeAutomationSpecField () {
       return this.requestCreativeAutomationSpecField(true);
     }
@@ -1509,7 +1517,6 @@ public class AdLabel extends APINode {
       "campaign_attribution",
       "campaign_id",
       "configured_status",
-      "cost_bidding_mode",
       "created_time",
       "creative_diversity_label",
       "creative_diversity_score",
@@ -1819,13 +1826,6 @@ public class AdLabel extends APINode {
     }
     public APIRequestGetAdSets requestConfiguredStatusField (boolean value) {
       this.requestField("configured_status", value);
-      return this;
-    }
-    public APIRequestGetAdSets requestCostBiddingModeField () {
-      return this.requestCostBiddingModeField(true);
-    }
-    public APIRequestGetAdSets requestCostBiddingModeField (boolean value) {
-      this.requestField("cost_bidding_mode", value);
       return this;
     }
     public APIRequestGetAdSets requestCreatedTimeField () {
@@ -2299,6 +2299,7 @@ public class AdLabel extends APINode {
       "account_id",
       "adlabels",
       "advantage_state_info",
+      "bid_constraints",
       "bid_strategy",
       "boosted_object_id",
       "brand_lift_studies",
@@ -2455,6 +2456,13 @@ public class AdLabel extends APINode {
     }
     public APIRequestGetCampaigns requestAdvantageStateInfoField (boolean value) {
       this.requestField("advantage_state_info", value);
+      return this;
+    }
+    public APIRequestGetCampaigns requestBidConstraintsField () {
+      return this.requestBidConstraintsField(true);
+    }
+    public APIRequestGetCampaigns requestBidConstraintsField (boolean value) {
+      this.requestField("bid_constraints", value);
       return this;
     }
     public APIRequestGetCampaigns requestBidStrategyField () {

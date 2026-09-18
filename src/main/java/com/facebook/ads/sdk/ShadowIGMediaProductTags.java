@@ -53,6 +53,8 @@ public class ShadowIGMediaProductTags extends APINode {
   private String mPriceString = null;
   @SerializedName("product_id")
   private Long mProductId = null;
+  @SerializedName("product_url")
+  private String mProductUrl = null;
   @SerializedName("review_status")
   private String mReviewStatus = null;
   @SerializedName("stripped_price_string")
@@ -268,6 +270,15 @@ public class ShadowIGMediaProductTags extends APINode {
     return this;
   }
 
+  public String getFieldProductUrl() {
+    return mProductUrl;
+  }
+
+  public ShadowIGMediaProductTags setFieldProductUrl(String value) {
+    this.mProductUrl = value;
+    return this;
+  }
+
   public String getFieldReviewStatus() {
     return mReviewStatus;
   }
@@ -336,6 +347,7 @@ public class ShadowIGMediaProductTags extends APINode {
     this.mName = instance.mName;
     this.mPriceString = instance.mPriceString;
     this.mProductId = instance.mProductId;
+    this.mProductUrl = instance.mProductUrl;
     this.mReviewStatus = instance.mReviewStatus;
     this.mStrippedPriceString = instance.mStrippedPriceString;
     this.mStrippedSalePriceString = instance.mStrippedSalePriceString;

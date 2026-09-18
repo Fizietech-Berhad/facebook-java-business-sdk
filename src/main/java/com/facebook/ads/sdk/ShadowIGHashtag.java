@@ -300,11 +300,20 @@ public class ShadowIGHashtag extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "ingest_first_video_received_time",
+      "ingest_is_ready_to_start",
+      "ingest_key",
+      "ingest_last_heartbeat_time",
+      "ingest_state",
+      "ingest_url",
+      "ingest_video_height",
+      "ingest_video_width",
       "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
       "like_count",
+      "live_status",
       "media_audio_type",
       "media_product_type",
       "media_type",
@@ -497,6 +506,62 @@ public class ShadowIGHashtag extends APINode {
       this.requestField("ig_id", value);
       return this;
     }
+    public APIRequestGetRecentMedia requestIngestFirstVideoReceivedTimeField () {
+      return this.requestIngestFirstVideoReceivedTimeField(true);
+    }
+    public APIRequestGetRecentMedia requestIngestFirstVideoReceivedTimeField (boolean value) {
+      this.requestField("ingest_first_video_received_time", value);
+      return this;
+    }
+    public APIRequestGetRecentMedia requestIngestIsReadyToStartField () {
+      return this.requestIngestIsReadyToStartField(true);
+    }
+    public APIRequestGetRecentMedia requestIngestIsReadyToStartField (boolean value) {
+      this.requestField("ingest_is_ready_to_start", value);
+      return this;
+    }
+    public APIRequestGetRecentMedia requestIngestKeyField () {
+      return this.requestIngestKeyField(true);
+    }
+    public APIRequestGetRecentMedia requestIngestKeyField (boolean value) {
+      this.requestField("ingest_key", value);
+      return this;
+    }
+    public APIRequestGetRecentMedia requestIngestLastHeartbeatTimeField () {
+      return this.requestIngestLastHeartbeatTimeField(true);
+    }
+    public APIRequestGetRecentMedia requestIngestLastHeartbeatTimeField (boolean value) {
+      this.requestField("ingest_last_heartbeat_time", value);
+      return this;
+    }
+    public APIRequestGetRecentMedia requestIngestStateField () {
+      return this.requestIngestStateField(true);
+    }
+    public APIRequestGetRecentMedia requestIngestStateField (boolean value) {
+      this.requestField("ingest_state", value);
+      return this;
+    }
+    public APIRequestGetRecentMedia requestIngestUrlField () {
+      return this.requestIngestUrlField(true);
+    }
+    public APIRequestGetRecentMedia requestIngestUrlField (boolean value) {
+      this.requestField("ingest_url", value);
+      return this;
+    }
+    public APIRequestGetRecentMedia requestIngestVideoHeightField () {
+      return this.requestIngestVideoHeightField(true);
+    }
+    public APIRequestGetRecentMedia requestIngestVideoHeightField (boolean value) {
+      this.requestField("ingest_video_height", value);
+      return this;
+    }
+    public APIRequestGetRecentMedia requestIngestVideoWidthField () {
+      return this.requestIngestVideoWidthField(true);
+    }
+    public APIRequestGetRecentMedia requestIngestVideoWidthField (boolean value) {
+      this.requestField("ingest_video_width", value);
+      return this;
+    }
     public APIRequestGetRecentMedia requestIsAiGeneratedField () {
       return this.requestIsAiGeneratedField(true);
     }
@@ -530,6 +595,13 @@ public class ShadowIGHashtag extends APINode {
     }
     public APIRequestGetRecentMedia requestLikeCountField (boolean value) {
       this.requestField("like_count", value);
+      return this;
+    }
+    public APIRequestGetRecentMedia requestLiveStatusField () {
+      return this.requestLiveStatusField(true);
+    }
+    public APIRequestGetRecentMedia requestLiveStatusField (boolean value) {
+      this.requestField("live_status", value);
       return this;
     }
     public APIRequestGetRecentMedia requestMediaAudioTypeField () {
@@ -683,11 +755,20 @@ public class ShadowIGHashtag extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "ingest_first_video_received_time",
+      "ingest_is_ready_to_start",
+      "ingest_key",
+      "ingest_last_heartbeat_time",
+      "ingest_state",
+      "ingest_url",
+      "ingest_video_height",
+      "ingest_video_width",
       "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
       "like_count",
+      "live_status",
       "media_audio_type",
       "media_product_type",
       "media_type",
@@ -880,6 +961,62 @@ public class ShadowIGHashtag extends APINode {
       this.requestField("ig_id", value);
       return this;
     }
+    public APIRequestGetTopMedia requestIngestFirstVideoReceivedTimeField () {
+      return this.requestIngestFirstVideoReceivedTimeField(true);
+    }
+    public APIRequestGetTopMedia requestIngestFirstVideoReceivedTimeField (boolean value) {
+      this.requestField("ingest_first_video_received_time", value);
+      return this;
+    }
+    public APIRequestGetTopMedia requestIngestIsReadyToStartField () {
+      return this.requestIngestIsReadyToStartField(true);
+    }
+    public APIRequestGetTopMedia requestIngestIsReadyToStartField (boolean value) {
+      this.requestField("ingest_is_ready_to_start", value);
+      return this;
+    }
+    public APIRequestGetTopMedia requestIngestKeyField () {
+      return this.requestIngestKeyField(true);
+    }
+    public APIRequestGetTopMedia requestIngestKeyField (boolean value) {
+      this.requestField("ingest_key", value);
+      return this;
+    }
+    public APIRequestGetTopMedia requestIngestLastHeartbeatTimeField () {
+      return this.requestIngestLastHeartbeatTimeField(true);
+    }
+    public APIRequestGetTopMedia requestIngestLastHeartbeatTimeField (boolean value) {
+      this.requestField("ingest_last_heartbeat_time", value);
+      return this;
+    }
+    public APIRequestGetTopMedia requestIngestStateField () {
+      return this.requestIngestStateField(true);
+    }
+    public APIRequestGetTopMedia requestIngestStateField (boolean value) {
+      this.requestField("ingest_state", value);
+      return this;
+    }
+    public APIRequestGetTopMedia requestIngestUrlField () {
+      return this.requestIngestUrlField(true);
+    }
+    public APIRequestGetTopMedia requestIngestUrlField (boolean value) {
+      this.requestField("ingest_url", value);
+      return this;
+    }
+    public APIRequestGetTopMedia requestIngestVideoHeightField () {
+      return this.requestIngestVideoHeightField(true);
+    }
+    public APIRequestGetTopMedia requestIngestVideoHeightField (boolean value) {
+      this.requestField("ingest_video_height", value);
+      return this;
+    }
+    public APIRequestGetTopMedia requestIngestVideoWidthField () {
+      return this.requestIngestVideoWidthField(true);
+    }
+    public APIRequestGetTopMedia requestIngestVideoWidthField (boolean value) {
+      this.requestField("ingest_video_width", value);
+      return this;
+    }
     public APIRequestGetTopMedia requestIsAiGeneratedField () {
       return this.requestIsAiGeneratedField(true);
     }
@@ -913,6 +1050,13 @@ public class ShadowIGHashtag extends APINode {
     }
     public APIRequestGetTopMedia requestLikeCountField (boolean value) {
       this.requestField("like_count", value);
+      return this;
+    }
+    public APIRequestGetTopMedia requestLiveStatusField () {
+      return this.requestLiveStatusField(true);
+    }
+    public APIRequestGetTopMedia requestLiveStatusField (boolean value) {
+      this.requestField("live_status", value);
       return this;
     }
     public APIRequestGetTopMedia requestMediaAudioTypeField () {

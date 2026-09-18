@@ -199,6 +199,8 @@ public class AdsUserSettings extends APINode {
   private List<String> mPreviouslySeenRecommendations = null;
   @SerializedName("product_extensions_opt_in")
   private String mProductExtensionsOptIn = null;
+  @SerializedName("push_model_opt_in_status")
+  private String mPushModelOptInStatus = null;
   @SerializedName("reactive_control_settings")
   private List<Object> mReactiveControlSettings = null;
   @SerializedName("replace_media_text_opt_in_status")
@@ -807,6 +809,10 @@ public class AdsUserSettings extends APINode {
     return mProductExtensionsOptIn;
   }
 
+  public String getFieldPushModelOptInStatus() {
+    return mPushModelOptInStatus;
+  }
+
   public List<Object> getFieldReactiveControlSettings() {
     return mReactiveControlSettings;
   }
@@ -1064,6 +1070,7 @@ public class AdsUserSettings extends APINode {
       "placement_group_vertical_opt_in_status",
       "previously_seen_recommendations",
       "product_extensions_opt_in",
+      "push_model_opt_in_status",
       "reactive_control_settings",
       "replace_media_text_opt_in_status",
       "sa_off_conv_loc_seen",
@@ -1748,6 +1755,13 @@ public class AdsUserSettings extends APINode {
       this.requestField("product_extensions_opt_in", value);
       return this;
     }
+    public APIRequestGet requestPushModelOptInStatusField () {
+      return this.requestPushModelOptInStatusField(true);
+    }
+    public APIRequestGet requestPushModelOptInStatusField (boolean value) {
+      this.requestField("push_model_opt_in_status", value);
+      return this;
+    }
     public APIRequestGet requestReactiveControlSettingsField () {
       return this.requestReactiveControlSettingsField(true);
     }
@@ -2117,6 +2131,7 @@ public class AdsUserSettings extends APINode {
     this.mPlacementGroupVerticalOptInStatus = instance.mPlacementGroupVerticalOptInStatus;
     this.mPreviouslySeenRecommendations = instance.mPreviouslySeenRecommendations;
     this.mProductExtensionsOptIn = instance.mProductExtensionsOptIn;
+    this.mPushModelOptInStatus = instance.mPushModelOptInStatus;
     this.mReactiveControlSettings = instance.mReactiveControlSettings;
     this.mReplaceMediaTextOptInStatus = instance.mReplaceMediaTextOptInStatus;
     this.mSaOffConvLocSeen = instance.mSaOffConvLocSeen;
